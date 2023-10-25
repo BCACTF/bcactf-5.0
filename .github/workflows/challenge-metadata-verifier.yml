@@ -1,0 +1,41 @@
+# This workflow will verify any chall.yaml files it finds.
+# For more information see: https://github.com/BCACTF/bcactf-2.0/pull/23#discussion_r626116130
+
+name: Metadata verifier
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@v2
+    - name: Check out verifier repo
+      uses: actions/checkout@v2
+      with:
+        repository: 'BCACTF/challenge-metadata-verifier'
+        path: 'challenge-metadata-verifier'
+        ssh-key: ${{secrets.VERIFIER_DEPLOY_KEY}}
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Cache dependencies
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ hashFiles('challenge-metadata-verifier/requirements.txt') }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r challenge-metadata-verifier/requirements.txt
+    - name: Verify challenge metadata
+      run: |
+        python challenge-metadata-verifier/ci.py
