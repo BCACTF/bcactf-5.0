@@ -1,5 +1,4 @@
-# Challenge Repo Template
-This repository is a template for future CTFs.
+# BCACTF 5.0
 
 - Look at [CONTRIBUTING.md](CONTRIBUTING.md) for information on how to create a challenge.
 - Look at [CHALL_YAML_GUIDE.md](CHALL_YAML_GUIDE.md) for information on how to create a `chall.yaml` file.
