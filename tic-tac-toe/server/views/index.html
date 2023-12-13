@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+        <title>Tic-Tac-Toe</title>
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+
+        <style>
+            .game {
+                width: 100vw;
+                padding-top: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .game-over {
+                text-align: center;
+                margin-top: 15px;
+            }
+
+            .game-btns {
+                margin-top: 15px;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 10px;
+            }
+
+            .game-btn {
+                height: 50px;
+                width: 50px;
+            }
+        </style>
+
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                const ws = new WebSocket((location.origin + '/ws').replace('http', 'ws'))
+
+                const cells = Array.from(
+                    { length: 9 },
+                    (_, i) => document.querySelector(`#cell${i}`)
+                )
+
+                const setCellsDisabled = disabled => {
+                    for (const cell of cells) {
+                        cell.disabled = disabled
+                    }
+                }
+
+                for (let i = 0; i < cells.length; i++) {
+                    cells[i].addEventListener('click', () => {
+                        if (cells[i].innerText) {
+                            return
+                        }
+
+                        setCellsDisabled(true)
+
+                        ws.send(JSON.stringify({
+                            packetId: 'move',
+                            position: i
+                        }))
+                    })
+                }
+
+                document.querySelector('#playAgain').addEventListener('click', () => {
+                    window.location.reload()
+                })
+
+                ws.addEventListener('message', message => {
+                    const packet = JSON.parse(message.data)
+
+                    switch (packet.packetId) {
+                        case 'board': {
+                            setCellsDisabled(false)
+
+                            for (let i = 0; i < 9; i++) {
+                                cells[i].innerText = packet.board[i]
+                            }
+
+                            break
+                        }
+
+                        case 'gameOver': {
+                            setCellsDisabled(true)
+
+                            const gameOverAlert = document.querySelector('#gameOver')
+                            gameOverAlert.hidden = false
+
+                            const text = document.querySelector('#gameOverText')
+                            text.innerText = packet.message
+
+                            break
+                        }
+                    }
+                })
+            })
+        </script>
+    </head>
+
+    <body data-bs-theme="dark">
+        <div class="game">
+            <h1>Tic-Tac-Toe</h1>
+
+            <span>Click on a square to make your move.</span>
+            <span>You are X and the computer is O.</span>
+
+            <div class="alert alert-info game-over" id="gameOver" hidden>
+                <span id="gameOverText"></span>
+                <div>
+                    <button class="btn btn-link p-0" id="playAgain">
+                        Play Again
+                    </button>
+                </div>
+            </div>
+
+            <div class="game-btns">
+                <button class="btn btn-primary game-btn" id="cell0"></button>
+                <button class="btn btn-primary game-btn" id="cell1"></button>
+                <button class="btn btn-primary game-btn" id="cell2"></button>
+                <button class="btn btn-primary game-btn" id="cell3"></button>
+                <button class="btn btn-primary game-btn" id="cell4"></button>
+                <button class="btn btn-primary game-btn" id="cell5"></button>
+                <button class="btn btn-primary game-btn" id="cell6"></button>
+                <button class="btn btn-primary game-btn" id="cell7"></button>
+                <button class="btn btn-primary game-btn" id="cell8"></button>
+            </div>
+        </div>
+    </body>
+</html>

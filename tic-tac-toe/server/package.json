@@ -1,0 +1,11 @@
+{
+    "name": "tic-tac-toe",
+    "dependencies": {
+        "express": "4.18.2",
+        "ws": "8.14.2"
+    },
+    "scripts": {
+        "start": "node server.js"
+    },
+    "type": "module"
+}
