@@ -1,0 +1,20 @@
+name: MOC, Inc.
+categories:
+  - webex
+value: 150
+flag:
+  file: ./flag.txt
+description: |-
+  Recently, we've been receiving reports about suspicious activity
+  coming from a company called MOC, Inc. Our investigative team has
+  tracked down their secret company portal but could not bypass
+  the advanced 2FA system. Can you find your way in?
+files:
+  - src: ./server/app.py
+deploy:
+  web:
+    build: .
+    expose: 3000/tcp
+authors:
+  - Thomas
+visible: true
