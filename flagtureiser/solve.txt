@@ -1,0 +1,19 @@
+=== Start reference explanation, skip if you dont care about this ===
+
+This challenge is a reference to the Fractureiser Minecraft Modded Malware from June 2023.
+
+An entire writeup can be found here (https://github.com/fractureiser-investigation/fractureiser/blob/main/docs/tech.md) but essentially the part I'm referencing is how the mods actually secretly downloaded the malware.
+
+This bad actor uploaded modified versions of the mod JAR files to Curseforge accounts of popular mods. These jars were the same; the mod was still there, but the bad actor (who was able to do this since most mods are open source and java is decompilable) added an operation to, once the mod was loaded, download the actual malware files to the victim's computer from a server. There were different IPs for each mod (yeah, whoever wrote this was on crack or something). The IP of this server was obfuscated by array bytes.
+
+The flag is like the server IP - hidden in these bytes, and the rest of the mod is just referencing history.
+
+The investigation and quick actions of all the people who helped in the Fractureiser investigation cannot be overvalued. People stayed up all night just to reverse engineer this malware. A small but effective list of everyone involved can be seen here - https://github.com/fractureiser-investigation/fractureiser/graphs/contributors
+
+=== End reference explanation, start of the solution ===
+
+You don't actually need to own Minecraft or run the mod to get the flag. Since the flag is already obfuscated by the array bytes in the JAR file, you just have to:
+
+1) Decompile the JAR file with a tool such as JD-GUI or an online tool
+2) Find the main mod file. This is often just the name of the mod file, so it will be org.bcactf.flagtureiser.Flagtureiser
+3) You can manually convert the bytes in the String[] array of bytes, or just copy and paste all of it into a java sandbox and just print out the values as a string.
