@@ -1,0 +1,20 @@
+The service is vulnerable to the SHA-256 length extension attack. For all
+the preloaded scripts, we know the value of the token:
+T = SHA-256(secret || script)
+
+Applying the length extension attack allows finding the value of T':
+T' = SHA-256(secret || script || attacker_data)
+
+All the attacker needs to know to find T' is the value of script and the
+length of secret || script. Of course, the attacker knows the length of
+the script, but the length of the secret is not provided---this has to
+be found by brute force (it's not that long so it this is quick).
+
+Because attacker_data is malicious data appended to the end of the script,
+it can be used to run arbitrary code on the server. The attacker can use
+this code added to the end of the script to read and print flag.txt.
+
+Also, since attacker_data is prepended by some binary padding the attacker
+should use the preloaded script named "Unfinished Script", which ends in a
+comment. This allows the binary padding to be commented out and not cause
+errors; the actual payload should start with \n so it is not commented out.

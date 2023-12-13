@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+        <title>Cinnamon Dynamics</title>
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+
+        <style>
+            .editor {
+                resize: none;
+                height: 250px;
+            }
+        </style>
+
+        <script>
+            const PRELOADED_SCRIPTS = {
+                company: {
+                    token: '50e37a8eb1bc0fa5570af7acd5de5a36be5ef2d7feb116f40732864c98946b45',
+                    script: `const file = await Deno.readTextFile('company.txt')
+
+file
+    .split('!')
+    .map(pair => /\\[(.+)\\]\\[(.+)\\]/g.exec(pair).slice(1, 3))
+    .forEach(stat => console.log(stat[0] + ': ' + stat[1]))`
+                },
+                employees: {
+                    token: '6c7595fe86268c288156ba87ec291b439b211b028c0349c6ef43d1999e4c91da',
+                    script: `const file = await Deno.readTextFile('employees.txt')
+
+for (const line of file.split('\\n')) {
+    const [name, salary] = line.split(';')
+    console.log(\`Employee \${name} makes $\${salary}/year\`)
+}`
+                },
+                invoice: {
+                    token: 'd5b2817b75e5e26a170c5d19c0fb54fbfc2ccc934b40372bf7b0e02c699efc37',
+                    script: `const parseInvoice = text => {
+    const invoice = Object.create(null)
+
+    for (const line of text.split('\\n')) {
+        if (!line.includes('=')) {
+            continue
+        }
+
+        const [path, value] = line.slice(1).split('=')
+
+        const object = path
+            .split('.')
+            .slice(0, -1)
+            .reduce((a, b) => a[b], invoice)
+
+        let key = path.split('.').at(-1)
+
+        if (Array.isArray(object)) {
+            key = Number(key)
+        }
+
+        object[key] = JSON.parse(value)
+    }
+
+    return invoice
+}
+
+const invoice = parseInvoice(await Deno.readTextFile('invoice.txt'))
+
+console.log('Invoice Details')
+console.log('===============\\n')
+
+console.log(\`Invoice Number: \${invoice.invoiceNumber}\\n\`)
+
+for (const product of invoice.products) {
+    console.log(\`Product \${product.productId}:\`)
+    console.log('  Quantity:', product.quantity)
+    console.log('  Unit Price:', product.unitPrice)
+    console.log('  Total Price:', product.totalPrice)
+}
+
+console.log('\\nSubtotal:', invoice.subtotal)
+console.log('Tax Amount:', invoice.taxAmount)
+console.log('Total:', invoice.total)`
+                },
+                unfinished: {
+                    token: 'd649728e5f43a2cf8c6ec863bb48328a060c2f1ddb91976d6d138eac8ab91684',
+                    script: `const file = await Deno.readTextFile('sales.txt')
+
+const sales = file.split('\\n')
+
+console.log('Number of sales:', sales.length)
+
+// TODO: finish this script`
+                }
+            }
+
+            window.addEventListener('DOMContentLoaded', () => {
+                const scriptSelect = document.querySelector('#scriptSelect')
+
+                document.querySelector('#loadScript').addEventListener('click', () => {
+                    const { token, script } = PRELOADED_SCRIPTS[scriptSelect.value]
+
+                    document.querySelector('[name=token]').value = token
+                    document.querySelector('[name=script]').value = script
+                })
+            })
+        </script>
+    </head>
+
+    <body class="p-3" data-bs-theme="dark">
+        <h2 class="mb-0">Cinnamon Dynamics</h2>
+        <h4 class="fw-light fst-italic mb-3">Script Execution Service</h4>
+
+        <div class="d-flex align-items-end gap-2">
+            <label>
+                Preloaded Script
+                <select class="form-select" id="scriptSelect">
+                    <option value="company" selected>Company Info</option>
+                    <option value="employees">Employee List</option>
+                    <option value="invoice">Invoice Details</option>
+                    <option value="unfinished">Unfinished Script</option>
+                </select>
+            </label>
+
+            <button class="btn btn-secondary" id="loadScript">Load</button>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-header">Script Editor</div>
+            <div class="card-body">
+                <form action="/execute" method="POST">
+                    <label class="w-100 mb-2">
+                        Script Token
+                        <input
+                            type="text"
+                            name="token"
+                            class="form-control font-monospace"
+                        />
+                    </label>
+
+                    <label class="w-100 mb-3">
+                        Script
+                        <textarea
+                            name="script"
+                            class="form-control font-monospace w-100 editor"
+                        ></textarea>
+                    </label>
+
+                    <input
+                        type="submit"
+                        value="Execute"
+                        class="btn btn-primary w-100"
+                    />
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
