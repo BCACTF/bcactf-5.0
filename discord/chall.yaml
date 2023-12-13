@@ -1,0 +1,13 @@
+name: Discord
+categories:
+  - misc
+value: 25
+flag: bcactf{blah}
+description: |-
+  Please join our Discord server!
+hints:
+  - Look in the rules channel
+authors:
+  - CTF Club
+visible: true
+# TODO: deployment
