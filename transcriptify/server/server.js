@@ -43,7 +43,7 @@ app.get('/viewtranscript', wrapped(async (req, res) => {
 
     const time = String(Math.round(new Date().getTime() / 1_000))
     const nonce = Buffer.from(
-        time + (Number(time.slice(-1)) >= 5 ? '5' : '0') + '00',
+        time.slice(0, -1) + (Number(time.at(-1)) >= 5 ? '5' : '0') + '000',
         'utf-8'
     ).toString('base64')
 

