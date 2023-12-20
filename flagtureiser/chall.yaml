@@ -1,0 +1,20 @@
+name: Flagtureiser
+categories:
+  - misc
+value: 50
+flag:
+    file: ./flag.txt
+description: |-
+  Here's a totally normal Minecraft mod (1.19.4, Forge) I've been making, check it out!
+hints:
+  - The name of the mod is a spoof of something else (It is Minecraft related).
+  - How does the infected mod jar download Neko Client?
+  - Not a hint, just a personal thanks to everyone who worked hard, and spent hours, and to everyone involved and active in the fight against this malware.
+files:
+  - src: ./flag.txt
+  - src: ./flagtureiser-4.2.0.6.9.jar
+    dest: flagtureiser-4.2.0.6.9.jar
+authors:
+  - Joshua Peisach (ItzSwirlz)
+visible: true
+# TODO: deployment
