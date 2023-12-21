@@ -15,5 +15,5 @@ The investigation and quick actions of all the people who helped in the Fracture
 You don't actually need to own Minecraft or run the mod to get the flag. Since the flag is already obfuscated by the array bytes in the JAR file, you just have to:
 
 1) Decompile the JAR file with a tool such as JD-GUI or an online tool
-2) Find the main mod file. This is often just the name of the mod file, so it will be org.bcactf.flagtureiser.Flagtureiser
+2) Find the main mod file. This is often just the name of the mod file, so it will be com.bcactf.flagtureiser.Flagtureiser
 3) You can manually convert the bytes in the String[] array of bytes, or just copy and paste all of it into a java sandbox and just print out the values as a string.
