@@ -13,7 +13,6 @@ hints:
   - How does the infected mod jar download Neko Client?
   - Not a hint, just a personal thanks to everyone who worked hard, and spent hours, and to everyone involved and active in the fight against this malware.
 files:
-  - src: ./flag.txt
   - src: ./flagtureiser-4.2.0.6.9.jar
     dest: flagtureiser-4.2.0.6.9.jar
 authors:
