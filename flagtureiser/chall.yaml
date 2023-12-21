@@ -1,3 +1,4 @@
+
 name: Flagtureiser
 categories:
   - misc
@@ -14,7 +15,6 @@ hints:
   - Not a hint, just a personal thanks to everyone who worked hard, and spent hours, and to everyone involved and active in the fight against this malware.
 files:
   - src: ./flagtureiser-4.2.0.6.9.jar
-    dest: flagtureiser-4.2.0.6.9.jar
 authors:
   - Joshua Peisach (ItzSwirlz)
 visible: true
