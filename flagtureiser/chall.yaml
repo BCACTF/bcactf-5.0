@@ -6,6 +6,8 @@ flag:
     file: ./flag.txt
 description: |-
   Here's a totally normal Minecraft mod (1.19.4, Forge) I've been making, check it out!
+
+  (You do not need Minecraft to solve this challenge)
 hints:
   - The name of the mod is a spoof of something else (It is Minecraft related).
   - How does the infected mod jar download Neko Client?
