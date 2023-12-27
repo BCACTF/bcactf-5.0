@@ -3,7 +3,7 @@ categories:
   - rev
 value: 50
 flag:
-    file: ./flag.txt
+    file: ./src/flag.txt
 description: |-
   Here's a totally normal Minecraft mod (1.19.4, Forge) I've been making, check it out!
 
