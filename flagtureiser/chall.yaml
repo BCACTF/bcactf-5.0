@@ -1,6 +1,6 @@
 name: Flagtureiser
 categories:
-  - misc
+  - rev
 value: 50
 flag:
     file: ./flag.txt
@@ -11,7 +11,7 @@ description: |-
 hints:
   - The name of the mod is a spoof of something else (It is Minecraft related).
   - How does the infected mod jar download Neko Client?
-  - Not a hint, just a personal thanks to everyone who worked hard, and spent hours, and to everyone involved and active in the fight against this malware.
+  - Not a hint, just a personal thanks to everyone involved who worked hard in the fight against this malware.
 files:
   - src: ./flagtureiser-4.2.0.6.9.jar
     container: builder

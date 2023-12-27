@@ -1,4 +1,4 @@
-package com.bcactf.fragtureiser;
+package com.bcactf.flagtureiser;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;

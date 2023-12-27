@@ -1,4 +1,4 @@
-package com.bcactf.fragtureiser;
+package com.bcactf.flagtureiser;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -93,7 +93,6 @@ public class Flagtureiser
         try {
           _6d8f2e1fefef5b67bf4f49179b84f29f7d1e01f0();
         } catch (Exception e) {
-          // TODO Auto-generated catch block
           e.printStackTrace();
         }
 
@@ -106,7 +105,6 @@ public class Flagtureiser
         try {
           _6d8f2e1fefef5b67bf4f49179b84f29f7d1e01f0();
         } catch (Exception e) {
-          // TODO Auto-generated catch block
           e.printStackTrace();
         }
         // Some common setup code

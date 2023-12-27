@@ -1,5 +1,4 @@
-FROM ubuntu:latest
-RUN apt-get update && apt-get full-upgrade -y && apt-get install openjdk-17-jdk
+FROM amazoncorretto:latest
 
-COPY * .
+COPY src/* .
 RUN ./gradlew buildEnvironment && ./gradlew build
