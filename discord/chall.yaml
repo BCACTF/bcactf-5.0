@@ -2,12 +2,11 @@ name: Discord
 categories:
   - misc
 value: 25
-flag: bcactf{blah}
+flag: bcactf{w3lc0m3_t0_bC@c7F_5_fby4uf4dijreferuvg}
 description: |-
-  Please join our Discord server!
+  Welcome to BCACTF 5.0! Please join our Discord server to find the flag: https://discord.gg/NP9Bb7PDWf
 hints:
   - Look in the rules channel
 authors:
   - CTF Club
 visible: true
-# TODO: deployment
