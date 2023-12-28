@@ -4,9 +4,9 @@ categories:
 value: 25
 flag: bcactf{w3lc0m3_t0_bC@c7F_5_fby4uf4dijreferuvg}
 description: |-
-  Welcome to BCACTF 5.0! Please join our Discord server to find the flag: https://discord.gg/NP9Bb7PDWf
+  Welcome to BCACTF 5.0! Please join [our Discord server](https://discord.gg/NP9Bb7PDWf) to find the flag.
 hints:
-  - Look in the rules channel
+  - Read our rules, then check out the announcements channel.
 authors:
   - CTF Club
 visible: true
