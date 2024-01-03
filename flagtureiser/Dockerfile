@@ -1,4 +1,4 @@
 FROM amazoncorretto:latest
 
-COPY src/* .
+COPY source/ .
 RUN ./gradlew buildEnvironment && ./gradlew build

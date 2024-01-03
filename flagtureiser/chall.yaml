@@ -3,7 +3,7 @@ categories:
   - rev
 value: 50
 flag:
-    file: ./src/flag.txt
+    file: ./source/flag.txt
 description: |-
   Here's a totally normal Minecraft mod (1.19.4, Forge) I've been making, check it out!
 
@@ -13,7 +13,7 @@ hints:
   - How does the infected mod jar download Neko Client?
   - Not a hint, just a personal thanks to everyone involved who worked hard in the fight against this malware.
 files:
-  - src: ./flagtureiser-4.2.0.6.9.jar
+  - src: ./build/libs/flagtureiser-4.2.0.6.9.jar
     container: builder
 authors:
   - Joshua Peisach (ItzSwirlz)
