@@ -1,11 +1,12 @@
-// (run with deno)
+#!/usr/bin/env -S deno run
 
-// The secret message and the user's message are encrypted with the
-// same (key, nonce) tuple, which completely defeats the security of
-// ChaCha20. Essentially, E(secret_msg) ⊕ E(user_msg) = secret_msg ⊕ user_msg
-// ...where E is obviously ChaCha20. Since the user message is controlled
-// by the attacker, it is trivial to retrieve the secret message thus:
-// (secret_msg ⊕ user_msg) ⊕ user_msg = secret_msg
+// ChaCha20 works by XORing the plaintext with a stream generated from
+// the (key, nonce) pair. Since this pair is reused for encrypting the
+// secret message and the user's message, the following operations can be
+// performed to reveal the secret plaintext given the secret ciphertext:
+// 1. user_ciphertext = user_plaintext ⊕ stream
+// 2. stream = user_plaintext ⊕ user_ciphertext
+// 3. secret_plaintext = stream ⊕ secret_ciphertext
 
 const fromHex = (hex: string) => hex.match(/.{2}/g)!.map(byte => parseInt(byte, 16))
 
