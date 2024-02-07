@@ -1,0 +1,16 @@
+name: Physics Test
+categories:
+  - misc
+value: 100
+flag:
+   file: ./flag.txt 
+description: |-
+  Help me get an A in Physics! My teacher made this review program for us.
+hints:
+  - TODO
+  # no files i think
+authors:
+  - Marvin Mao
+visible: true
+# TODO: deployment
+# NOTE: When deploted, check that error messages are visible (you can see that "flag" is in the error message)
