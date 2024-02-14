@@ -1,0 +1,18 @@
+name: "Phone number"
+categories:
+  - webx
+value: 25
+flag: 
+  file: ./flag.txt
+description: |
+  I was trying to sign into this website, but now it's
+  asking me for a phone number. The way I'm supposed to
+  input it is strange. Can you help me sign in?
+
+  My phone number is 1234567890
+hints:
+  - "If only you could just type in the phone number"
+  - "" # something about disabling the events (i think that's what they're called)
+docker: 
+
+# kinda gave up here sorry dockerfile more like stupid

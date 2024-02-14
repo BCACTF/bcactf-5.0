@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Sign in
+        </title>
+    </head>
+    <body>
+        <p><b>To continue, please enter your phone number.</b></p><br>
+        <input readonly="true" id="input" style="display:block" value="" /><br>
+        <button onclick="rollDice()" style="display:block">
+            Roll Dice
+        </button>
+        <p id="result" style="display:none">
+            <b id="dicetext"></b>
+            <button onclick="subtractSet()" class="resultbutton">
+                Subtract Dice
+            </button>
+            <button onclick="addNumber()" class="resultbutton">
+                Add Number
+            </button>
+            <br>
+            <img id="img1"><img id="img2">
+        </p>
+        <button style="display:block" onclick="submit()">
+            Submit
+        </button>
+        <script src="script.js"></script>
+    </body>
+</html>
