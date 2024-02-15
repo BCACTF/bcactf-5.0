@@ -3,8 +3,7 @@ FROM ubuntu:latest as build
 RUN apt-get update -y && apt-get install -y gcc && apt-get install -y wget && apt-get install -y unzip && rm -rf /var/lib/apt/lists/*
 
 RUN wget -O ynetd.c https://raw.githubusercontent.com/johnsonjh/ynetd/master/ynetd.c \
-  && gcc -o ynetd ynetd.c \
-  && rm -f /tmp/ynetd.zip
+  && gcc -o ynetd ynetd.c
 
 
 FROM --platform=linux/amd64 python:3.8-slim-buster AS deployer
