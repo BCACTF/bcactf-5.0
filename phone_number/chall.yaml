@@ -1,6 +1,6 @@
-name: "Phone number"
+name: Phone number
 categories:
-  - webx
+  - webex
 value: 25
 flag: 
   file: ./flag.txt
@@ -11,8 +11,12 @@ description: |
 
   My phone number is 1234567890
 hints:
-  - "If only you could just type in the phone number"
-  - "" # something about disabling the events (i think that's what they're called)
-docker: 
-
-# kinda gave up here sorry dockerfile more like stupid
+  - If only you could just type in the phone number
+  - Have you heard of event listeners in Javascript?
+authors:
+  - Jacob Korn
+visible: true
+deploy:
+  web:
+    build: .
+    expose: 80/tcp
