@@ -12,5 +12,8 @@ hints:
 authors:
   - Marvin Mao
 visible: true
-# TODO: deployment
-# NOTE: When deploted, check that error messages are visible (you can see that "flag" is in the error message)
+deploy:
+  nc:
+    build: .
+    expose: 8148/tcp
+# NOTE: When deployed, check that error messages are visible (you can see that "flag" is in the error message)
