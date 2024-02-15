@@ -23,4 +23,4 @@ RUN chown -R root:root /home/ctf
 # run and expose
 USER ctf
 EXPOSE 9999
-CMD ["./ynetd", "-p", "8148", "python3 physics-test.py"]
+CMD ["./ynetd", "-p", "8148", "python3 physics-test.py 2>&1"]
