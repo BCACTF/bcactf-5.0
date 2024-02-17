@@ -1,0 +1,15 @@
+name: Fogblaze
+categories:
+  - webex
+value: 125
+flag:
+  file: ./flag.txt
+description: |-
+  Can you bypass this website's new stateless CAPTCHA system?
+deploy:
+  web:
+    build: .
+    expose: 3000/tcp
+authors:
+  - Thomas
+visible: true
