@@ -1,28 +1,15 @@
 name: XOR
 categories:
   - reverse
-value: 25
+value: 50
 flag:
   file: ./flag.txt
-# Alternatively:
-# flag:
-#   file: ./flag.txt
-# 
 description: |-
-  Look at this example problem.
-  This is the problem description.
-  You will be able to add **markdown**!
-  Here is a separate paragraph.
-  Wow!
-  
-  Take your flag: bcactf{this_is_a_flag}
+  The executable below outputs an encrypted flag using the XOR operator. Can you decompile and reveal the flag?
 hints:
-  - Have you tried turning it off and on again?
-  - Have you tried forcing an unexpected reboot?
+  - What is symmetric encryption?
 files:
-  - src: ./flag.txt
-  - src: ./a.txt
-    dest: optionallyrenamethefile.txt
+  - src: ./xor
 authors:
-  - Michael Middlezong
+  - Michael
 visible: true
