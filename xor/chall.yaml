@@ -1,6 +1,6 @@
 name: XOR
 categories:
-  - reverse
+  - rev
 value: 50
 flag:
   file: ./flag.txt
