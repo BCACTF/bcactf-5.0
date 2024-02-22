@@ -16,19 +16,19 @@ jobs:
 
     steps:
     - name: Check out repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     - name: Check out verifier repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         repository: 'BCACTF/challenge-metadata-verifier'
         path: 'challenge-metadata-verifier'
         ssh-key: ${{secrets.VERIFIER_DEPLOY_KEY}}
     - name: Set up Python 3.9
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
         python-version: 3.9
     - name: Cache dependencies
-      uses: actions/cache@v2
+      uses: actions/cache@v4
       with:
         path: ~/.cache/pip
         key: ${{ hashFiles('challenge-metadata-verifier/requirements.txt') }}
