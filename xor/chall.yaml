@@ -10,6 +10,12 @@ hints:
   - What is symmetric encryption?
 files:
   - src: ./xor
+    dest: xor
+    container: nc
 authors:
   - Michael
 visible: true
+deploy:
+  nc:
+    build: .
+    expose: 3012/tcp
