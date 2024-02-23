@@ -1,0 +1,7 @@
+Run the executable to get an encrypted flag.
+
+Then, decompile it and see that the flag is encrypted by doing XOR on each character with a key string.
+
+The key string is in plain sight in the decompiled file.
+
+It is easy to decrypt by doing the same encrypting algorithm again.
