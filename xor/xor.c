@@ -4,10 +4,6 @@
 
 #define XOR_KEY "ClkvKOR8JQA1JB731LeGkU7J4d2khDvrOPI63mM7"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 void xorEncrypt(char* input, char* output, size_t length) {
     size_t keyLength = strlen(XOR_KEY);
     for (size_t i = 0; i < length; i++) {
