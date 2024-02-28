@@ -1,0 +1,18 @@
+name: Sea Scavenger
+categories:
+  - foren
+  - webex
+tags:
+  - beginner
+value: 25
+flag: bcactf{b3t_y0u_d1dnt_f1nd_th3_tre4sur3}
+description: |
+  Take a tour of the deep sea! Explore the depths of webpage code and find the hidden treasure.
+hints:
+  - Press Ctrl+Shift+I
+  - If you're a Mac loser press Cmd+Option+I
+authors:
+  - pinuna27
+visible: true
+# TODO: deployment
+# NEED HELP RUNNING HTML FILE IN SERVER

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Depths of the Sea</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #000066 0%, #000000 100%);
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            position: relative;
+            height: 6000px;
+            width: 3000px;
+            overflow: auto;
+        }
+        h1 {
+            color: #66ccff;
+        }
+        img {
+            position: absolute;
+            width: 200px;
+            display: none;
+        }
+        #shark {
+            top: 500px;
+            left: 500px;
+        }
+        #squid {
+            top: 1200px;
+            right: 800px;
+        }
+        #clam {
+            top: 1900px;
+            left: 1500px;
+        }
+        #shipwreck {
+            top: 2600px;
+            right: 1200px;
+        }
+        #whale {
+            top: 3300px;
+            left: 2200px;
+        }
+        #dolphin {
+            top: 4000px;
+            right: 1800px;
+        }
+        #jellyfish {
+            top: 4700px;
+            left: 2800px;
+        }
+        #treasure {
+            bottom: 50px;
+            right: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Depths of the Sea</h1>
+    </header>
+    <main>
+        <p>Explore the mysteries of the deep sea...</p>
+        <img id="shark" src="shark.jpg" alt="Shark Image">
+        <img id="squid" src="squid.jpg" alt="Squid Image">
+        <img id="clam" src="clam.jpg" alt="Clam Image">
+        <img id="shipwreck" src="shipwreck.jpg" alt="Shipwreck Image">
+        <img id="whale" src="whale.jpg" alt="Whale Image">
+        <img id="dolphin" src="dolphin.jpg" alt="Dolphin Image">
+        <img id="jellyfish" src="jellyfish.jpg" alt="Jellyfish Image">
+        <img id="treasure" src="treasure.jpg" alt="Treasure Image">
+    </main>
+    <footer>
+        <p>Continue your journey in the next exploration...</p>
+    </footer>
+    <script>
+        window.addEventListener('scroll', function() {
+            var scrollPosition = window.pageYOffset;
+            if (scrollPosition > 400) document.getElementById('shark').style.display = 'block';
+            if (scrollPosition > 1100) document.getElementById('squid').style.display = 'block';
+            if (scrollPosition > 1800) document.getElementById('clam').style.display = 'block';
+            if (scrollPosition > 2500) document.getElementById('shipwreck').style.display = 'block';
+            if (scrollPosition > 3200) document.getElementById('whale').style.display = 'block';
+            if (scrollPosition > 3900) document.getElementById('dolphin').style.display = 'block';
+            if (scrollPosition > 4600) document.getElementById('jellyfish').style.display = 'block';
+            if ((scrollPosition + window.innerHeight >= document.body.offsetHeight) && 
+                (window.pageXOffset + window.innerWidth >= document.body.offsetWidth)) {
+                document.getElementById('treasure').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
