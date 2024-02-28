@@ -2,8 +2,12 @@ name: "Third Time's The Charm"
 categories:
 - crypto
 value: 25
-flag: flag{hereisyourcharm}
+flag: flag{luckycharmscereal}
 description: |
+key - uno
+cipher 0 - xriwrg
+cipher 1 - eshgwaqehgej
+cipher 2 - mipoqkuaeqstffred
 hints:
 authors:
 - Sylvia Lee
