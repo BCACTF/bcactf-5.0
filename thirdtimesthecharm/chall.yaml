@@ -1,16 +1,16 @@
-name: "Third Time's The Charm"
+name: Third Time's The Charm
 categories:
-- crypto
+  - crypto
 value: 25
 flag: bcactf{lucky_charms_cereal_yipee}
-description: |
-put the decrypted cipher in bcactf{};
-key - uno
-cipher 0 - xriwrg
-cipher 1 - eshgwaqehgej
-cipher 2 - mipoq_kuaeqs_tffred_gvpri
-
+description: |-
+  put the decrypted cipher in bcactf{}
+  key - uno
+  cipher 0 - xriwrg
+  cipher 1 - eshgwaqehgej
+  cipher 2 - mipoq_kuaeqs_tffred_gvpri
 hints:
+  - No hints, good luck!
 authors:
 - Sylvia Lee
 - Juna Lee
