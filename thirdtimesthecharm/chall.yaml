@@ -1,14 +1,16 @@
-name: Third Time's The Charm
+name: Vinegar Times 3
 categories:
   - crypto
 value: 25
-flag: bcactf{lucky_charms_cereal_yipee}
+flag: bcactf{add_to_salad_yummy}
 description: |-
+  We can't speak French and just say what we see.
+  We also don't know what underscores are add them yourself.
   put the decrypted cipher in bcactf{}
-  key - uno
-  cipher 0 - xriwrg
-  cipher 1 - eshgwaqehgej
-  cipher 2 - mipoq_kuaeqs_tffred_gvpri
+  key - vinegar
+  cipher 0 - mmqaonv (redwine)
+  cipher 1 - seooizmt (balsamic)
+  cipher 2 - bdoloeinbdjmmyg
 hints:
   - No hints, good luck!
 authors:
