@@ -1,4 +1,4 @@
-name: Example Problem
+name: Touch Tone Telephone
 categories:
   - foren
   - rev
@@ -31,6 +31,9 @@ files:
   - src: /gen/output.wav
     dest: beep_boop.wav
     container: static
+deploy:
+  static:
+    build: .
 authors:
   - Skyler Calaman
 visible: true
