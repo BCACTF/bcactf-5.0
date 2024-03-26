@@ -1,0 +1,36 @@
+name: Example Problem
+categories:
+  - foren
+  - rev
+value: 75
+flag:
+  file: ./flag.txt
+description: |-
+  theres a demon inside of my head \
+  now im unable to go to bed \
+  i gave a shout \
+  the phone rang out \
+  and now theres just feelings of dread
+
+  i picked up the phone and i heard \
+  a resounding cry from the herd \
+  of phone systems cursed \
+  and stuck with the curse \
+  of button pressing till theyre dead
+
+  i heard the beeping with my ears \
+  knowing it could solve all my fears \
+  to find the demon \
+  the lemon heathen \
+  to wipe away ctf tears
+hints:
+  - DTMF is a really cool technology
+  - There also used to be A, B, C, and D menu selection keys
+  - How many keys are there in total? Is it a computer science-y number?
+files:
+  - src: /gen/output.wav
+    dest: beep_boop.wav
+    container: static
+authors:
+  - Skyler Calaman
+visible: true
