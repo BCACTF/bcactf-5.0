@@ -1,0 +1,15 @@
+name: Serene Abstractions
+categories:
+  - rev
+value: 150
+flag: bcactf{a_s3REn3_D3veL0pM3nT_eXp3Ri3nC3_f7a6afef2bc1}
+description: |-
+  I accidentally overwrote my JavaScript source file with its
+  abstract syntax tree! Please help me run the program.
+hints:
+  - If it helps, the AST was generated from SerenityOS LibJS at commit d91d6ee.
+files:
+  - src: ./tree
+authors:
+  - Thomas
+visible: true
