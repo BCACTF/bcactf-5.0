@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request
-app = Flask(__name__)
+import importlib
+import os
+main = importlib.import_module("flag_transmitter", "rad-be-damned.src")
 
-from src.flag_bearer import crc_encrypt
+app = Flask(__name__)
 
 @app.route('/')
 def index(): #Gets the main page
@@ -12,7 +14,16 @@ def getFlag():
     #Get flag from flag.txt
     with open("flag.txt") as f:
         flag = f.read()
-        print(flag)
+        encoded = main.main(flag)
+        print(encoded)
+
+        #Encoded string printout
+        total_str = ""
+        for letter in encoded:
+            total_str += chr(int(letter[:-5], base = 2))
+        print(total_str)
+        for letter in encoded:
+            print(letter, end = ' ')
     #Encrypt with crc_encrypt
     return render_template('index.html', flag = "Flag")
     #Get flag from flag.txt

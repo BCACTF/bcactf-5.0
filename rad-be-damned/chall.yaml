@@ -1,0 +1,11 @@
+name: "rad-be-damned"
+categories: 
+  - misc
+  - crypto
+value: 125
+flag: 
+    file: flag.txt
+description: |
+  Write this later
+hints:
+    - "Enter more hints"
