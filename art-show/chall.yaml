@@ -1,0 +1,70 @@
+name: Art Show
+categories:
+  - misc
+value: 100
+flag:
+  file: ./flag.txt
+description: |-
+  You will receive a series of random PNG images in Base64 form.
+  Each image contains some number of non-overlapping rectangles.
+
+  Your task is to determine the color, position, and size of each
+  rectangle in the image.
+
+  Responses should be provided in the following format:
+
+  `R,G,B,X,Y,W,H; R,G,B,X,Y,W,H; R,G,B,X,Y,W,H; ...`
+
+  R, G, and B refer to the RGB color of the rectangle.
+  X and Y denote the position of the rectangle.
+  W and H are the width and height of the rectangle.
+
+  Note that each piece of information for each rectangle should be
+  separated only by a comma, but each rectangle is to be separated
+  by a semicolon and a space.
+
+  (0, 0) refers to the top left corner of the image.
+
+  The order of rectangles in the response does not matter.
+  That is to say, the following two responses are equivalent:
+  1. `246,217,230,235,181,55,36; 101,212,140,78,336,27,34`
+  2. `101,212,140,78,336,27,34; 246,217,230,235,181,55,36`
+
+  The order of the information for each rectangle must not be
+  changed. The following two responses are not the same:
+  1. `246,217,230,235,181,55,36; 101,212,140,78,336,27,34`
+  2. `217,246,230,235,181,55,36; 101,212,140,78,336,27,34`
+
+  Suppose an image has the following two rectangles:
+  1. RGB: (125, 48, 45); X: 12; Y: 127; Width: 51; Height: 15
+  2. RGB: (65, 48, 132); X: 424; Y: 115; Width: 16; Height: 21
+
+  Either of these answers would be accepted:
+  1. `125,48,45,12,127,51,15; 65,48,132,424,115,16,21`
+  2. `65,48,132,424,115,16,21; 125,48,45,12,127,51,15`
+
+  But neither of these answers would be accepted:
+  1. `125, 48, 45, 12, 127, 51, 15; 65, 48, 132, 424, 115, 16, 21`
+  2. `125,48,45,12,127,51,15;65,48,132,424,115,16,21`
+
+  There will be ten total images for which you must ascertain these
+  details. You will have one minute to complete all ten tasks.
+
+  The image will always be well-formed and will only contain
+  non-overlapping rectangles on a white background.
+
+  For further details about the expected response format, refer to
+  the sample image and the associated answer.
+files:
+  - src: ./sample/image.png
+    dest: sample_image.png
+  - src: ./sample/answer.txt
+    dest: sample_answer.txt
+deploy:
+  nc:
+    build: .
+    expose: 3000/tcp
+authors:
+  - Thomas
+  - Puhalenthi
+visible: true

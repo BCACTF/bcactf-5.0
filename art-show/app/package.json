@@ -1,0 +1,7 @@
+{
+    "name": "art-show",
+    "dependencies": {
+        "canvas": "^2.11.2"
+    },
+    "type": "module"
+}
