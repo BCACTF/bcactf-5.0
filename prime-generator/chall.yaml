@@ -1,0 +1,19 @@
+name: Prime Generator
+categories:
+  - crypto
+value: 75
+flag:
+  file: ./flag.txt
+description: |-
+  I don't trust all these mathematicians coming up with these crypto algorithms for prime generation, so I did it myself (mostly).
+  
+  (Wrap the output in `bcactf{}`)
+hints:
+  - Marin Mersenne is the only math person I can trust
+files:
+  - src: ./vals.txt
+  - src: ./primer.py
+    dest: ./gen.py
+authors:
+  - Mudasir
+visible: true
