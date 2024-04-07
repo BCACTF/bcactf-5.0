@@ -11,7 +11,7 @@ description: |-
 hints:
   - Marin Mersenne is the only math person I can trust
 files:
-  - src: ./vals.txt
+  - src: ./output.txt
   - src: ./primer.py
     dest: ./gen.py
 authors:
