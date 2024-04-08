@@ -3,7 +3,6 @@ categories:
   - crypto
 value: 25
 flag: bcactf{th3fl@gUsee33ek_g3tg00d}
-
 description: |-
   A mutated man wakes up with sixteen fingers and too much time on his fingers.
   He challenges you to return him the number he is thinking of and he will give you a reward/cookie.
@@ -16,3 +15,7 @@ files:
 authors:
   - Michael Pylypovych
 visible: true
+deploy:
+  nc:
+    build: .
+    expose: 3000/tcp
