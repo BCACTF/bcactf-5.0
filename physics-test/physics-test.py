@@ -19,9 +19,9 @@ while True:
     q = choice(questions)
     print(q[0].format(i))
     answer = input("Answer: ")
-    for char in ".=_{}'\"" :
+    for char in ".=_{}'\" " :
         if char in answer:
-            print(f"Dangerous character {char}!")
+            print(f"Dangerous character ({char})!")
             exit()
     print("Running tests...")
     
