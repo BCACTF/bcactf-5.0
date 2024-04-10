@@ -1,3 +1,0 @@
-TODO
-
-Proof of concept: (a*b*b/2,98471529834)[flag[0]=='T']

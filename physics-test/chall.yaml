@@ -7,10 +7,10 @@ flag:
 description: |-
   Help me get an A in Physics! My teacher made this review program for us.
 hints:
-  - TODO
-  # no files i think
+  - How is the program checking your answer? After all, it's possible to write a correct answer in multiple ways (e.g. x+y vs y+x vs 0+x+y, etc).
+  - What information/feedback do you get from each question? How can you use it to your advantage?
 authors:
-  - Marvin Mao
+  - Marvin
 visible: true
 deploy:
   nc:
