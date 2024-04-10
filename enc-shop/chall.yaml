@@ -9,14 +9,13 @@ description: |-
   always getting hacked), I decided to start offering Encryption as a 
   Service (EaaS). With such a strong guarantee of security, I'll even 
   give you the source code AND my encrypted super secret flag.
-hints:
-  - No hints for this challenge, have fun!
+hints: []
 files:
   - src: ./server.py
 authors:
   - Mudasir
-visible: true
 deploy:
   nc:
     build: .
     expose: 5000/tcp
+visible: true
