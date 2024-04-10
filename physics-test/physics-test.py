@@ -11,7 +11,7 @@ clear()
 
 questions = [("Question {}: A box starts at rest on a frictionless table. It has a constant acceleration of x. How far does it travel in y seconds?", "x*y*y/2"),
              ("Question {}: A spring has a spring constant of x. If it is compressed by a distance of y, what is the magnitude of the restoring force? (Your answer should be positive.)", "x*y"),
-             ("Question {}: A red ball (with mass 1kg and velocity x) and a blue ball (with mass 2kg and velocity y collide inelastically). What is the final velocity of the two balls?", "(x+2*y)/3"),]
+             ("Question {}: A red ball (with mass 1kg and velocity x) and a blue ball (with mass 2kg and velocity y) collide perfectly inelastically. What is the final velocity of the two balls?", "(x+2*y)/3"),]
 
 i = 0
 while True:
