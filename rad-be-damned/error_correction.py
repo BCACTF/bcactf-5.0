@@ -9,15 +9,13 @@ def find_leftmost_set_bit(plaintext):
     return pos
 
 def error_lookup_table():
-    lookup_table = {}
+    lookup_table = {0: 0}
     for i in range(0, (poly_length - 1) + 8):
         error = 2**i
         while (error.bit_length() >= poly_length):
             first_pos = find_leftmost_set_bit(error)
             error = error ^ (poly << (first_pos - poly_length))
         lookup_table[error] = i
-        # if (i == 5):
-        #     lookup_table[3] = 5
     return lookup_table
 
 def error_corrector(lookup_table: dict, bitstring: str):
@@ -29,8 +27,12 @@ def error_corrector(lookup_table: dict, bitstring: str):
     return chr((int(bitstring, base=2) ^ (2**bit_pos)) >> poly_length - 1)
 
 def main():
+    received_str = ""
     user_input = input()
-    received_bytes = user_input.split(" ")
+    while user_input != "":
+        received_str += user_input
+        user_input = input()
+    received_bytes = [received_str[i:i+12] for i in range(0, len(received_str), 12)]
     lookup_table = error_lookup_table() #Uses the poly defined above
 
     for byte in received_bytes:

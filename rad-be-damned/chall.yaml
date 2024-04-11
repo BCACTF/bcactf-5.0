@@ -2,10 +2,19 @@ name: "rad-be-damned"
 categories: 
   - misc
   - crypto
-value: 125
+value: 100
 flag: 
     file: flag.txt
 description: |
-  Write this later
+  My friend seems to be communicating something but I can't make out anything. 
+  Must be because of that decommissioned uranium mine.
+
+  (Encoded with CRC-4-ITU)
 hints:
-    - "Enter more hints"
+  - What can CRCs also do besides error detection?
+deploy:
+  web:
+    build: .
+    expose: 1337/tcp
+authors:
+  - Nikhil Palempalle

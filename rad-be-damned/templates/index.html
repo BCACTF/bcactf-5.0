@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(1) New Message - Error: Data is corrupted</title>
+    <style>
+        body{
+            background-color: aqua;
+            font-family:verdana
+        }
+        h6{
+            margin: 9px;
+            padding: 0;
+            line-height: 0px;  
+        }
+        .flag-display {
+            text-align: center;
+            transform: translate(40%, 3%)
+        }
+        .flag-pole {
+            color: rgb(115, 115, 115);
+        }
+        .flag {
+            color: rgb(211, 23, 23);
+        }
+        .button{
+            position: fixed;
+            left: 0;
+            bottom: 0px; /* Adjust this value to control the distance from the bottom */
+            width: 100%; /* Make the button span the width of the viewport */
+            background-color: green; /* Change background color to green */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center
+        }
+    </style>
+</head>
+<body>
+    <!-- prints the flag in the image of a flag -->
+    {% if flag_string %}
+        {% set ns = namespace(pole = "", flag = "", flag_width = 0, char_num = 0) %}
+        <div class = "flag-display">
+            {% for line in range(0, 34) %}
+                {% for j in range(0, 6) %}
+                    {% set ns.pole = ns.pole + joined_flag[ns.char_num] %}
+                    {% set ns.char_num = ns.char_num + 1 %}
+                {% endfor %}
+
+                {% if line <= 5 %}
+                    {% set ns.flag_width = 60 - 12 * (5 - line) %}
+                {% endif %}
+                {% if line > 5 and line < 11 %}
+                    {% set ns.flag_width = 60 - 12 * (line - 6) %}
+                {% endif %}
+
+                {% for j in range(0, ns.flag_width) %}
+                    {% set ns.flag = ns.flag + joined_flag[ns.char_num] %}
+                    {% set ns.char_num = ns.char_num + 1 %}
+                {% endfor %}
+
+                <div style="display: flex;">
+                    <h6 class = "flag-pole">{{ns.pole}}</h6>
+                    <h6 class = "flag">{{ns.flag}}</h6>
+                </div>
+
+                {% set ns.pole = "" %}
+                {% set ns.flag = "" %}
+                {% set ns.flag_width = 0 %}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <!--ground button-->
+    <div class = "ground">
+        <form action="/flag">
+            <input class="button" type="submit" value="Get Flag!!!!!!!!">
+        </form>
+    </div>
+    
+</body>
+</html>
