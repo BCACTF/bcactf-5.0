@@ -21,4 +21,4 @@ def getFlag():
     return render_template('index.html', joined_flag = joined_flag, flag_string = encoded)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=3000, debug=True)

@@ -1,8 +1,7 @@
 name: rad-be-damned
 categories: 
-  - misc
   - crypto
-value: 100
+value: 125
 flag: 
     file: flag.txt
 description: |
@@ -18,3 +17,4 @@ deploy:
     expose: 1337/tcp
 authors:
   - Nikhil Palempalle
+visible: true
