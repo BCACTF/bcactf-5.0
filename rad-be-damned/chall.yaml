@@ -6,9 +6,9 @@ flag:
     file: flag.txt
 description: |
   My friend seems to be communicating something but I can't make out anything. 
-  Must be because of that decommissioned uranium mine.
+  Why do we live so close to Chernobyl anyways?
 
-  (Encoded with CRC-4-ITU)
+  (Each letter is encoded with CRC-4-ITU)
 hints:
   - What can CRCs also do besides error detection?
 deploy:
