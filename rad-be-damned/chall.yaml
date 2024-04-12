@@ -14,7 +14,7 @@ hints:
 deploy:
   web:
     build: .
-    expose: 1337/tcp
+    expose: 3000/tcp
 authors:
   - Nikhil Palempalle
 visible: true
