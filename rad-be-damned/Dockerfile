@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM python:3.12-bookworm
 
 RUN apt update
 RUN apt install python3-pip -y
@@ -10,5 +10,5 @@ WORKDIR /app
 COPY . .
 
 EXPOSE 3000
-
+ENV FLASK_APP __init__.py
 CMD ["python3", "-m", "flask", "run", "-p", "3000", "-h", "0.0.0.0"]
