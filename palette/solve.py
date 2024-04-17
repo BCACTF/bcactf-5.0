@@ -134,12 +134,83 @@ just flattening with 'F' mode in numpy.
 
 import numpy as np
 def rev_f3(in_arr):
-    arr = in_arr.flatten('F')
+    arr = np.array(in_arr).flatten('F')
     text = ''.join([str(x) for x in arr])
-    # remove leading 0 and trailing 17
+    # remove trailing 17
+    while text[-2:] == '17':
+        text = text[:-2]
+    return rev_f2(int(text))
+
+# test with fake flag
+print("f3:", rev_f3([["01","21","95","06","22","24","70","28","44","41","62"],["54","70","28","44","41","01","07","70","64","40","30"],["43","07","70","64","40","51","52","07","45","14","17"],["44","52","07","45","35","20","55","49","67","00","17"],["20","55","49","67","09","21","95","06","22","70","17"]]))
+
+'''
+f4(in) = TRANSPOSE(BYCOL(WRAPROWS(FLATTEN(f3(in)),5),LAMBDA(C,CONCATENATE(C))))
+
+This flattens f3(in), wraps it into rows of 5, and then
+concatenates each column (and transposes it to form
+one column rather than one row).
+
+f3(in) always has 5 rows, so we can reshape it, and each
+element is 2 characters long.
+Note that we have to transpose before reshaping
+because of the use of BYCOL rather than BYROW.
+'''
+def rev_f4(in_arr):
+    arr = [[x[i:i+2] for i in range(0,len(x),2)] for x in in_arr]
+    arr = np.array(arr).T.reshape((5,-1))
+    return rev_f3(arr)
+
+# test with fake flag
+print("f4:", rev_f4(["0124624140644507495595","2170540130401445674906","9528700743511735006722","0644287007524420170970","2241446470075255202117"]))
 
 
-# more kneading, then the bycol and transpose
-    
+'''
+f5(in) = FLATTEN(MAP(f4(in),LAMBDA(x,XT(L(x,"7",6*CEILING(LEN(x)/6)),6))))
 
-# TODO: finish
+This pads each element of f4(in) with "7" to make a
+multiple of 6, breaks it up into chunks of 6, and
+returns them as a hex code.
+
+This is the last real step, as the only MAP around f5 is
+just to render the colors. 
+
+We need to be careful with the right dimension to reshape
+our array to, but we can likely figure this out with the
+padding. So, we'll take the length of each row as a
+parameter so that we can manually set it.
+
+'''
+
+def rev_f5(pad, row_len, in_arr): # pad = # of 7s
+    arr = [in_arr[i:i+row_len] for i in range(0, len(in_arr), row_len)]
+    arr = [''.join(i)[pad:] for i in arr]
+    return rev_f4(arr)
+
+# test with fake flag
+print("f5:", rev_f5(2, 4,["770124","624140","644507","495595","772170","540130","401445","674906","779528","700743","511735","006722","770644","287007","524420","170970","772241","446470","075255","202117"]))
+
+
+# Finally, we need a way to extract the hex codes
+# from palette.png. We count the number of pixels
+# between rows manually and use Pillow.
+
+from PIL import Image
+img = Image.open("palette.png")
+pixels = img.load()
+width, height = img.size
+
+pixel_gap = 29
+starting_pixel = (400,17)
+
+def extract_hex_codes():
+    hex_codes = []
+    for y in range(starting_pixel[1],img.height, pixel_gap):
+       r, g, b = pixels[starting_pixel[0], y]
+       hex_codes.append("{:02x}{:02x}{:02x}".format(r,g,b))
+    return hex_codes
+
+print(extract_hex_codes())
+
+# padding of 4, 7 items per row
+print(rev_f5(4, 7, extract_hex_codes()))
