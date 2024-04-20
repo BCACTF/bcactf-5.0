@@ -37,7 +37,7 @@ def crc_encrypt(letter: str):
 def expose_to_radiation(letcrc: str):
     #generates 1 random failure in a given bitstring
     length_crc = len(letcrc)
-    pos = random.randint(5, length_crc - 1) #Only mutates the actual data bits (not the CRC bits)
+    pos = random.randint(0, length_crc - 1) #Only mutates the actual data bits (not the CRC bits)
     bit_mask = 2**pos
     rad_let = int(letcrc, base=2) ^ bit_mask
     rad_bin = format(rad_let, "0" + f"{length_crc}" + "b")
