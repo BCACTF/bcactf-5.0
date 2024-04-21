@@ -1,8 +1,9 @@
 from pwn import *
 
 # running on local machine
-# replace this with remote() when deployed
-p = process(['python3', 'physics-test.py'])
+# replace this with remote url
+# p = process(['python3', 'physics-test.py'])
+p = remote('localhost', 8148)
 
 # answers for each of the problems
 answers = [

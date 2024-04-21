@@ -3,9 +3,9 @@ categories:
   - misc
 value: 100
 flag:
-   file: ./flag.txt 
+    file: ./flag.txt 
 description: |-
-  Help me get an A in Physics! My teacher made this review program for us.
+    Help me get an A in Physics! My teacher made this review program for us.
 hints:
   - How is the program checking your answer? After all, it's possible to write a correct answer in multiple ways (e.g. x+y vs y+x vs 0+x+y, etc).
   - What information/feedback do you get from each question? How can you use it to your advantage?
@@ -16,4 +16,3 @@ deploy:
   nc:
     build: .
     expose: 8148/tcp
-# NOTE: When deployed, check that error messages are visible (you can see that "flag" is in the error message)
