@@ -1,0 +1,5 @@
+search up a vignere decrypter or you can do it yourself I guess.
+put the key in cipher 0.
+put the solution as the key for cipher 1 and solve.
+put the solution as the key for cipher 2 and solve.
+and then you have the key! yipee
