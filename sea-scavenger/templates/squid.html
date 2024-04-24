@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sea Creature: Shark</title>
+    <title>Sea Creature: Squid</title>
     <style>
         * {
             margin: 0;
             padding: 0;
         }
+
         body {
             height: 100vh;
             background: linear-gradient(to bottom, #000066 0%, #000000 100%);
@@ -34,20 +35,24 @@
             text-decoration: underline;
             color: lightblue;
         }
+
+        img {
+            width: 500px;
+            height: auto;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <img src="{{ url_for('static', filename='shark.png') }}" alt="Shark Image">
+        <img src="{{ url_for('static', filename='squid.png') }}" alt="Shark Image">
         <div class="riddle">
-            <p>Sharks swim really fast, especially through the HTML sea!</p>
-        </div>
-        <div class="notFlagPartTrust">
-            <!-- You found the shark! Part 1 of the flag: "bcactf{b3" -->
+            <p>Believe it or not, but squids can console you with their ink!</p>
         </div>
         <a class="back-link" href="{{ url_for('home') }}">Back to the Depths of the Sea</a>
     </div>
+
+    <script src="{{ url_for('static', filename='squid.js') }}"></script>
 </body>
 
 </html>

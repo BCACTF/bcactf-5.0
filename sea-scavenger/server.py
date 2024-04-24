@@ -2,7 +2,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-app.static_folder = 'images'
+app.static_folder = 'resources'
 
 @app.route('/')
 def home():
