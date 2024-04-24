@@ -1,8 +1,8 @@
 name: Easy Cat
 categories:
   - misc
-value: 50
-flag: bcactf{this_is_a_flag} #todo
+value: 10
+flag: bcactf{meow_ten} 
 description: |-
   My keyboard seems to have broken, all the newlines are gone from my poem.
 hints:
