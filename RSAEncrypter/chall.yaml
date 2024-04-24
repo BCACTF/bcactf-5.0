@@ -1,0 +1,18 @@
+name: RSAEncrypter
+categories:
+  - crypto
+value: 50
+flag:
+  file: ./flag.txt
+description: |-
+  I made an rsa encrypter to send my messages but it seems to be inconsistent...
+hints: []
+files:
+  - src: ./rsa_encrypter.py
+deploy:
+  nc:
+    build: .
+    expose: 3000/tcp
+authors:
+  - Zevi
+visible: true

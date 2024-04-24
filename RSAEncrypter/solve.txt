@@ -1,0 +1,3 @@
+Look at this link: https://cims.nyu.edu/~regev/teaching/lattices_fall_2004/ln/rsa
+Or just plug in to this website: https://chineseremaindertheorem.com/calculator.php 
+and take the cube root (forget the modulus) then decode utf8 to get the flag
