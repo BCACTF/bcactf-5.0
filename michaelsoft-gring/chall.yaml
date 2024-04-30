@@ -1,0 +1,14 @@
+name: Michaelsoft Gring
+categories:
+  - webex
+value: 100 #maybe idk, i'm a horrible scorer
+flag:
+  file: ./flag.txt 
+description: |-
+  From the makers of famous operating system Binbows comes a new search engine to rival the best: Gring. The sqlite database is super secure and has only the best search results picked by our custom AI (we forgot to train it but that's not important). 
+hints: # these hints are bad, fix later
+  - Have you heard of SQL injections?
+  - # something about splitting by spaces messing up sql injection
+authors:
+  - Jacob Korn
+visible: true

@@ -1,0 +1,34 @@
+<!DOCTYPE>
+<html lang="en">
+    <head>
+        <title>Gring Search: {{ search }}</title>
+        <link rel="stylesheet" href="../static/search.css">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    </head>
+    <body>
+        <header>
+            <div id="logo">
+                <img src="../static/images/logo.png" alt="logo" onclick="window.location.href = '/'">
+                <p>
+                    Michaelsoft Gring
+                </p>
+            </div>
+        </header>
+        <h1> Search Terms: {{ search_terms }} </h1>
+        <div id="search-results">
+            {% for s in search_results %}
+                <div>
+                    <a class="result-text" href="https://www.google.com/search?&q={{ s }}"> {{ s }} </a>
+                </div>
+            {% endfor %}
+            {% if no_results %}
+                Unfortunately, there were no results for your search. Have you tried getting better?
+            {% endif %}
+        </div>
+    </body>
+    <script>
+        // put search data into js here (because jinja reasons)
+        let search = JSON.parse('{{ search_lower | tojson }}');
+    </script>
+    <script src="../static/search.js"></script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="static/styles.css">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <title>
+            Gring
+        </title>
+    </head>
+    {% if a %}
+        <script> 
+            alert("Uh oh! Error occured. That's bad. Try again maybe?");
+            location.href = "/";
+        </script>
+    {% endif %}
+    <body> 
+        <header>
+            <div id="logo">
+                <img src="static/images/logo.png" alt="logo">
+                <p>
+                    Michaelsoft Gring
+                </p>
+            </div>
+        </header>
+        <div id="body">
+            <div id="middle-container">
+                <div id="searchbar">
+                    <img id="search" alt="search" src="static/images/search.png" onclick="location.href = '/search/' + document.getElementById('searchtext').value;">
+                    <textarea id="searchtext" autocapitalize="characters" autocomplete="on" minlength="20" placeholder="Search our database of billions of search results!" inputmode="search"></textarea>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        document.body.onkeydown = (e) => {
+            if (e.key === "Enter")
+                location.href = '/search/' + document.getElementById('searchtext').value;
+        }
+    </script>
+</html>

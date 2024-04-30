@@ -1,0 +1,49 @@
+html, body, form, table, textarea {
+    width: 100%;
+    height: 100%;
+}
+* {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    font-family: "Segoe Script", cursive;
+}
+
+header {
+    width: 100%;
+    height: 15%;
+    background: rgba(171, 166, 166,0.5);
+}
+
+#logo p {
+    display: inline;
+    font-size: 60px;
+}
+
+#logo img {
+    width: 103px;
+    height: 66px;
+    display: inline;
+}
+
+#logo {
+    vertical-align: center;
+}
+
+#search-results {
+    width: 50%;
+    height: 85%;
+    display: grid;
+    grid-template-columns: 100%;
+    overflow-y: scroll;
+    scrollbar-color: #99d9ea;
+}
+
+#search-results > div {
+    height: 50px;
+    border: solid black 5px
+}
+
+#search-results > div > a, a > b {
+    font-family: "Comic Sans MS", serif;
+}
