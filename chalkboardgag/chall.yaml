@@ -3,7 +3,6 @@ categories:
   - foren
 value: 25
 flag: bcactf{BaRT_W0U1D_B3_PR0uD}
-
 description: |-
   Matt Groening sent me an unused chalkboard gag, he says there's something special inside of it.
 hints:
@@ -13,4 +12,3 @@ files:
 authors:
   - Joshua Peisach (ItzSwirlz)
 visible: true
-# TODO: deployment
