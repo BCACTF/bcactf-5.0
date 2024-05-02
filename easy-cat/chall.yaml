@@ -1,7 +1,7 @@
 name: Easy Cat
 categories:
   - misc
-value: 10
+value: 25
 flag: bcactf{meow_ten} 
 description: |-
   My keyboard seems to have broken, all the newlines are gone from my poem.
@@ -12,4 +12,3 @@ files:
 authors:
   - Ethan Cha
 visible: true
-# TODO: deployment
