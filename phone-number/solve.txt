@@ -1,0 +1,3 @@
+remove all 3 checks for changes using console, ex. input.onclick = () => {} or something
+
+then just type in 1234567890, press submit, then get flag
