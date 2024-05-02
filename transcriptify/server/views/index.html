@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+        <title>Transcriptify</title>
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+
+        <style>
+            .entry-row {
+                max-width: 650px;
+            }
+        </style>
+
+        <script>
+            const entryRowCount = () => document.querySelectorAll('.entry-row').length
+
+            const getRowElements = entryRow => ({
+                courseNameInput: entryRow.querySelector('[data-course-name-input]'),
+                letterGradeInput: entryRow.querySelector('[data-letter-grade-input]'),
+                numericalGradeInput: entryRow.querySelector('[data-numerical-grade-input]'),
+                deleteRowBtn: entryRow.querySelector('[data-delete-row-btn]')
+            })
+
+            const insertEntryRow = () => {
+                const entryRow = document.createElement('div')
+
+                entryRow.classList = 'd-flex gap-2 align-items-end entry-row'
+                entryRow.innerHTML = `<label class="w-100">
+                    Course Name
+                    <input
+                        type="text"
+                        class="form-control"
+                        maxlength="32"
+                        data-course-name-input
+                    />
+                </label>
+                <label>
+                    Numerical Grade
+                    <input
+                        type="text"
+                        class="form-control"
+                        data-numerical-grade-input
+                    />
+                </label>
+                <label>
+                    Letter Grade
+                    <input
+                        type="text"
+                        class="form-control"
+                        data-letter-grade-input
+                        readonly
+                    />
+                </label>
+                <button class="btn btn-danger" data-delete-row-btn>
+                    -
+                </button>`.trim()
+
+                const rowElements = getRowElements(entryRow)
+
+                rowElements.numericalGradeInput.addEventListener('input', event => {
+                    const { value } = event.target
+
+                    let letterGrade = ''
+
+                    const number = Math.round(Number(value))
+
+                    if (!isNaN(number) && value && number <= 100 && number >= 0) {
+                        if (number >= 93) {
+                            letterGrade = 'A'
+                        } else if (number >= 90) {
+                            letterGrade = 'A-'
+                        } else if (number >= 87) {
+                            letterGrade = 'B+'
+                        } else if (number >= 83) {
+                            letterGrade = 'B'
+                        } else if (number >= 80) {
+                            letterGrade = 'B-'
+                        } else if (number >= 77) {
+                            letterGrade = 'C+'
+                        } else if (number >= 73) {
+                            letterGrade = 'C'
+                        } else if (number >= 70) {
+                            letterGrade = 'C-'
+                        } else if (number >= 67) {
+                            letterGrade = 'D+'
+                        } else if (number >= 63) {
+                            letterGrade = 'D'
+                        } else if (number >= 60) {
+                            letterGrade = 'D-'
+                        } else {
+                            letterGrade = 'F'
+                        }
+                    }
+
+                    rowElements.letterGradeInput.value = letterGrade
+                })
+
+                rowElements.deleteRowBtn.addEventListener('click', () => {
+                    if (entryRowCount() === 1) {
+                        alert('The last course cannot be removed.')
+                        return
+                    }
+
+                    entryRow.remove()
+                })
+
+                document.querySelector('#entryRows').appendChild(entryRow)
+            }
+
+            window.addEventListener('DOMContentLoaded', () => {
+                insertEntryRow()
+                insertEntryRow()
+                insertEntryRow()
+
+                const serializeTranscript = () => {
+                    const studentNameInput = document.querySelector('#studentName')
+
+                    if (!studentNameInput.value.length) {
+                        alert('Student name is required.')
+                        return null
+                    }
+
+                    const courses = []
+
+                    let i = 0
+
+                    for (const entryRow of document.querySelectorAll('.entry-row')) {
+                        const rowElements = getRowElements(entryRow)
+
+                        if (!rowElements.courseNameInput.value.length) {
+                            alert(`Course #${i + 1} is missing a course name.`)
+                            return null
+                        } else if (!rowElements.letterGradeInput.value.length) {
+                            alert(`Course #${i + 1} has a missing or invalid numerical grade.`)
+                            return null
+                        }
+
+                        courses.push({
+                            name: rowElements.courseNameInput.value,
+                            grade: [
+                                rowElements.numericalGradeInput.value,
+                                rowElements.letterGradeInput.value
+                            ]
+                        })
+
+                        i++
+                    }
+
+                    return JSON.stringify({
+                        studentName: studentNameInput.value,
+                        courses
+                    })
+                }
+
+                document.querySelector('#addRow').addEventListener('click', () => {
+                    if (entryRowCount() >= 10) {
+                        alert('You cannot add more than 10 courses.')
+                        return
+                    }
+
+                    insertEntryRow()
+                })
+
+                const transcriptAction = destination => {
+                    const transcript = serializeTranscript()
+
+                    if (!transcript) {
+                        return
+                    }
+
+                    const url = new URL(window.location.href)
+                    url.pathname = `/${destination}transcript`
+                    url.searchParams.set('transcript', transcript)
+
+                    window.location.href = url
+                }
+
+                document.querySelector('#viewTranscript').addEventListener('click', () => {
+                    transcriptAction('view')
+                })
+
+                document.querySelector('#printTranscript').addEventListener('click', () => {
+                    transcriptAction('pdf')
+                })
+            })
+        </script>
+    </head>
+
+    <body class="p-3" data-bs-theme="dark">
+        <h1 class="fst-italic fw-bolder">Transcriptify</h1>
+
+        <label>
+            Student Name
+            <input
+                type="text"
+                class="form-control"
+                id="studentName"
+                maxlength="32"
+            />
+        </label>
+
+        <hr />
+
+        <div id="entryRows"></div>
+
+        <button
+            class="btn btn-outline-primary mt-3"
+            id="addRow"
+        >Add Row</button>
+
+        <hr />
+
+        <button
+            class="btn btn-success me-1"
+            id="viewTranscript"
+        >View Transcript</button>
+        <button
+            class="btn btn-success"
+            id="printTranscript"
+        >Print Transcript</button>
+    </body>
+</html>

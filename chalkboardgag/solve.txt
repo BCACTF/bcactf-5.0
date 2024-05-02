@@ -1,0 +1,3 @@
+I learned this while making the challenge, this was fun
+
+Use the 'uniq' command. It will show you the line that has the unique modified character and the line before it. I suggest piping to less so you dont have to scroll and relocate yourself.
