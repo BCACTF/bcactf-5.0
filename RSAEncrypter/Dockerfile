@@ -1,14 +1,26 @@
-FROM python:3.12-bookworm
+FROM --platform=linux/amd64 python:3.12-slim-bookworm AS build
 
-WORKDIR /app
-
-RUN wget -O ynetd.c \
-        https://raw.githubusercontent.com/johnsonjh/ynetd/e6fd08f8f5d0c6b8c18d645957e30ce012536ed4/ynetd.c \
-    && echo "ec7509dec7737da54f8b18e1b5ba935d657f9f016c36cfc9ac08f9952373226f  ynetd.c" | sha256sum -c \
+RUN apt-get update -y \
+    && apt-get install -y gcc wget \
+    && rm -rf /var/lib/apt/lists/* \
+    && wget -O ynetd.c https://raw.githubusercontent.com/johnsonjh/ynetd/master/ynetd.c \
     && gcc -o ynetd ynetd.c
 
-COPY ./flag.txt .
 
+FROM --platform=linux/amd64 python:3.12-slim-bookworm AS deployer
+
+RUN useradd -m -d /home/ctf -u 12345 ctf
+WORKDIR /home/ctf
+
+# copy over ynetd
+COPY --from=build ynetd ynetd 
+RUN chmod +x ynetd && chown -R ctf:ctf /home/ctf 
+
+USER ctf
+
+COPY ./flag.txt .
 COPY ./rsa_encrypter.py .
 
-ENTRYPOINT ["./ynetd", "-p", "3000", "python3 ./rsa_encrypter.py"]
+RUN pip install pycryptodome==3.20.0
+
+CMD ["./ynetd", "-p", "3000", "python3 ./rsa_encrypter.py"]
