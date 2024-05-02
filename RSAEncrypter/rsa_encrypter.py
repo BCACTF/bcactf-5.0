@@ -8,7 +8,7 @@ message = open("./flag.txt").read().encode('utf-8')
 
 
 def encode():
-    n = getPrime(256)*getPrime(256)
+    n = getPrime(512)*getPrime(512)
     rsa_key = RSA.construct((n,3))
     cipher = PKCS1_OAEP.new(rsa_key)
     ciphertext1 = cipher.encrypt(message)

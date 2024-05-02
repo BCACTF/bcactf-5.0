@@ -71,12 +71,11 @@ num = [0, 0, 0]
 rem = [0, 0, 0]  
 k = 3
 
-num[0] = put the first modulus here
-rem[0] = put the first ciphertext here
-num[1] = put the second modulus here
-rem[1] = put the second ciphertext here
-num[2] = put the third modulus here
-rem[2] = put the third ciphertext here
+num[0] = 0 #put the first modulus here
+rem[0] = 0 #put the first ciphertext here
+num[1] = 0 #put the second modulus here
+rem[1] = 0 #put the second ciphertext here
+num[2] = 0 #put the third modulus here
+rem[2] = 0 #put the third ciphertext here
 
-print(findMinX(num,rem,k)==bytes_to_long(message))
 print(long_to_bytes(find_invpow(decimal.Decimal(findMinX(num, rem, k)),3)).decode('utf-8'))
