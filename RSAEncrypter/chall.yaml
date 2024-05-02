@@ -6,7 +6,8 @@ flag:
   file: ./flag.txt
 description: |-
   I made an rsa encrypter to send my messages but it seems to be inconsistent...
-hints: []
+hints:
+  - Search up Chinese Remainder Theorem
 files:
   - src: ./rsa_encrypter.py
 deploy:
