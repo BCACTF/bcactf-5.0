@@ -1,0 +1,18 @@
+name: Superstitious 2
+categories:
+  - crypto
+value: 125
+flag: 
+  file: ./flag.txt
+description: |-
+  My client is a bit picky with the primes they are willing to use...
+
+  (Sequel from [BCACTF 4.0](https://github.com/BCACTF/bcactf-4.0/tree/main/superstitious))
+files:
+  - src: ./superstitious-2.py
+  - src: ./superstitious-2.txt
+hints:
+  - No hints, good luck!
+authors:
+  - Marvin
+visible: true
