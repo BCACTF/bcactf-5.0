@@ -8,8 +8,9 @@ int main() {
 
     puts("Welcome to the most tasmastic game of all time!");
     wait_for(3);
-    puts("Basically it's just too simple, I put the");
-    puts("and your job is ... to guess where it is!!");
+    puts("Basically it's just too simple, I've put the");
+    puts("flag into the memory and your job is ... to");
+    puts("guess where it is!!");
     wait_for(2);
     puts("Have fun!");
     wait_for(1);

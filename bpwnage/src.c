@@ -6,14 +6,6 @@
 #include <unistd.h>
 #include <string.h>
 
-void sleepms(long ms) {
-    // https://stackoverflow.com/questions/1157209/is-there-an-alternative-sleep-function-in-c-to-milliseconds
-    struct timespec ts;
-    ts.tv_sec = ms / 1000;
-    ts.tv_nsec = (ms % 1000) * 1000000;
-    nanosleep(&ts, NULL);
-}
-
 void load_flag(char* flag, size_t size) {
     FILE *fp = NULL;
 
@@ -43,7 +35,7 @@ char* read_pointer() {
 }
 
 int main() {
-    void* first_var;
+    void** first_var;
     char* guess;
     char flag[100];
     load_flag(flag, 100);
@@ -54,14 +46,15 @@ int main() {
 
     puts("Welcome to the most tasmastic game of all time!");
     wait_for(3);
-    puts("Basically it's just too simple, I put the");
-    puts("and your job is ... to guess where it is!!");
+    puts("Basically it's just too simple, I've put the");
+    puts("flag into the memory and your job is ... to");
+    puts("guess where it is!!");
     wait_for(2);
-    puts("Have fun!");
+    puts("How fun is that!");
     wait_for(1);
     puts("Oh and before you start, I'll give you a little");
     puts("hint, the address of the current stackframe I'm");
-    printf("in is %p\n", (&first_var)[-2]);
+    printf("in is %p\n", &(&first_var)[-2]);
     wait_for(3);
     puts("Okay anyway, back to the game. Make your guess!");
     puts("(hexadecimals only, so something like 0xA would work)");
