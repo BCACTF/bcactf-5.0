@@ -1,0 +1,13 @@
+name: Broken C Code
+categories:
+  - rev
+value: -1
+flag:
+  file: ./flag.txt
+description: |-
+  Help! I was trying to make a flag printer but my C code just prints random garbage and I can't figure out why! Can you help me? Here's the file:
+files:
+  - src: ./flagprinter
+authors:
+  - Jacob Korn
+visible: true

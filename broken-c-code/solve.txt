@@ -1,0 +1,1 @@
+use ghidra to reverse engineer and fix code. error is in the for loop (should be i++)
