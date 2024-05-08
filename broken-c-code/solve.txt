@@ -1,1 +1,3 @@
-use ghidra to reverse engineer and fix code. error is in the for loop (should be i++)
+use ghidra or some other decompiler to reverse engineer and fix code.
+
+error: two uses of i++ rather than one in for loop
