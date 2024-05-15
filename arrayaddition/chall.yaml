@@ -1,0 +1,17 @@
+name: Array Addition
+categories:
+  - rev
+value: 25
+flag: bcactf{w0W_cHa4aCt3R_aDD}
+
+description: |-
+  Someone asked how well I could add ASCII characters. Please help.
+hints:
+  - What values are ASCII characters stored in?
+  - Is it possible there's a relation between the character and its position?
+files:
+  - src: ./arrayaddition
+authors:
+  - Joshua Peisach (ItzSwirlz)
+visible: true
+# TODO: deployment
