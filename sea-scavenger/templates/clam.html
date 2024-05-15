@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sea Creature: Squid</title>
+    <title>Sea Creature: Clam</title>
     <style>
         * {
             margin: 0;
@@ -35,24 +35,19 @@
             text-decoration: underline;
             color: lightblue;
         }
-
-        img {
-            width: 450px;
-            height: auto;
-        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <img src="{{ url_for('static', filename='squid.png') }}" alt="Shark Image">
+        <img class="clam-image" src="{{ url_for('static', filename='clam.png') }}" alt="Clam Image">
         <div class="riddle">
-            <p>Believe it or not, but squids can console you with their ink!</p>
+            <p>Clams are shaped like a specific sweet treat when they are closed...</p>
         </div>
         <a class="back-link" href="{{ url_for('home') }}">Back to the Depths of the Sea</a>
     </div>
 
-    <script src="{{ url_for('static', filename='squid.js') }}"></script>
+    <script src="{{ url_for('static', filename='clam.js') }}"></script>
 </body>
 
 </html>
