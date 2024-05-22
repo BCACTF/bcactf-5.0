@@ -28,14 +28,6 @@ def shipwreck():
 def whale():
     return render_template('whale.html')
 
-@app.route('/dolphin')
-def dolphin():
-    return render_template('dolphin.html')
-
-@app.route('/jellyfish')
-def jellyfish():
-    return render_template('jellyfish.html')
-
 @app.route('/treasure')
 def treasure():
     return render_template('treasure.html')

@@ -1,4 +1,4 @@
-document.cookie = "flag part 3:=1dnt_f";
+document.cookie = "flag part 3:=dnt_f1n";
 
 window.onbeforeunload = function() {
     // Your cleanup code here

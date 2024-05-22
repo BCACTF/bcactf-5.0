@@ -24,43 +24,33 @@
         }
 
         #shark {
-            top: 800px;
+            top: 10%;
             left: 1200px;
         }
 
         #squid {
-            top: 1800px;
+            top: 30%;
             right: 1400px;
         }
 
         #clam {
-            top: 2800px;
+            top: 50%;
             left: 2600px;
         }
 
         #shipwreck {
-            top: 3800px;
+            top: 70%;
             right: 2800px;
         }
 
         #whale {
-            top: 4800px;
-            left: 4200px;
-        }
-
-        #dolphin {
-            top: 5800px;
-            right: 5200px;
-        }
-
-        #jellyfish {
-            top: 6800px;
-            left: 6200px;
+            top: 90%;
+            left: 1000px;
         }
 
         #treasure {
             top: 7800px;
-            right: 7200px;
+            left: 6600px;
         }
     </style>
 </head>
@@ -77,20 +67,13 @@
                 alt="Squid Image"></a>
         <a href="{{ url_for('clam') }}"><img id="clam" src="{{ url_for('static', filename='clam.png') }}"
                 alt="Clam Image"></a>
-        <a href="{{ url_for('shipwreck') }}"><img id="shipwreck" src="{{ url_for('static', filename='shipwreck.jpg') }}"
+        <a href="{{ url_for('shipwreck') }}"><img id="shipwreck" src="{{ url_for('static', filename='shipwreck.png') }}"
                 alt="Shipwreck Image"></a>
-        <a href="{{ url_for('whale') }}"><img id="whale" src="{{ url_for('static', filename='whale.jpg') }}"
+        <a href="{{ url_for('whale') }}"><img id="whale" src="{{ url_for('static', filename='whale.png') }}"
                 alt="Whale Image"></a>
-        <a href="{{ url_for('dolphin') }}"><img id="dolphin" src="{{ url_for('static', filename='dolphin.jpg') }}"
-                alt="Dolphin Image"></a>
-        <a href="{{ url_for('jellyfish') }}"><img id="jellyfish" src="{{ url_for('static', filename='jellyfish.jpg') }}"
-                alt="Jellyfish Image"></a>
         <a href="{{ url_for('treasure') }}"><img id="treasure" src="{{ url_for('static', filename='treasure.png') }}"
                 alt="Treasure Image"></a>
     </main>
-    <footer>
-        <p>Continue your journey in the next exploration...</p>
-    </footer>
 </body>
 
 </html>

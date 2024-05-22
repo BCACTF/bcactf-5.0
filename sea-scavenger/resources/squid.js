@@ -1,1 +1,1 @@
-console.log("You found it! Here's the second part of the flag: \"t_y0u_d\"");
+console.log("You found it! Here's the second part of the flag: \"t_y0u_d1\"");
