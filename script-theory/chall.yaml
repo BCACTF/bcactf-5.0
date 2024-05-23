@@ -1,0 +1,21 @@
+name: Script Theory
+categories:
+  - rev
+value: 125
+flag:
+  file: ./src/flag.txt
+description: |-
+  I rewrote some of my code in Rust to make it run faster.
+  But where did my flag go?
+deploy:
+  builder:
+    build: .
+files:
+  - src: ./src/program.js
+  - src: ./output.txt
+  - src: /addon/libscript_theory_addon.node
+    dest: libscript_theory_addon.node
+    container: builder
+authors:
+  - Puhalenthi
+visible: true
