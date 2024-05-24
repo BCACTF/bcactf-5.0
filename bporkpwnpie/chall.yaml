@@ -1,0 +1,17 @@
+name: Goodbye, Porkpwnpie Hat
+categories:
+  - binex
+value: 150
+flag:
+  file: ./flag.txt
+description: |-
+  
+hints:
+  - If you have PIE leak, get a stack leak
+authors:
+  - awt
+visible: true
+deploy:
+  nc:
+    build: .
+    expose: 9999/tcp
