@@ -1,0 +1,24 @@
+name: User \#1
+categories:
+  - web
+value: 200
+flag:
+  file: ./flag.txt
+description: |-
+  I was working on this website and wanted you to check it out.
+  The code is a bit of a mess, since it's only an extremely early version.
+  In fact, you're the very first user, with ID 1! 
+
+  PLEASE NOTE: What you do should, in theory, not affect other solvers.
+  Please contact me if this is not the case.
+hints:
+  - The form is vulnerable to SQL injection (it uses an UPDATE statement).
+  - You will always have user ID 1.
+deploy:
+  web:
+    build: .
+    expose: 3000/tcp
+authors:
+  - Marvin
+visible: true
+# TODO: deployment

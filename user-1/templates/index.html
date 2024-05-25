@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User #1</title>
+</head>
+
+<body>
+
+    <h1>Hi!!</h1>
+
+    {% if admin == 1 %}
+    <h1>You are User #1 (because of course User ID 0 is reserved for me, the admin... wait you're also an admin?? That's
+        weird.) {{ flag }}</h1>
+    {% else %}
+    <h1>You are User #1 (because of course User ID 0 is reserved for me, the admin!)</h1>
+    {% endif %}
+
+    <h2>Your username is {{ username }}. Care to change it?</h2>
+
+    <form action="/set-username" method="POST">
+        <input type="text" name="username" placeholder="Enter your username" required>
+        <button type="submit">Set Username</button>
+    </form>
+
+
+
+    <h2>Note: This challenge will reset periodically for maintenance (for which you may get 500 errors - just reload).
+        This is not related to the challenge's solution.
+    </h2>
+    <h3>Next restart in: {{ time_to_restart }}</h3>
+
+    {% if error %}
+    <h3>My code is bad, so you received an error (and your session might have reset):</h3>
+    <h3> {{ error }} {% if "database is locked" in error %} (This means you probably want to <a
+            href="/?reset=1">reset</a>.) {% endif %}</h3>
+
+    <h3> (It is normal to see "no such table: users" on your first load of this page.) </h3>
+    {% endif %}
+</body>
+
+</html>
