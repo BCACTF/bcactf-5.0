@@ -1,12 +1,12 @@
 name: sheep
 categories:
   - foren
-value: 125
+value: 75
 flag: bcactf{SHaPE_f1lEd_b54a11ac9c87c8}
 description: |-
   baa
 hints:
-  - Figure out what type of file it is and read some documentation.
+  - Figure out what type of file it is and see if there are tools you can use or modify.
 files:
   - src: ./sheep-modified.shp
     dest: sheep
