@@ -1,6 +1,6 @@
 name: User \#1
 categories:
-  - web
+  - webex
 value: 200
 flag:
   file: ./flag.txt
