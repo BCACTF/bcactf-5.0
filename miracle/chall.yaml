@@ -1,0 +1,21 @@
+name: Miracle 
+categories:
+  - misc
+value: 50
+flag:
+  file: ./flag.txt
+description: |-
+  You'll need a miracle to get this flag. The server requires you to solve an easy addition problem, but you only
+  get the flag if the bits magically flip to form another answer.
+hints: []
+files:
+  - src: ./main.js
+  - src: ./eslint.config.mjs
+  - src: ./package.json
+authors:
+  - Mudasir
+visible: true
+deploy:
+  nc:
+    build: .
+    expose: 8898/tcp
