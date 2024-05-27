@@ -7,10 +7,11 @@ The hidden text that, in the original PDF, said
 has been edited to read the flag,
   "bcactf{rEAl_WOrLd_appLIc4t1ons_Of_cTf_ad04cc78601d5da8}".
 
-Several methods can be used to extract this text:
+Several methods can be used to extract this text, such as:
   1. simply copy/pasting, as in the above articles
-  2. using Inspect Element in Firefox's PDF viewer
-  3. using a command-line utility like pdftotext.
+  2. directly using Ctrl+F in MacOS Preview
+  3. using Inspect Element in Firefox's PDF viewer
+  4. using a command-line utility like pdftotext.
 
 P.S. Creating this challenge was a bit harder than I expected.
 Many PDF editors could not edit (or sometimes even access) the text.
