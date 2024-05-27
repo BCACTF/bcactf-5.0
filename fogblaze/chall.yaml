@@ -6,11 +6,12 @@ flag:
   file: ./flag.txt
 description: |-
   Can you bypass this website's new stateless CAPTCHA system?
+hints:
+  - The challengeId for "SCLN" would be 1e8298221a767bb37c01eb0cc61d1775
 deploy:
   web:
     build: .
     expose: 3000/tcp
-hints: []
 authors:
   - Thomas
 visible: true
