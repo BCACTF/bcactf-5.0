@@ -2,9 +2,7 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const parser = require("body-parser");
-
-
-
+const fs = require("fs");
 
 app.use("/", express.static("static"));
 
@@ -15,7 +13,7 @@ app.get("/", (req, res) => {
 
 
 app.post("/check", (req, res) => {
-    let flag = "bcactf{1ava5cRIPT_mAk35_S3Nse_48129846}"; // TODO: get from flag.txt instead of assigning it in the server file that the user can see
+    let flag = fs.readFileSync("flag.txt", "utf-8");
 
     let d = req.body;
     let out = "";
@@ -50,4 +48,6 @@ app.post("/check", (req, res) => {
     }
     res.send(out);
 });
+
 app.listen(port, () => {});
+console.log("Server started on http://localhost:" + port);
