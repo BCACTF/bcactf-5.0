@@ -1,15 +1,15 @@
 name: This is NOT the flag
 categories:
-  - crypto # i think? is this even considered crypto?
+  - misc
 value: 25
 flag:
   file: ./flag.txt
 description: |
   The flag is NOT inside this file. Do NOT even bother checking.
 hints: 
-  - Have you heard of NOT in boolean algebra?
   - This is encoded in ASCII
 authors:
   - Jacob Korn
 files:
   - src: ./NOTflag.txt
+visible: true
