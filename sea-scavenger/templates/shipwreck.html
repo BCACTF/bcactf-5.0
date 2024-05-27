@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sea Creature: Squid</title>
+    <title>Sea: Shipwreck</title>
     <style>
         * {
             margin: 0;
@@ -35,24 +35,19 @@
             text-decoration: underline;
             color: lightblue;
         }
-
-        img {
-            width: 450px;
-            height: auto;
-        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <img src="{{ url_for('static', filename='squid.png') }}" alt="Shark Image">
+        <img class="shipwreck-image" src="{{ url_for('static', filename='shipwreck.png') }}" alt="Shipwreck Image">
         <div class="riddle">
-            <p>What type of game is Squid Game? Definitely not a console game...</p>
+            <p>Looks like this ship lost its network connections with the rest of the world...</p>
         </div>
         <a class="back-link" href="{{ url_for('home') }}">Back to the Depths of the Sea</a>
     </div>
 
-    <script src="{{ url_for('static', filename='squid.js') }}"></script>
+    <script src="{{ url_for('static', filename='shipwreck.js') }}"></script>
 </body>
 
 </html>

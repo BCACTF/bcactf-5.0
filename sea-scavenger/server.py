@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_from_directory, request
+from flask import Flask, render_template, send_from_directory, request, make_response
 
 app = Flask(__name__)
 
@@ -22,7 +22,9 @@ def clam():
 
 @app.route('/shipwreck')
 def shipwreck():
-    return render_template('shipwreck.html')
+    response = make_response(render_template('shipwreck.html'))
+    response.headers['Flag_Part_4'] = 'd_th3_tr'
+    return response
 
 @app.route('/whale')
 def whale():

@@ -1,0 +1,1 @@
+console.log("Hint: Check the response headers");
