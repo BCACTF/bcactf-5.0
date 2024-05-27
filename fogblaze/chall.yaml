@@ -10,6 +10,7 @@ deploy:
   web:
     build: .
     expose: 3000/tcp
+hints: []
 authors:
   - Thomas
 visible: true
