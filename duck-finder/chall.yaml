@@ -1,0 +1,18 @@
+name: Duck Finder
+categories:
+  - webex
+value: 75
+flag:
+  file: ./flag.txt
+description: |-
+  This old service lets you make some interesting queries.
+  It hasn't been updated in a while, though.
+files:
+  - src: ./server.zip
+deploy:
+  web:
+    build: .
+    expose: 3000/tcp
+authors:
+  - Thomas
+visible: true
