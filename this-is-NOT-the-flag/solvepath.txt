@@ -1,0 +1,3 @@
+1. turn string into binary (ascii)
+2. NOT it
+3. turn binary into string
