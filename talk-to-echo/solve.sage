@@ -180,12 +180,6 @@ print("Candidates:", priv_keys)
 
 
 # Decode when given private key:
-G = (
-    0x6B17D1F2E12C4247F8BCE6E563A440F277037D812DEB33A0F4A13945D898C296,
-    0x4FE342E2FE1A7F9B8EE7EB4A7C0F9E162BCE33576B315ECECBB6406837BF51F5,
-)
-
-
 def dec(priv, R, c):
     key = mul(priv, R)
     h = SHA256.new()
