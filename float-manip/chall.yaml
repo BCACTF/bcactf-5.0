@@ -8,8 +8,8 @@ flag:
 description: |-
   This code seems to encode the flag in a special way involving floats. Can you find out what is happening?
 files:
-  - float-manip.cpp
-  - encoded.bin
+  - ./float-manip.cpp
+  - ./encoded.bin
 authors:
   - Michael
 visible: true
