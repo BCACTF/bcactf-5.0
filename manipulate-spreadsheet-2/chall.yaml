@@ -1,6 +1,7 @@
 name: Manipulate Spreadsheet 2
 categories:
   - misc
+  - foren
 value: 50
 flag: bcactf{600D_job_Using_900G13_SHe3t5}
 description: |-
