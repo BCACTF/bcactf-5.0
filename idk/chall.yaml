@@ -8,8 +8,13 @@ description: |-
 hints:
   - i didn't invent any of these
 files:
-  - src: ./idk
+  - src: /chall
+    dest: idk
+    container: static
+deploy:
+  static:
+    build: .
 authors:
   - Marvin
 visible: true
-# TODO: deployment
+# TODO: verify deployment
