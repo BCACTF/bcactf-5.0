@@ -16,6 +16,6 @@ authors:
   - Joshua Peisach (ItzSwirlz)
 visible: true
 deploy:
-  builder:
+  static:
     build: .
 # TODO: deployment
