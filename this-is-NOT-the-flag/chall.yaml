@@ -1,13 +1,13 @@
 name: This is NOT the flag
 categories:
   - misc
-value: 25
+value: 50
 flag:
   file: ./flag.txt
 description: |
   The flag is NOT inside this file. Do NOT even bother checking.
 hints: 
-  - This is encoded in ASCII
+  - The flag is ASCII encoded in base 64
 authors:
   - Jacob Korn
 files:
