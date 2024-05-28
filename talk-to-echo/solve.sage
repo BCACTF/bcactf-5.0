@@ -166,7 +166,7 @@ while prod(moduli) < goal:
 end = time.time()
 print("Done!")
 print(f"Took {end - start} seconds")
-# personal best: 181 seconds
+# personal best: 120 seconds
 # can tweak timeout and prime factor cutoff to optimize ig
 
 # use CRT to find priv^2
