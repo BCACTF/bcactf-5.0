@@ -1,8 +1,8 @@
 name: Time Skip
 categories:
   - crypto
-value: 75
-flag: bcactf{5c7t4l3_f7ll7ng_j2ndm912}
+value: 50
+flag: bcactf{5c7t4l3_h15t04y_qe829xl1}
 
 description: |-
   One of our problem writers got sent back in time!
