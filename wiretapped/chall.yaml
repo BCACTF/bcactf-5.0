@@ -1,0 +1,16 @@
+name: Wiretapped
+categories:
+  - foren
+value: 100
+flag: bcactf{listening_in_a28270fb0dbfd}
+description: |-
+  I've been listening to this cable between two computers,
+  but I feel like it's in the wrong format.
+hints:
+  - A certain type of file is embedded in the .wav file - see if you can extract it
+  - Familiarize yourself with the application used to view the file
+files:
+  - src: ./wiretapped.wav
+authors:
+  - Marvin
+visible: true
