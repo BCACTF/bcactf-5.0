@@ -11,6 +11,8 @@ description: |
     I could really go for a taco right now
 
 hints: []
+files:
+  - ./main.py
 deploy:
   web:
     build: .
