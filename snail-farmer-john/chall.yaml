@@ -11,8 +11,13 @@ hints:
   - Where does the slowness come from? Can you find a way to eliminate it with math?
 files:
   - src: ./input.txt
-  - src: ./slow
+  - src: /chall
     dest: snail-farmer-john
+    container: static
+deploy:
+  static:
+    build: .
 authors:
   - Marvin
 visible: true
+# TODO: verify deployment
