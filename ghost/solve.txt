@@ -1,0 +1,33 @@
+Opening the executable in a decompiler reveals a bunch of
+unused functions, each named with a character (like a 
+lowercase/uppercase letter or a digit) and whose bodies each
+refer to a number from 1 to 20.
+
+Some more digging (perhaps by clicking into some of the variables
+like "f" and "B" used in M()) also reveals a number of named
+global variables as well, again each with a value between 1 and 20.
+
+Ordering all of these names by their associated values, we get:
+
+1. b
+2. c
+3. a
+4. c__
+5. t
+6. f
+7. leftbrace
+8. Five
+9. Y
+10. m
+11. B
+12. zero
+13. l
+14. _
+15. n
+16. four
+17. M
+18. e
+19. S
+20. rightBrace
+
+The flag is bcactf{5Ymb0l_n4MeS}.
