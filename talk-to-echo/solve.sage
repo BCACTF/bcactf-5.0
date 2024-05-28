@@ -85,21 +85,29 @@ def small_prime_factors(N, bound):
             out.append(prime)
     return out
 
+
 # this operation is really slow, so set a timeout
 @fork(timeout=5)
 def order_with_timeout(pt):
     return pt.order()
 
-# Find a low-order point on a curve that with the same a coeff
-# as the curve used by the server.
 start = time.time()
+# We will eventually find the square of the private key using CRT
+# and it is bounded above by n^2, so we will continue getting
+# factors until we reach that number.
 goal = n ^ 2
 while prod(moduli) < goal:
 
+    # Find a low-order point on a curve that with the same a coeff
+    # as the curve used by the server.
     # Any random curve likely has some low-order points
     b = randint(1, n - 1)
     print("\033[31;1mTrying curve with b =", b, "\033[0m")
-    print("-- Still need a factor of 2 ^\033[34;1m", (goal // prod(moduli)).nbits(), "\033[0m")
+    print(
+        "-- Still need a factor of 2 ^\033[34;1m",
+        (goal // prod(moduli)).nbits(),
+        "\033[0m",
+    )
     E = EllipticCurve(K, (a, b))
     # Take a random point, hope its order has a small prime factor
     # That way, we can find a low-order point by multiplying it
@@ -158,7 +166,8 @@ while prod(moduli) < goal:
 end = time.time()
 print("Done!")
 print(f"Took {end - start} seconds")
-# personal best: 200 seconds
+# personal best: 181 seconds
+# can tweak timeout and prime factor cutoff to optimize ig
 
 # use CRT to find priv^2
 print("residues:", residues)
