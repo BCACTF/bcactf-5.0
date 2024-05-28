@@ -2,7 +2,7 @@ name: float-manip
 categories:
   - misc
   - rev
-value: 25
+value: 150
 flag:
   file: ./flag.txt
 description: |-
