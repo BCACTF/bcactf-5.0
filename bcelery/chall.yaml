@@ -1,0 +1,28 @@
+name: Celery
+categories:
+  - binex
+value: 50
+flag:
+  file: ./flag.txt
+description: |-
+  lol, you can never win (source code leak):
+
+  ```c
+  int main() {
+    lose();
+    return 0;
+  }
+  ```
+hints:
+  - Get up from your losses, I believe in you 
+files:
+  - src: /app/celery
+    dest: celery
+    container: nc
+authors:
+  - Mudasir
+visible: true
+deploy:
+  nc:
+    build: .
+    expose: 8989/tcp
