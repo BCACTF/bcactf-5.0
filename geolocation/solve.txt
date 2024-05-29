@@ -1,0 +1,17 @@
+Suggested solutions:
+1. Identify the extremely wide highway (Ontario Highway 401).
+For example, searching for "18-lane highway" or even just
+"wide highway near airport" can lead you towards the correct
+location. The building is the Mississauga Harley-Davidson,
+which has what3words ///beeline.tape.couch.
+
+2. Careful manipulation of the image (such as by viewing it
+in a program that can properly view 360-degree photos and
+cropping) can yield something that Yandex Reverse Image Search
+can recognize. Alternatively, search for something like
+"white tram bridge europe" to find other images of the bridge.
+The location is 48.5743659,7.8020683, ///colleague.fairy.helpers.
+
+3. This is Malta (BNF Bank advertisement). Look for a bus stop
+near a wide road (e.g. with https://osm-search.bellingcat.com/).
+The location is 35.8765799, 14.4950154, ///face.discount.slacker.
