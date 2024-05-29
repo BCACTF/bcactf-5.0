@@ -1,0 +1,19 @@
+name: Inaccessible
+categories:
+  - misc
+value: 50
+flag: bcactf{W0w_Y0u_m4d3_iT_b810c453a9ac9}
+description: |-
+  I wrote a function to generate the flag, but don't
+  worry, I bet you can't access it!
+hints:
+  - you could reverse engineer the function, but it's
+    not necessary
+  - see if you can use any debugging tools to just
+    call the function
+files:
+  - src: ./inaccessible
+authors:
+  - Marvin
+visible: true
+# TODO: deployment
