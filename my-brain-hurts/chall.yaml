@@ -1,6 +1,6 @@
 name: My Brain Hurts
 categories:
-  - reverse
+  - rev
 value: 25
 flag: bcactf{Br41n_fcK-1s-fUn}
 description: |-
