@@ -11,6 +11,8 @@ description: |
 hints:
   - Press Ctrl+Shift+I or F12
   - If you're a Mac loser press Cmd+Option+I
+  - Some parts have hints in the console
+  - Pro tip- Zoom out
 deploy:
   web:
     build: .
