@@ -18,5 +18,5 @@ deploy:
     build: .
     expose: 3000/tcp
 authors:
-  - Nikhil Palempalle
+  - Nikhil
 visible: true
