@@ -1,0 +1,15 @@
+name: My Brain Hurts
+categories:
+  - reverse
+value: 25
+flag: bcactf{Br41n_fcK-1s-fUn}
+description: |-
+  My friend sent me a weird string and a "program" they wrote, although it doesn't seem anything interpretable to me. Can you help me find out what they put through their program?
+hints:
+  - If you don't know where to start, look into an esoteric coding language called "Brain F*ck"
+files:
+  - src: ./script.txt
+  - src: ./string.txt
+authors:
+  - Kai Lindemer
+visible: true
