@@ -7,7 +7,7 @@ and call the function.
 Example:
 
 (gdb) break main 
-        (set a breakpoint so that the program
-        doesn't immediately end)
+        (set a breakpoint so that the 
+        program doesn't immediately end)
 (gdb) run
 (gdb) call win()

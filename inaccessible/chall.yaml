@@ -12,8 +12,13 @@ hints:
   - see if you can use any debugging tools to just
     call the function
 files:
-  - src: ./inaccessible
+  - src: /chall
+    dest: inaccessible
+    container: static
+deploy:
+  static:
+    build: .
 authors:
   - Marvin
 visible: true
-# TODO: deployment
+# TODO: verify deployment
