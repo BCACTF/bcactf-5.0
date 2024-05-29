@@ -27,11 +27,7 @@ def error_corrector(lookup_table: dict, bitstring: str):
     return chr((int(bitstring, base=2) ^ (2**bit_pos)) >> poly_length - 1)
 
 def main():
-    received_str = ""
-    user_input = input()
-    while user_input != "":
-        received_str += user_input
-        user_input = input()
+    received_str = input()
     received_bytes = [received_str[i:i+12] for i in range(0, len(received_str), 12)]
     lookup_table = error_lookup_table() #Uses the poly defined above
 

@@ -1,7 +1,7 @@
 name: rad-be-damned
 categories: 
   - crypto
-value: 125
+value: 100
 flag: 
     file: ./flag.txt
 description: |
@@ -11,10 +11,12 @@ description: |
   (Each letter is encoded with CRC-4-ITU)
 hints:
   - What can CRCs also do besides error detection?
+files:
+  - src: ./flag_gen.py
 deploy:
-  web:
+  nc:
     build: .
-    expose: 3000/tcp
+    expose: 1337/tcp
 authors:
-  - Nikhil Palempalle
+  - Nikhil
 visible: true
