@@ -1,8 +1,0 @@
-Step 1: Learn how CRC works
-    - wikipedia page on CRC: https://en.wikipedia.org/wiki/Cyclic_redundancy_check
-    - good youtube video (kinda long but very thorough): https://www.youtube.com/watch?v=izG7qT0EpBw
-
-Step 2: Find a paper on single-bit error correction with CRC
-    - Good paper on CRC's capability in correction: https://www.nxp.jp/docs/en/application-note/AN2918.pdf
-    
-Step 3: Write code that implements the correction (check error_correction.py for an example)
