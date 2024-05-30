@@ -1,1 +1,13 @@
-
+name: a long time spent grinding
+categories:
+  - misc
+value: 75
+flag: bcactf{br@wl_st@rs_1s_0rz}
+description: |-
+  I lost the gaMe. aGain. so many screen protectors wasted, but i am Unable to climb the Ranks.
+  i dont think i will get to my goal /a/nytime soon. can you help me?
+  for the rest of the challenge, you can call me iu3ymer.
+authors:
+  - Arnav
+visible: true
+# TODO: deployment
