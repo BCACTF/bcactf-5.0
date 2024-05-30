@@ -1,0 +1,4 @@
+Brainfuck uses + and - to adjust the value of the char at the currently selected position, so all you have to do is swap all the + and -'s to get the flag.
+Here is the code that does that:
+,>,>,>,>,>,>,>,>,>,>,>,>,>,>,>,>,>,>,>,>,>,>,>,<++++<------<+++++++++<--<+<-----<+++++++<---------<+++++++<++++<+++<----<++<---<-------<---<-<--<+++++++++++++++<-----<+++++++<+++<++++.>.>.>.>.>.>.>.>.>.>.>.>.>.>.>.>.>.>.>.>.>.>.>.>.
+On a brainfuck compiler, put this as the code and ^`Zheh|Ey7/r\b\T&6r/][j} as the input.
