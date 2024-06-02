@@ -5,7 +5,7 @@ it gives you a hint as to where to find the segments of the flag in the devtools
 
 part 1: html of shark in notFlagPartTrust div
 part 2: console of squid
-part 3: cookies (application) of clam
+part 3: cookies of clam
 part 4: network of shipwreck, response headers of shipwreck
 part 5: sources of whale, static then whale.js
 final part: go to treasure, navigate to https://_________.___/treasure/robots.txt
