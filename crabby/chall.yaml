@@ -13,7 +13,7 @@ hints: []
 files:
   - src: /app/crabby
     dest: crabby
-    container: static
+    container: web
 authors:
   - Mudasir
 visible: true

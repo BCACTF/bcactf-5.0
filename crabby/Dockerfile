@@ -21,7 +21,7 @@ FROM python:3.12-slim-bookworm AS server
 
 WORKDIR /app
 
-COPY --from=builder /app/target/release/crabby /app/crabby
+COPY --from=builder /app/target/release/crabby .
 
 WORKDIR /app/server
 
