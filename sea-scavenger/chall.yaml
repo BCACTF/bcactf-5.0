@@ -7,11 +7,10 @@ tags:
 value: 25
 flag: bcactf{b3t_y0u_d1dnt_f1nd_th3_tre4sur3_t336e3}
 description: |
-  Take a tour of the deep sea! Explore the depths of webpage secrets and find the hidden treasure.
+  Take a tour of the deep sea! Explore the depths of webpage secrets and find the hidden treasure. Pro tip: Zoom out!
 hints:
   - Press F12 or Ctrl+Shift+I on Windows (Cmd+Option+I on Mac OS) to launch DevTools
   - Some parts have hints in the console
-  - Pro tip- Zoom out
 deploy:
   web:
     build: .
