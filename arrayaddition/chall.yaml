@@ -3,7 +3,6 @@ categories:
   - rev
 value: 25
 flag: bcactf{w0W_cHa4aCt3R_aDD}
-
 description: |-
   Someone asked how well I could add ASCII characters. Please help.
 hints:
@@ -11,7 +10,7 @@ hints:
   - Is it possible there's a relation between the character and its position?
 files:
   - src: ./arrayaddition
-    container: builder
+    container: static
 authors:
   - Joshua Peisach (ItzSwirlz)
 visible: true
