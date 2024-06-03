@@ -17,8 +17,7 @@ hints:
 deploy:
   web:
     build: .
-    expose: 3000/tcp
+    expose: 7272/tcp
 authors:
   - Marvin
 visible: true
-# TODO: deployment
