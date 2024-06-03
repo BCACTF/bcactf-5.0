@@ -1,0 +1,16 @@
+name: Canary Keeper
+categories:
+  - binex
+value: 100
+flag:
+  file: ./flag.txt
+description: |-
+  My Friend Gave me this executeable, but it keeps giving me errors.
+  Can you get the flag?
+files:
+  - src: ./a.out # TODO COMPILED VERSION OF PROVIDED.C
+authors:
+  - Jack
+visible: true
+
+#Todo Deployment
