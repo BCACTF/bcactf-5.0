@@ -2,8 +2,7 @@ name: NoSQL
 categories:
   - webex
 value: 75
-flag:
-  file: ./flag.txt
+flag: bcactf{R3gex_WH1z_54dfa9cdba13}
 description: |-
   I found this database that does not use SQL, 
   is there any way to break it?
