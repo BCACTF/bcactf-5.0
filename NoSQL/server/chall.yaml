@@ -6,7 +6,7 @@ flag:
   file: ./flag.txt
 description: |-
   I found this database that does not use SQL, 
-  is their any way to break it?
+  is there any way to break it?
 files:
   - src: ./app.js
 authors:
