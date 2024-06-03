@@ -1,0 +1,15 @@
+name: PyJail-1
+categories:
+  - misc
+value: 75
+flag: bcactf{PyTH0n_pR0_03ed78292b89c}
+description: |-
+  I cannot get the python file to print the flag, are you able to?
+hints:
+  - How can you access variables in python?
+files:
+  - src: ./main.py
+authors:
+  - Jack
+visible: true
+#TODO Deployment
