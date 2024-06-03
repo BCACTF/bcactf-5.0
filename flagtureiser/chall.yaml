@@ -14,7 +14,7 @@ hints:
   - Not a hint, just a personal thanks to everyone involved who worked hard in the fight against this malware.
 files:
   - src: ./build/libs/flagtureiser-4.2.0.6.9.jar
-    container: builder
+    container: static
 authors:
   - Joshua Peisach (ItzSwirlz)
 visible: true
