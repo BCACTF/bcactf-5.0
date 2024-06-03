@@ -18,7 +18,7 @@ files:
     container: nc
   - src: Dockerfile
 authors:
-  - Marvin Mao
+  - Marvin
   - awt
 visible: true
 deploy:
