@@ -1,7 +1,7 @@
 name: Inaccessible
 categories:
-  - misc
-value: 50
+  - binex
+value: 25
 flag: bcactf{W0w_Y0u_m4d3_iT_b810c453a9ac9}
 description: |-
   I wrote a function to generate the flag, but don't
