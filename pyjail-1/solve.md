@@ -6,6 +6,6 @@ Based off of the banned keys, `gdvxftundmn'~`\``@#$%^&*-/.{}`, there are only a 
 
 To get around this, we can raise an error with a custom error message.
 
-```
+```py
 raise OSError(locals()[chr(102)+chr(108)+chr(97)+chr(103)])
 ```
