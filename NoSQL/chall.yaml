@@ -7,7 +7,7 @@ description: |-
   I found this database that does not use SQL, 
   is there any way to break it?
 files:
-  - src: ./app.js
+  - src: ./server/app.js
 authors:
   - Jack
 visible: true
