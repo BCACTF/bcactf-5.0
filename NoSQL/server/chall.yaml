@@ -1,0 +1,15 @@
+name: NoSQL
+categories:
+  - webex
+value: 75
+flag:
+  file: ./flag.txt
+description: |-
+  I found this database that does not use SQL, 
+  is their any way to break it?
+files:
+  - src: ./app.js
+authors:
+  - Jack
+visible: true
+#TODO Deployment
