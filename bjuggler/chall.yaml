@@ -1,29 +1,27 @@
-name: Juggler
+name: Juggler 1
 categories:
   - binex
-value: 25
-flag: bcactf{this_is_a_flag}
-# Alternatively:
-# flag:
-#   file: ./flag.txt
-# 
+value: 100
+flag:
+  file: ./flag.txt
 description: |-
-  Look at this example problem.
-  This is the problem description.
-  You will be able to add **markdown**!
-  Here is a separate paragraph.
-  Wow!
-  
-  Take your flag: bcactf{this_is_a_flag}
+  My friend here has got some issues...
+  Mainly, he can't stop juggling.
+
+  P.S Dockerfile is provided but not necessary for Juggler
 hints:
   - Have you tried turning it off and on again?
   - Have you tried forcing an unexpected reboot?
 files:
-  - src: ./flag.txt
-  - src: ./a.txt
-    dest: optionallyrenamethefile.txt
+  - src: /home/ctf/chall
+    dest: chall
+    container: nc
+  - src: Dockerfile
 authors:
-  - John Doe
-  - Jane Smith
+  - Marvin Mao
+  - awt
 visible: true
-# TODO: deployment
+deploy:
+  nc:
+    build: .
+    expose: 9999/tcp

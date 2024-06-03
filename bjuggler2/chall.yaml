@@ -1,0 +1,19 @@
+name: Juggler 2
+categories:
+  - binex
+value: 150
+# this MUST be synced with /bjuggler/secret_flag.txt
+flag: bcactf{UHM_YOU_Sh0ULdN'T_Be_hEre_951cd948f02f3}
+description: |-
+  Remember my old friend the juggler? Well apparently
+  he's got another flag somewhere on his `system`
+
+  Use the same port as *Juggler 1*. Also here, take this Dockerfile
+hints:
+  - If only we could get some more turns
+files:
+  - src: Dockerfile
+authors:
+  - Marvin Mao
+  - awt
+visible: true
