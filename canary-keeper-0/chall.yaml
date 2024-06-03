@@ -5,7 +5,7 @@ value: 100
 flag:
   file: ./flag.txt
 description: |-
-  My Friend Gave me this executeable, but it keeps giving me errors.
+  My friend gave me this executable, but it keeps giving me errors.
   Can you get the flag?
 files:
   - src: ./a.out # TODO COMPILED VERSION OF PROVIDED.C
