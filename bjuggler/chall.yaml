@@ -24,7 +24,7 @@ files:
     dest: chall
     container: nc
 authors:
-  - Marvin Mao
+  - Marvin
   - awt
 visible: true
 deploy:
