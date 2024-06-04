@@ -1,4 +1,4 @@
-FROM node:20.04
+FROM node:20.14
 
 RUN apt-get update && apt-get install -y curl gcc wget && apt-get clean && rm -rf /var/lib/apt/lists/* \
     && wget -O ynetd.c https://raw.githubusercontent.com/johnsonjh/ynetd/e6fd08f8f5d0c6b8c18d645957e30ce012536ed4/ynetd.c \
@@ -12,4 +12,4 @@ COPY . /app/
 
 EXPOSE 8898
 
-ENTRYPOINT ["ynetd", "-p", "8898", "node", "main.js"]
+ENTRYPOINT ["ynetd", "-p", "8898", "node main.js"]
