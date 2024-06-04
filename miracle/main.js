@@ -47,6 +47,7 @@ async function run() {
   } else {
     console.log("wow you suck at math.");
   }
+  process.exit(1);
 }
 
 run();
