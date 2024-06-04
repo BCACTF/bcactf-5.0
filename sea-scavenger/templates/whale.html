@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea Creature: Whale</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(to bottom, #000066 0%, #000000 100%);
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .riddle {
+            font-size: 24px;
+            margin-top: 50px;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 50px;
+            font-size: 18px;
+            text-decoration: underline;
+            color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img class="whale-image" src="{{ url_for('static', filename='whale.png') }}" alt="Whale Image">
+        <div class="riddle">
+            <p>Whales have many sources of food!</p>
+        </div>
+        <a class="back-link" href="{{ url_for('home') }}">Back to the Depths of the Sea</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='whale.js') }}"></script>
+</body>
+
+</html>
