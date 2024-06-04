@@ -1,8 +1,11 @@
-the code is supposed to group the sign bits, exponent bits, and mantissa bits together.
-oh yeah the floats come from the ascii values of the flag
+// the code is supposed to group the sign bits, exponent bits, and mantissa bits together.
+// oh yeah the floats come from the ascii values of the flag
 
-I think this should solve the challenge but I haven't tested yet:
-```cpp
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <cstring>
+
 void decodeFileToFloats(std::vector<float> &floats, std::string filename) {
     std::ifstream encodedFile(filename, std::ios::binary);
 
@@ -59,4 +62,14 @@ void decodeFileToFloats(std::vector<float> &floats, std::string filename) {
         floats.push_back(result);
     }
 }
-```
+
+int main() {
+    std::vector<float> floats;
+    decodeFileToFloats(floats, "encoded.bin");
+
+    for (float f : floats) {
+        std::cout << (char) f;
+    }
+
+    return 0;
+}
