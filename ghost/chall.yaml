@@ -1,0 +1,21 @@
+name: ghost
+categories:
+  - rev
+value: 50
+flag: bcactf{5YmB0l_n4MeS}
+description: |-
+  spooky!
+hints:
+  - Use a decompilation tool such as [Binary Ninja Cloud](https://cloud.binary.ninja/)
+  - Compilation preserves the names of functions and global variables
+files:
+  - src: /chall
+    dest: ghost
+    container: static
+deploy:
+  static:
+    build: .
+authors:
+  - Marvin
+visible: true
+# TODO: verify deployment
