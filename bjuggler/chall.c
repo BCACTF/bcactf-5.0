@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include <stddef.h>
 #include <time.h>
 #include <unistd.h>
@@ -27,20 +28,31 @@ void load_flag(char* flag, size_t size) {
 }
 
 int main() {
+    setbuf(stdout, NULL);
+    setbuf(stderr, NULL);
+    setbuf(stdin, NULL);
+
+    char flag[40];
+    uint32_t turn_count = 5;
+    char air[12];
     char left_hand[8];
     char right_hand[24];
-    char air[12];
-    uint32_t turn_count = 5;
-    char flag[40];
     load_flag(flag, 40);
 
-    printf("P.S the juggler animation is kind of tilted so you might need to look at it sideways.");
+    printf("P.S the juggler animation is kind of tilted so you might need to look at it sideways.\n\n");
+    sleep(1);
 
     while (1) {
         puts("Please help me, I am the juggler, but I can't stop juggling.");
         sleep(1);
-        printf("Give me something for my left hand (not too heavy though please, I injured it):\n> ");
+        printf("Give me something for my left hand (not too heavy though please, I injured it)\n(or QUIT to quit):\n> ");
         fgets(left_hand, sizeof(left_hand), stdin);
+
+        if (strncmp(left_hand, "QUIT", 4) == 0 || strncmp(left_hand, "quit", 4)) {
+            puts("Goodbye!");
+            return 0;
+        }
+        
         printf("Give me something for my right hand:\n> ");
         fgets(right_hand, sizeof(right_hand), stdin);
         strcpy(air, "");

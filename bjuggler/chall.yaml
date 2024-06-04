@@ -17,6 +17,12 @@ files:
     dest: chall
     container: nc
   - src: Dockerfile
+  - src: /home/ctf/chall
+    dest: chall
+    container: nc
+  - src: /home/ctf/chall
+    dest: chall
+    container: nc
 authors:
   - Marvin Mao
   - awt
