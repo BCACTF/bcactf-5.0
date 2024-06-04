@@ -1,22 +1,17 @@
 name: rad-be-damned
 categories: 
   - crypto
-value: 100
+value: 125
 flag: 
     file: ./flag.txt
 description: |
   My friend seems to be communicating something but I can't make out anything. 
   Why do we live so close to Chernobyl anyways?
-
-  (Each letter is encoded with CRC-4-ITU)
 hints:
-  - What can CRCs also do besides error detection?
+  - Encoded with CRC (Cyclic Redundancy Checks)
 files:
-  - src: ./flag_gen.py
-deploy:
-  nc:
-    build: .
-    expose: 1337/tcp
+  - src: ./message.py
+  - src: ./output.txt
 authors:
   - Nikhil
 visible: true
