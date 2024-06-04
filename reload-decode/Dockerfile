@@ -10,5 +10,4 @@ WORKDIR /app
 COPY . .
 
 EXPOSE 3000
-ENV FLASK_APP __init__.py
-CMD ["python3", "-m", "flask", "run", "-p", "3000", "-h", "0.0.0.0"]
+CMD ["python3", "main.py"]

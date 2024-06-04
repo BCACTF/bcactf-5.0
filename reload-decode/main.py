@@ -22,4 +22,4 @@ def getFlag():
     return render_template('index.html', joined_flag = flag_str)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=3000)
