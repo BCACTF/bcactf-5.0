@@ -12,6 +12,9 @@ int main() {
     // solution:
     // the same as above but subtract i instead of add
 
-    printf("i hope you can add numbers");
+    printf("Alright, here's the deal:\n");
+    printf("There is an array hiding somewhere in this program..\n");
+    printf("But it is a little bit odd.\n");
+    printf("I think there's a correlation between the individual data in the array's placement and what the data actually means.");
     return 0;
 }
