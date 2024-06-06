@@ -1,0 +1,19 @@
+name: NoSQL
+categories:
+  - webex
+value: 75
+flag: bcactf{R3gex_WH1z_54dfa9cdba13}
+description: |-
+  I found this database that does not use SQL, 
+  is there any way to break it?
+hints:
+  - The first user to use my database had an ID of 1
+files:
+  - src: ./server/provided.js
+authors:
+  - Jack
+visible: true
+deploy:
+  web:
+    build: .
+    expose: 3000/tcp
