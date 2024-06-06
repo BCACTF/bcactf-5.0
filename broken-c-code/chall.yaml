@@ -9,6 +9,7 @@ description: |-
 files:
   - src: ./flagprinter
     container: static
+hints: []
 deploy:
   static:
     build: .
