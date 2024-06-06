@@ -2,7 +2,7 @@ name: Touch Tone Telephone
 categories:
   - foren
   - rev
-value: 75
+value: 150
 flag:
   file: ./flag.txt
 description: |-
