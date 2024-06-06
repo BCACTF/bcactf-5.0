@@ -13,6 +13,10 @@ int check_flag(const char* flag) {
 }
 
 int main() {
+    setbuf(stdout, NULL);
+    setbuf(stdin, NULL);
+    setbuf(stderr, NULL);
+
     char flag[64] = FLAG_VALUE;
     char canary[7] = CANARY_VALUE;
     char buffer[64];
