@@ -6,9 +6,11 @@ flag:
   file: ./flag.txt
 description: |-
   This code seems to encode the flag in a special way involving floats. Can you find out what is happening?
+hints:
+  - How are single-precision floats stored in memory?
 files:
   - src: ./float-manip.cpp
   - src: ./encoded.bin
 authors:
-  - Michael
+  - appllo
 visible: true
