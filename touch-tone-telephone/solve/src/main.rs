@@ -6,7 +6,7 @@ use solve::{
 
 
 fn main() {
-    let (orig_samples, rate) = ingest_wav::wav_to_samples("output.wav");
+    let (orig_samples, rate) = ingest_wav::wav_to_samples("beep_boop.wav");
     let keys = get_key_by_key(&orig_samples, rate);
     let message = key_chars_to_string(keys.into_iter()).unwrap();
     // println!("{message}");
