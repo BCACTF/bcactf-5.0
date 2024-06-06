@@ -15,7 +15,7 @@ def getFlag():
     flag_str = ""
     for b in flag:
         b = b << 4 ^ ((b << 4 & 0xff) >> 4)
-        bm = 2 ^ random.randint(0, 11)
+        bm = 1 << random.randint(0, 11)
         cb = b ^ bm
         flag_str += bin(cb)[2:].zfill(12)
         
