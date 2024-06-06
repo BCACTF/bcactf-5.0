@@ -2,15 +2,19 @@ name: Canary Keeper
 categories:
   - binex
 value: 100
-flag:
-  file: ./flag.txt
+flag: bcactf{s1mple_CANaRY_9b36bd9f3fd2f}
 description: |-
   My friend gave me this executable, but it keeps giving me errors.
   Can you get the flag?
 files:
-  - src: ./a.out # TODO COMPILED VERSION OF PROVIDED.C
+  - src: /app/chall
+    dest: canary-keeper
+    container: nc
 authors:
   - Jack
 visible: true
-
-#Todo Deployment
+hints: []
+deploy:
+  nc:
+    build: .
+    expose: 6896/tcp
