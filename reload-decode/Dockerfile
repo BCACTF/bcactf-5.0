@@ -1,9 +1,9 @@
 FROM python:3.12-bookworm
 
-RUN apt update
-RUN apt install python3-pip -y
-RUN pip3 install flask
-RUN pip3 install python-dotenv
+RUN apt update && apt install python3-pip -y \
+    && pip3 install flask \
+    && pip3 install python-dotenv \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
