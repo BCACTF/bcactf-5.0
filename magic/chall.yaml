@@ -9,7 +9,7 @@ description: |-
   I was going to throw it away, but it somehow screamed at me
   while I was holding it?!
 hints:
-  - might not work depending on your browser / pdf viewer
+  - the pdf should be interactive; if not, try changing your pdf viewer
 files:
   - src: ./magic.pdf
 authors:
