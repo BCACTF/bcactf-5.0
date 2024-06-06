@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include <cstring>
 
 int c(int n) {
   if (n == 0) {
