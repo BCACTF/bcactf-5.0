@@ -1,0 +1,8 @@
+Basically realize from the description that
+this is transposition cipher using a scytale (https://en.wikipedia.org/wiki/Scytale)
+and from there you can sort of write code to 
+figure out how big the scytale is also I guess
+factoring the size of it because 221 = 13 x 17
+Or you can just try to brute force transposition it,
+there are other ciphers like this so surely some 
+website will just crack this as well
