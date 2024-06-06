@@ -8,8 +8,8 @@ description: |-
   We also don't know what underscores are add them yourself.
   put the decrypted cipher in bcactf{}
   key - vinegar
-  cipher 0 - mmqaonv (redwine)
-  cipher 1 - seooizmt (balsamic)
+  cipher 0 - mmqaonv
+  cipher 1 - seooizmt
   cipher 2 - bdoloeinbdjmmyg
 hints: []
 authors:
