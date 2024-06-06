@@ -10,4 +10,5 @@ Example:
         (set a breakpoint so that the 
         program doesn't immediately end)
 (gdb) run
-(gdb) call win()
+(gdb) call (int)win()
+        (cast win() function to int because gdb doesn't understand its return type)
