@@ -1,3 +1,5 @@
 use binary ninja or another decompiler to reverse engineer and fix code.
 
 error: two uses of i++ rather than one in for loop
+
+can also just recreate program to be working as seen in solve.py
