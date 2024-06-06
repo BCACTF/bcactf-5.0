@@ -11,7 +11,6 @@ hints: []
 files:
   - src: ./main.js
   - src: ./eslint.config.mjs
-  - src: ./package.json
 authors:
   - Mudasir
 visible: true
