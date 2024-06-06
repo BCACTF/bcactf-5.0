@@ -19,7 +19,7 @@ while True:
     q = choice(questions)
     print(q[0].format(i))
     answer = input("Answer: ")
-    for char in ".=_{}'\" " :
+    for char in ".=_{}'\" \t\n\r\x0b\x0c:;":
         if char in answer:
             print(f"Dangerous character ({char})!")
             exit()
