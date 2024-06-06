@@ -6,9 +6,13 @@ flag: bcactf{R3gex_WH1z_54dfa9cdba13}
 description: |-
   I found this database that does not use SQL, 
   is there any way to break it?
+hints: []
 files:
-  - src: ./server/app.js
+  - src: ./server/provided.js
 authors:
   - Jack
 visible: true
-#TODO Deployment
+deploy:
+  web:
+    build: .
+    expose: 3000/tcp
