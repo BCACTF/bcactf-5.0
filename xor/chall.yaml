@@ -13,7 +13,7 @@ files:
     dest: xor
     container: nc
 authors:
-  - Michael
+  - appllo
 visible: true
 deploy:
   nc:
