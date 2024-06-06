@@ -1,0 +1,17 @@
+name: Michaelsoft Gring
+categories:
+  - webex
+value: 100
+flag:
+  file: ./flag.txt 
+description: |-
+  From the makers of famous operating system Binbows comes a new search engine to rival the best: Gring. The sqlite database is super secure and has only the best search results picked by our custom AI (we forgot to train it but that's not important). 
+hints:
+  - I think the server is splitting by spaces - how do I put spaces in my "search"?
+authors:
+  - Jacob Korn
+visible: true
+deploy:
+  web:
+    build: .
+    expose: 5000/tcp
