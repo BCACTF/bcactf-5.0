@@ -11,9 +11,9 @@ flag: bcactf{beautiful_melody_beautiful_harmony}
 description: |-
   - We intercepted this mysterious melody being played on a secretive radio station. Can you figure out what it means?
 hints:
-  - base16
+  - base 16
 files:
   - src: ./melody.wav
 authors:
-  - Michael
+  - appllo
 visible: true
