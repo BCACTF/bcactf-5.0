@@ -15,6 +15,7 @@ description: |-
   managed to circumvent the security system...
 files:
   - src: ./server/server.js
+hints: []
 deploy:
   web:
     build: .
