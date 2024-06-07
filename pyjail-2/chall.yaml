@@ -2,7 +2,8 @@ name: JailBreak 2
 categories:
   - misc
 value: 125
-flag: bcactf{PyTH0n_M4st3R_Pr0veD}
+flag:
+  file: flag.txt
 description: |-
   The prison has increased security measures since you last escaped it. 
   Can you still manage to escape?
@@ -13,4 +14,7 @@ files:
 authors:
   - Jack Crowley
 visible: true
-#TODO Deployment
+deploy:
+  nc:
+    build: .
+    expose: 9031/tcp

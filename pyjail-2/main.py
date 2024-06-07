@@ -7,7 +7,7 @@ def end():
     exit()
 
 BANNED_CHARS = "gdvxfiyundmnet/\\'~`@#$%^&.{}0123456789"
-flag = "REDACTED"
+flag = open('flag.txt').read().strip()
 
 print("Welcome to the prison's mail center")
 
