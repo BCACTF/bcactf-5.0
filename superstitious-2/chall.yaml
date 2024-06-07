@@ -11,8 +11,7 @@ description: |-
 files:
   - src: ./superstitious-2.py
   - src: ./superstitious-2.txt
-hints:
-  - No hints, good luck!
+hints: []
 authors:
   - Marvin
 visible: true
