@@ -21,8 +21,7 @@ for _ in range(3):
     print("Here is the public key for your reference:")
     print(f"n = {n}")
     print(f"e = {e}")
-    print(f"phi = {phi}")
-
+    
 print("Thank you for encrypting with us!")
 print("In order to guarantee the security of your data, we will now let you view the encrypted flag.")
 x=input("Would you like to view it? (yes or no) ")
