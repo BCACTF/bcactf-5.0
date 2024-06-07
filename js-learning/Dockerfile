@@ -1,19 +1,10 @@
-FROM node:20.04
+FROM node:20.14
 
 WORKDIR /app
 
-COPY package.json .
+COPY . .
 
 RUN npm ci 
-
-COPY server.js .
-COPY flag.txt .
-
-WORKDIR /app/static
-
-COPY static/ .
-
-WORKDIR /app
 
 EXPOSE 3000
 
