@@ -1,7 +1,7 @@
 name: Palette
 categories:
   - rev
-value: 125
+value: 200
 flag: bcactf{YaY_sPRead5heETs_f0deb}
 description: |-
   I've written a script in my favorite programming language! 

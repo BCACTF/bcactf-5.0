@@ -1,7 +1,7 @@
 name: Serene Abstractions
 categories:
   - rev
-value: 150
+value: 175
 flag: bcactf{a_s3REn3_D3veL0pM3nT_eXp3Ri3nC3_f7a6afef2bc1}
 description: |-
   I accidentally overwrote my JavaScript source file with its

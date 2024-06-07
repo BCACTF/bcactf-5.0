@@ -1,7 +1,7 @@
 name: Script Theory
 categories:
   - rev
-value: 225
+value: 200
 flag:
   file: ./src/flag.txt
 description: |-

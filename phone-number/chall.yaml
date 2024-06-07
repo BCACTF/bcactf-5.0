@@ -1,7 +1,7 @@
 name: Phone number
 categories:
   - webex
-value: 25
+value: 50
 flag: 
   file: ./flag.txt
 description: |

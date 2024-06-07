@@ -1,7 +1,7 @@
 name: Tic-Tac-Toe
 categories:
   - webex
-value: 100
+value: 75
 flag:
   file: ./flag.txt
 description: |-

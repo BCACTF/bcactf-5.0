@@ -1,8 +1,7 @@
 name: Manipulate Spreadsheet 2
 categories:
-  - misc
   - foren
-value: 50
+value: 75
 flag: bcactf{600D_job_Using_900G13_SHe3t5}
 description: |-
   Sequel to a challenge from BCACTF 4. The flag lies within: https://docs.google.com/spreadsheets/d/1kGrbQpZ4oUt0ChKvwGa4PDJQ1QvUl73Qpeo585vQ6s4/edit?usp=sharing

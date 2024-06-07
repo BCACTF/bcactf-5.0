@@ -1,7 +1,7 @@
 name: Inaccessible
 categories:
   - binex
-value: 25
+value: 50
 flag: bcactf{W0w_Y0u_m4d3_iT_b810c453a9ac9}
 description: |-
   I wrote a function to generate the flag, but don't
@@ -21,4 +21,3 @@ deploy:
 authors:
   - Marvin
 visible: true
-# TODO: verify deployment

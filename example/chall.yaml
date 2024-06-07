@@ -25,5 +25,5 @@ files:
 authors:
   - John Doe
   - Jane Smith
-visible: true
+visible: false
 # TODO: deployment

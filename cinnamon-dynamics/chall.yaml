@@ -1,7 +1,7 @@
 name: Cinnamon Dynamics
 categories:
   - crypto
-value: 175
+value: 150
 flag:
   file: ./server/files/flag.txt
 description: |-

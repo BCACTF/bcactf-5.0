@@ -1,7 +1,7 @@
 name: MathJail
 categories:
   - misc
-value: 50
+value: 75
 flag:
   file: ./flag.txt
 description: |-

@@ -1,7 +1,7 @@
 name: Geolocation
 categories:
   - misc
-value: 125
+value: 100
 flag: bcactf{beeline_fairy_slacker}
 description: |-
   Here are some pictures.

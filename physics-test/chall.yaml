@@ -1,7 +1,7 @@
 name: Physics Test
 categories:
   - misc
-value: 100
+value: 125
 flag:
     file: ./flag.txt 
 description: |-

@@ -1,7 +1,7 @@
 name: Encryptor Shop
 categories:
   - crypto
-value: 75
+value: 50
 flag:
   file: ./flag.txt
 description: |-
