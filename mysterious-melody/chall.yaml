@@ -1,7 +1,6 @@
 name: Mysterious Melody
 categories:
-  - misc
-  - crypto
+  - foren
 value: 100
 flag: bcactf{beautiful_melody_beautiful_harmony}
 # Alternatively:
