@@ -15,7 +15,7 @@ files:
   - src: ./flagserver.pcapng
 deploy:
   nc:
-    build: ./flagserver
+    build: ./flagserver/Dockerfile
     expose: 54323/tcp
 authors:
   - Marvin
