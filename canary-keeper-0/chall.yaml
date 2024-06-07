@@ -8,7 +8,7 @@ description: |-
   Can you get the flag?
 hints: []
 files:
-  - src: /provided
+  - src: ./provided
     container: nc
 deploy:
   nc:
