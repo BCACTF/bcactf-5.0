@@ -1,7 +1,7 @@
 name: Encryptor Shop
 categories:
   - crypto
-value: 50
+value: 75
 flag:
   file: ./flag.txt
 description: |-
@@ -17,5 +17,5 @@ authors:
 deploy:
   nc:
     build: .
-    expose: 5000/tcp
+    expose: 3000/tcp
 visible: true
