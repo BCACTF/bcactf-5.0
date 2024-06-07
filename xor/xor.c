@@ -16,7 +16,7 @@ void xorEncrypt(char* input, char* output, size_t length) {
 int main() {
     FILE* file = fopen("flag.txt", "r");
     if (file == NULL) {
-        printf("Failed to open file.\n");
+        printf("Failed to open flag file. Make sure flag.txt exists.\n");
         return 1;
     }
 
