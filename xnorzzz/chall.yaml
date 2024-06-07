@@ -1,0 +1,22 @@
+name: xnorzzz
+categories:
+  - rev
+value: 125
+flag:
+  file: secret.txt
+description: |-
+  A mutated man wakes up with sixteen fingers and too much time on his fingers.
+  He challenges you to return him the number he is thinking of and he will give you a reward/cookie.
+hints:
+  - Did you use XOR or XNOR?
+files:
+  - src: ./output.txt
+  - src: chall
+    dest: xnorzzz
+    container: static
+authors:
+  - Michael Pylypovych
+visible: true
+deploy:
+  static:
+    build: .
