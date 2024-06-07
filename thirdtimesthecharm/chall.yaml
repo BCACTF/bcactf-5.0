@@ -8,7 +8,7 @@ description: |
   
   We also don't know what underscores are add them yourself.
   
-  put ONLY the final decrypted cipher in bcactf{}
+  put ONLY the final decrypted cipher in bcactf{}, no intermediate steps
   
   key - vinegar
   
