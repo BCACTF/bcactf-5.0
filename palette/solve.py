@@ -15,6 +15,10 @@ IC(x)=IF(CODE(RIGHT(x))<>57,LEFT(x,LEN(x)-1)&CHAR(CODE(RIGHT(x))+1),IF(x=CHAR(57
     last character with '0' and increments the rest of
     the string.
 
+    NOTE: It was pointed out that this function has a
+    bug in it -- IC("9") returns "100", not "10" -- 
+    but this doesn't affect the challenge.
+
 IX(l,x,i)=IF(i=0,x,l(IX(l,x,i-1)))
     This function returns l(l(l(...l(x)...))) where the
     lambda l is applied i times. It calls l and then 
