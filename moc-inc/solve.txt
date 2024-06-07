@@ -1,0 +1,6 @@
+TOTP secrets are not cryptographically random and the seed for the RNG
+is predictable (it's just the current date). All the user has to do
+is write a script to go back the last few days and generate TOTP secrets
+and try them until they hit the right one.
+
+(The date is 5/27/2024 which will have passed by the time of the CTF)

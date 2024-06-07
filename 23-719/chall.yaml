@@ -1,0 +1,16 @@
+name: 23-719
+categories:
+  - foren
+value: 50
+flag: bcactf{rEAl_WOrLd_appLIc4t1ons_Of_cTf_ad04cc78601d5da8}
+description: |-
+  that's a nice unanimous supreme court decision you've made public,
+  sure would be a shame if someone didn't properly clean up remnants
+  of a prior version of the document before publishing it
+hints:
+  - this is a real thing that happened that had real articles written about it
+files:
+  - src: ./23-719_19m2.pdf
+authors:
+  - Marvin
+visible: true

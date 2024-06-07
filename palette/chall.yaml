@@ -1,0 +1,15 @@
+name: Palette
+categories:
+  - rev
+value: 125
+flag: bcactf{YaY_sPRead5heETs_f0deb}
+description: |-
+  I've written a script in my favorite programming language! 
+  It takes in an arbitrary string and returns a thematic color palette.
+  You can find it at https://tinyurl.com/yuha3yfx.
+hints: []
+files:
+  - src: ./palette.png
+authors:
+  - Marvin
+visible: true

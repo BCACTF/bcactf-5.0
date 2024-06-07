@@ -1,0 +1,4 @@
+Record only the first eight bits for each 12 bit group. Reload. Repeat
+
+Since the last four bits have an equal chance of being flicked and there is only one bit flicking,
+    the chance that the first eight bits are not modified is the highest

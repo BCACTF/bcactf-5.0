@@ -16,4 +16,5 @@ deploy:
     expose: 3000/tcp
 authors:
   - Thomas
+hints: []
 visible: true

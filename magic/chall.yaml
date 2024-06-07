@@ -1,0 +1,17 @@
+name: magic
+categories:
+  - foren
+  - rev
+value: 75
+flag: bcactf{InTerACtIv3_PdFs_W0W_cbd14436e6aea8}
+description: |-
+  I found this piece of paper on the floor.
+  I was going to throw it away, but it somehow screamed at me
+  while I was holding it?!
+hints:
+  - the pdf should be interactive; if not, try changing your pdf viewer
+files:
+  - src: ./magic.pdf
+authors:
+  - Marvin
+visible: true

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>Duck Finder</title>
+    </head>
+    <body>
+        <h1>Duck Finder</h1>
+        <p>Type the name of a duck breed to learn more.</p>
+
+        <form action="/" method="POST">
+            <input type="text" name="breed" />
+            <input type="submit" value="Submit" />
+        </form>
+
+        <p>We have info about these breeds:</p>
+        <ul>
+            <% for (const breed of breedNames) { %>
+                <li><%= breed %></li>
+            <% } %>
+        </ul>
+    </body>
+</html>

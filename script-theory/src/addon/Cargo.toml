@@ -1,0 +1,17 @@
+[package]
+name = "script-theory-addon"
+version = "1.0.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+chacha20 = "0.9.1"
+rand = "0.8.5"
+rand_chacha = "0.3.1"
+napi = "2.16.6"
+napi-derive = "2.16.4"
+
+[build-dependencies]
+napi-build = "2.1.3"

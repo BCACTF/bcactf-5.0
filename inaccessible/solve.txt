@@ -1,0 +1,14 @@
+The function win() will print the flag,
+but the program just doesn't call it.
+
+You can use a program like gdb to debug
+and call the function.
+
+Example:
+
+(gdb) break main 
+        (set a breakpoint so that the 
+        program doesn't immediately end)
+(gdb) run
+(gdb) call (int)win()
+        (cast win() function to int because gdb doesn't understand its return type)

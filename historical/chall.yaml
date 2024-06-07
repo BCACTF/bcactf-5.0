@@ -1,0 +1,17 @@
+name: Time Skip
+categories:
+  - crypto
+value: 50
+flag: bcactf{5c7t4l3_h15t04y_qe829xl1}
+description: |-
+  One of our problem writers got sent back in time!
+  We found a piece a very very old piece of parchment
+  where he disappeared, alongside a long cylinder.
+  See if you can uncover his flag!
+hints:
+  - Ignore the silly science, but perhaps he wanted to mimic encryption methods of his new time.
+files:
+  - src: ./parchment.txt
+authors:
+  - Jeremy Lee
+visible: true

@@ -1,0 +1,20 @@
+name: idk
+categories:
+  - rev
+value: 100
+flag: bcactf{H1gH_QUAlITy_coDE_ccec60e091ba2}
+description: |-
+  i threw some random stuff at a wall
+hints:
+  - i didn't invent any of these
+files:
+  - src: /chall
+    dest: idk
+    container: static
+deploy:
+  static:
+    build: .
+authors:
+  - Marvin
+visible: true
+# TODO: verify deployment

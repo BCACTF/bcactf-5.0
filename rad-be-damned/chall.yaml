@@ -1,0 +1,17 @@
+name: rad-be-damned
+categories: 
+  - crypto
+value: 125
+flag: 
+    file: ./flag.txt
+description: |
+  My friend seems to be communicating something but I can't make out anything. 
+  Why do we live so close to Chernobyl anyways?
+hints:
+  - Encoded with CRC (Cyclic Redundancy Checks)
+files:
+  - src: ./message.py
+  - src: ./output.txt
+authors:
+  - Nikhil
+visible: true
