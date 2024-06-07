@@ -4,7 +4,7 @@ categories:
 value: 100
 flag: bcactf{thankS_5OCK3ts_and_tHreADInG_clA5s_2f6fb44c998fd8}
 description: |-
-  It looks like IRCUS have been using a fully exposed application
+  It looks like Ircus have been using a fully exposed application
   to access their flags! Look at this traffic I captured. 
   I can't seem to get it to work, though... can you help me
   get the flag for this very challenge?
