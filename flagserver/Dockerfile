@@ -2,7 +2,7 @@ FROM openjdk:22-jdk
 
 WORKDIR /app
 
-COPY . /app/flagserver
+COPY flagserver /app/flagserver
 
 RUN javac flagserver/ChatServer.java
 
