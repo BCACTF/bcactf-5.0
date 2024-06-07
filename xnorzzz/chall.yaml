@@ -1,21 +1,22 @@
 name: xnorzzz
 categories:
-  - crypto
-value: 25
-flag: bcactf{th3fl@gUsee33ek_g3tg00d}
+  - rev
+value: 125
+flag:
+  file: secret.txt
 description: |-
   A mutated man wakes up with sixteen fingers and too much time on his fingers.
   He challenges you to return him the number he is thinking of and he will give you a reward/cookie.
 hints:
   - Did you use XOR or XNOR?
-  - Have you tried converting back to the original base?
 files:
-  - src: ./a.txt
-    dest: end.txt
+  - src: ./output.txt
+  - src: chall
+    dest: xnorzzz
+    container: static
 authors:
   - Michael Pylypovych
 visible: true
 deploy:
-  nc:
+  static:
     build: .
-    expose: 3000/tcp
