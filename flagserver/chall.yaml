@@ -10,7 +10,7 @@ description: |-
   get the flag for this very challenge?
 hints:
   - It looks like their server contains flags for two challenges -
-    this one (`flagserver`) and a decoy one.
+    this one ("flagserver") and a decoy one.
 files:
   - src: ./flagserver.pcapng
 deploy:
