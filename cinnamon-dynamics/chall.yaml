@@ -1,10 +1,10 @@
 name: Cinnamon Dynamics
 categories:
   - crypto
-value: 150
+value: 175
 flag:
   file: ./server/files/flag.txt
-description: |-
+description: |
   Cinnamon Dynamics, an innovative technology company, provides a service
   for the public to execute short scripts to query some limited information
   about the company. To combat abuse, they've instated a requirement for
