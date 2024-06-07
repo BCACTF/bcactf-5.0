@@ -1,14 +1,14 @@
-FROM python:3.12-slim-bookworm
+FROM python:3.12
 
 WORKDIR /app
 
-RUN useradd -m bcactf && chown -R bcactf:bcactf /app && chmod -R 775 /app
+RUN useradd -m bcactf && chown -R bcactf:bcactf /app
 
+USER bcactf
 ENV PATH $PATH:/home/bcactf/.local/bin
 RUN pip install flask
 
 COPY . . 
 
-USER bcactf
 EXPOSE 5000
-ENTRYPOINT ["python", "server.py"]
+CMD ["python", "server.py"]
