@@ -1,12 +1,13 @@
 name: Duck Finder
 categories:
   - webex
-value: 75
+value: 100
 flag:
   file: ./flag.txt
 description: |-
   This old service lets you make some interesting queries.
   It hasn't been updated in a while, though.
+hints: []
 files:
   - src: ./server.zip
 deploy:
