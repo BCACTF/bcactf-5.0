@@ -19,4 +19,4 @@ visible: true
 deploy:
   web:
     build: .
-    expose: 80/tcp
+    expose: 5000/tcp

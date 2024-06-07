@@ -83,3 +83,7 @@ def search_page(search):
     url_for("static", filename="images/logo.png")
     url_for("static", filename="search.js")
     return render_template("searchpage.html", search=search, search_lower=search_lower, search_results=search_results, no_results=no_results, search_terms=search_words)
+
+
+if __name__ == '__main__':
+    app.run(host = '0.0.0.0', port = 5000)
