@@ -1,0 +1,36 @@
+(solvepath written by a total Rust noob. someone actually
+competent will probably have a much different solvepath)
+
+Running the binary (after installing openssl-1.1 to get libssl.so
+if necessary) returns some error about a HTTP request. We can
+see that the request is to localhost:7787/flag, so we presume we
+will need to access /flag on the remote server.
+
+Use a executable decompiler to open the given binary.
+
+After doing some digging, we find two functions in the
+crabby namespace, namely gpwd and main.
+
+gpwd seems to do some things with this string,
+"99 50 57 116 90 86 57 122 100 88 66 108 99 108 57 122 90 87 78 121 90 88 82 102 97 50 86 53 88 51 82 108 101 72 82 102 97 71 86 121 90 81 61 61"
+
+Converting from decimal, we get
+"c29tZV9zdXBlcl9zZWNyZXRfa2V5X3RleHRfaGVyZQ=="
+
+and "some_super_secret_key_text_here" from Base64.
+That seems pretty important!
+
+Looking into the references of crabby::gpwd throughout
+the binary, we find a function that makes many calls to
+the reqwest:: namespace, so it's likely the one sending the
+HTTP request. 
+
+Later in this function, we see that it runs Client::post 
+from reqwest, adds some sort of Authorization header, and
+sends the reqwest.
+
+Someone more familiar with Rust rev than me can probably tease
+out what exactly's going on with gpwd(), but we can piece together
+what the program's doing. The correct way to solve the challenge
+is to send a POST request to /flag with the Authorization header
+set to "c29tZV9zdXBlcl9zZWNyZXRfa2V5X3RleHRfaGVyZQ==".

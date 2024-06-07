@@ -1,0 +1,24 @@
+name: Crabby
+categories:
+  - rev
+value: 125
+flag:
+  file: ./flag.txt
+description: |-
+  I asked somebody to open source a specific project, but they're being very crabby about it.
+  Instead, they sent me this binary and said "Everything is open source if you can read assembly".
+
+  I can't read assembly, can you help me out?
+hints: []
+files:
+  - src: /app/crabby
+    dest: crabby
+    container: web
+authors:
+  - Mudasir
+visible: true
+deploy:
+  web:
+    build: .
+    expose: 7787/tcp
+  
