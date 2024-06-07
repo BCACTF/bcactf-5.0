@@ -1,0 +1,19 @@
+name: JSLearning.com
+categories:
+  - webex
+value: 75
+flag: 
+  file: ./flag.txt
+description: |
+  Hey, can you help me on this Javascript problem? Making strings is hard.
+hints:
+  - Do you know any ways to run JS with just those select characters?
+  - Do you notice anything vulnerable about the server?
+deploy:
+  web:
+    build: .
+    expose: 3000/tcp
+authors:
+  - Jacob Korn
+files:
+  - src: ./server.js
