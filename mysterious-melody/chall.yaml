@@ -1,0 +1,19 @@
+name: Mysterious Melody
+categories:
+  - misc
+  - crypto
+value: 100
+flag: bcactf{beautiful_melody_beautiful_harmony}
+# Alternatively:
+# flag:
+#   file: ./flag.txt
+# 
+description: |-
+  - We intercepted this mysterious melody being played on a secretive radio station. Can you figure out what it means?
+hints:
+  - base 16
+files:
+  - src: ./melody.wav
+authors:
+  - appllo
+visible: true
