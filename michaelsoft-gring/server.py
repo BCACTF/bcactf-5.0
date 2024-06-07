@@ -11,38 +11,6 @@ def rand_word():
         n -= words[word][1]
     return words[word][0]
 
-#create DB with tables
-con = sqlite3.connect("search_results.db")
-cur = con.cursor()
-for table in cur.execute("SELECT name FROM sqlite_master WHERE type = 'table'").fetchall():
-    cur.execute("DROP TABLE " + table[0]) 
-
-con.commit()
-
-cur.execute("CREATE TABLE search(title)")
-cur.execute("CREATE TABLE flag(flag)")
-cur.execute("INSERT INTO flag VALUES ('bcactf{59L_1n1ECTeD_026821}')")
-con.commit()
-
-# load words with frequencies from words.txt
-word_file = open("words.txt", "r", errors="ignore")
-words = []
-rand_max = 0 # sum of all word frequencies (for horrible weighted random system (i'm bad at math))
-
-for line in word_file:
-    words.append((line.split(",")[0], int(line.split(",")[1])))
-    rand_max += int(line.split(",")[1])
-
-# create and add search results
-to_add = []
-for _ in range(10000):
-    to_add.append([""])
-    for __ in range(randint(3,12)):
-        to_add[-1][0] += " " + rand_word()
-to_add = [tuple(n) for n in to_add]
-print(to_add)
-cur.executemany("INSERT INTO search VALUES (?)", to_add)
-con.commit()
 
 
 # flask app
@@ -86,4 +54,37 @@ def search_page(search):
 
 
 if __name__ == '__main__':
+    #create DB with tables
+    con = sqlite3.connect("search_results.db")
+    cur = con.cursor()
+    for table in cur.execute("SELECT name FROM sqlite_master WHERE type = 'table'").fetchall():
+        cur.execute("DROP TABLE " + table[0]) 
+
+    con.commit()
+
+    cur.execute("CREATE TABLE search(title)")
+    cur.execute("CREATE TABLE flag(flag)")
+    cur.execute("INSERT INTO flag VALUES ('bcactf{59L_1n1ECTeD_026821}')")
+    con.commit()
+
+    # load words with frequencies from words.txt
+    word_file = open("words.txt", "r", errors="ignore")
+    words = []
+    rand_max = 0 # sum of all word frequencies (for horrible weighted random system (i'm bad at math))
+
+    for line in word_file:
+        words.append((line.split(",")[0], int(line.split(",")[1])))
+        rand_max += int(line.split(",")[1])
+
+    # create and add search results
+    to_add = []
+    for _ in range(10000):
+        to_add.append([""])
+        for __ in range(randint(3,12)):
+            to_add[-1][0] += " " + rand_word()
+    to_add = [tuple(n) for n in to_add]
+    print(to_add)
+    cur.executemany("INSERT INTO search VALUES (?)", to_add)
+    con.commit()
+    
     app.run(host = '0.0.0.0', port = 5000)
