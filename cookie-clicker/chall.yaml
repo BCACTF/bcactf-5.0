@@ -8,5 +8,8 @@ description: |-
 authors:
   - Jack
 visible: true
-
-#TODO deployment
+hints: []
+deploy:
+  web:
+    build: .
+    expose: 3000/tcp
