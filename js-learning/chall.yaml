@@ -17,3 +17,4 @@ authors:
   - Jacob Korn
 files:
   - src: ./server.js
+visible: true
