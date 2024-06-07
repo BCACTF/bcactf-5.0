@@ -1,1 +1,15 @@
-I don't actually know how to solve it
+Each note in the melody corresponds to a hex digit from 0 to F,
+as indicated by the scale at the start of the sound file.
+
+Online tools exist to aid with music transcription, but another way
+is to view the spectrogram using a tool like Audacity.
+(Right click on track, select spectrogram view, and zoom into the right 
+frequencies. For convenience, right click and go into spectrogram settings
+and change scale to logarithmic to make the spacing better.)
+
+The correct note should now roughly line up with a bright spot in the
+spectrogram (and you can add horizontal lines in an image editor to
+aid with lining things up) and you can listen to the audio file to
+confirm that you are transcribing the correct one.
+
+Then, convert from hex to characters to retrieve the flag.
