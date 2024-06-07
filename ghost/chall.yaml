@@ -1,10 +1,9 @@
 name: ghost
 categories:
   - rev
-value: 50
+value: 75
 flag: bcactf{5YmB0l_n4MeS}
-description: |-
-  spooky!
+description: spooky!
 hints:
   - Use a decompilation tool such as [Binary Ninja Cloud](https://cloud.binary.ninja/)
   - Compilation preserves the names of functions and global variables
@@ -18,4 +17,3 @@ deploy:
 authors:
   - Marvin
 visible: true
-# TODO: verify deployment
