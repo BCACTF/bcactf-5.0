@@ -1,0 +1,21 @@
+name: Goodbye, Porkpwnpie Hat
+categories:
+  - binex
+value: 150
+flag:
+  file: ./flag.txt
+description: |-
+  My friends graphic design tool, has some issues... can you help me get shell?
+hints:
+  - So you get all the PIE you want, can you get shell?
+authors:
+  - awt
+visible: true
+deploy:
+  nc:
+    build: .
+    expose: 9999/tcp
+files:
+  - src: /home/ctf/chall
+    dest: chall
+    container: nc
