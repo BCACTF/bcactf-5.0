@@ -33,17 +33,14 @@ def restart():
 
 def time_to_restart():
     # format as mm:ss
-    return str(next_restart - datetime.datetime.now())[2:-7]
+    return str(next_restart - datetime.datetime.now())[:-7]
 
 def get_conn(db):
-    if db not in sql_connections:
-        conn = sqlite3.connect("dbs/" + db + ".db")
-        c = conn.cursor()
-        c.execute("PRAGMA foreign_keys = ON")
-        sql_connections[db] = conn
-        return conn
-    return sql_connections[db]
-
+    conn = sqlite3.connect("dbs/" + db + ".db")
+    c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON")
+    sql_connections[db] = conn
+    return conn
 
 def init_db(db):
     role_table = "roles_" + os.urandom(8).hex()
@@ -64,6 +61,7 @@ def init_db(db):
         c.execute(f"INSERT INTO {role_table} (id, admin) VALUES (0, 1)")
         c.execute(f"INSERT INTO {role_table} (id, admin) VALUES (1, 0)")
     conn.commit()
+    conn.close()
     return role_table
 
 
@@ -75,6 +73,7 @@ def set_name():
         c = conn.cursor()
         c.execute(f'UPDATE users SET name="{request.form["username"]}" WHERE id=1')
         conn.commit()
+        conn.close()
     except Exception as e:
         print(traceback.format_exc())
         return redirect(f"/?error={str(e)}")
@@ -83,6 +82,9 @@ def set_name():
 
 @app.route("/")
 def index():
+    if (datetime.datetime.now() > next_restart):
+        restart()
+
     print(session.get("db"), session.get("role_table"))
     if not session.get("db") or not session.get("role_table") or request.args.get("reset"):
         session["db"] = os.urandom(16).hex()
@@ -97,6 +99,7 @@ def index():
         username = c.fetchone()[0]
         c.execute(f'SELECT admin FROM {session["role_table"]} WHERE id=1')
         admin = c.fetchone()[0]
+        conn.close()
     except Exception as e:
         print(traceback.format_exc())
         return redirect(f"/?reset=1&error={str(e)}")
