@@ -10,7 +10,7 @@ description: |
   In fact, you're the very first user, with ID 1! 
   
   PLEASE NOTE: What you do should, in theory, not affect other solvers.
-  Please contact me if this is not the case.
+  Please let us know if this is not the case.
 hints:
   - The form is vulnerable to SQL injection (it uses an UPDATE statement).
   - You will always have user ID 1.
@@ -20,4 +20,4 @@ deploy:
     expose: 7272/tcp
 authors:
   - Marvin
-visible: false
+visible: true
