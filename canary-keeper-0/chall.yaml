@@ -8,7 +8,8 @@ description: |-
   Can you get the flag?
 hints: []
 files:
-  - src: ./provided
+  - src: /home/ctf/provided
+    dest: provided
     container: nc
 deploy:
   nc:
