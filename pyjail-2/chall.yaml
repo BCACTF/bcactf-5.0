@@ -1,0 +1,20 @@
+name: JailBreak 2
+categories:
+  - misc
+value: 125
+flag:
+  file: flag.txt
+description: |-
+  The prison has increased security measures since you last escaped it. 
+  Can you still manage to escape?
+hints:
+  - What in python is evaluated to a number?
+files:
+  - src: ./main.py
+authors:
+  - Jack Crowley
+visible: true
+deploy:
+  nc:
+    build: .
+    expose: 9031/tcp
