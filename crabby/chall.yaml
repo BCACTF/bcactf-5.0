@@ -1,7 +1,7 @@
 name: Crabby
 categories:
   - rev
-value: 75
+value: 125
 flag:
   file: ./flag.txt
 description: |-
