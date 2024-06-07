@@ -20,4 +20,4 @@ deploy:
     expose: 7272/tcp
 authors:
   - Marvin
-visible: true
+visible: false
