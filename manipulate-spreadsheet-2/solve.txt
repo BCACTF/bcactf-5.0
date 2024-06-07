@@ -1,0 +1,1 @@
+There's a hidden sheet and it contains the flag in binary obscured using LSB steg and shuffling the rows (indicated by index)
