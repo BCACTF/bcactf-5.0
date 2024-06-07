@@ -10,7 +10,10 @@ ENV PATH $PATH:/home/bcactf/.local/bin
 
 RUN pip install flask
 
-COPY . . 
+COPY . .
+
+RUN chown bcactf:bcactf ./search_results.db
+RUN chmod +rw ./search_results.db
 
 EXPOSE 5000
 CMD ["python", "server.py"]

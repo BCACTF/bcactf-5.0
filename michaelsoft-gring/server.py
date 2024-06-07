@@ -26,7 +26,7 @@ def main_page(a=False):
 @app.get("/search/<search>")
 def search_page(search):
     #reconnect sql (sqlite wants me to do that idk why)
-    con = sqlite3.connect("search_results.db")
+    con = sqlite3.connect("file:search_results.db?mode=ro", uri=True)
     cur = con.cursor()
     
     # make search results
