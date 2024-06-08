@@ -1,3 +1,7 @@
+# You can find out how everything is encoded through
+# a link in the metadata to a specifications doc
+# https://shorturl.at/AUKZm
+
 from PIL import Image
 import os
 import zlib
