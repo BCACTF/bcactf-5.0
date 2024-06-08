@@ -1,6 +1,8 @@
 FROM --platform=linux/amd64 ubuntu@sha256:86ac87f73641c920fb42cc9612d4fb57b5626b56ea2a19b894d0673fd5b4f2e9 AS build
 
-RUN apt-get update -y && apt-get install -y gcc && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y wget gcc && rm -rf /var/lib/apt/lists/* \
+    && wget -O ynetd.c "https://raw.githubusercontent.com/johnsonjh/ynetd/master/ynetd.c" \
+    && gcc -o ynetd ynetd.c && rm ynetd.c && chmod +x ./ynetd
 
 COPY src.c .
 RUN gcc -o chall src.c
@@ -11,7 +13,7 @@ FROM --platform=linux/amd64 ubuntu@sha256:86ac87f73641c920fb42cc9612d4fb57b5626b
 RUN useradd -m -d /home/ctf -u 12345 ctf
 WORKDIR /home/ctf
 
-COPY ynetd .
+COPY --from=build ynetd .
 RUN chmod +x ynetd
 
 COPY --from=build chall chall

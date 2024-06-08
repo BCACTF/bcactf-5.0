@@ -47,7 +47,7 @@ int main() {
 
     char input[2];
     char cursor;
-    uint16_t x = ART_WIDTH / 2, y = ART_HEIGHT / 2;
+    int16_t x = ART_WIDTH / 2, y = ART_HEIGHT / 2;
 
     PAINT_START:
     printf("Pick the character you want to paint with: ");
