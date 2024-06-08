@@ -1,9 +1,11 @@
+"use strict";
+
 const express = require("express");
 const app = express();
 const port = 3000;
 const parser = require("body-parser");
 const fs = require("fs");
-
+let flag;
 app.use("/", express.static("static"));
 
 app.use(parser.text());
@@ -13,7 +15,7 @@ app.get("/", (req, res) => {
 
 
 app.post("/check", (req, res) => {
-    let flag = fs.readFileSync("flag.txt", "utf-8");
+    flag = fs.readFileSync("flag.txt", "utf-8");
 
     let d = req.body;
     let out = "";
@@ -27,7 +29,7 @@ app.post("/check", (req, res) => {
 
     let c;
     try {
-        c = eval(req.body).toString();
+        c = eval?.(req.body).toString();
     } catch (e) {
         res.send("An error occurred with your code.");
     }
