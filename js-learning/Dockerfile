@@ -1,15 +1,23 @@
-FROM node:20.14
+FROM node:20-bookworm
 
-RUN useradd -m ctf -d /app && chown -R ctf:ctf /app
+RUN useradd -m -d /home/ctf ctf
 
 USER ctf
 
-WORKDIR /app
+RUN bash -c "curl -fsSL https://deno.land/x/install/install.sh | sh"
 
-COPY . .
+WORKDIR /home/ctf/app
 
-RUN npm ci && chmod 550 /app
+COPY --chown=ctf:ctf ./entrypoint ./entrypoint
+COPY --chown=ctf:ctf ./server ./server
+
+WORKDIR /home/ctf/app/entrypoint
+
+RUN npm ci
+
+ENV PATH "${PATH}:/home/ctf/.deno/bin"
+ENV NODE_ENV production
 
 EXPOSE 3000
 
-ENTRYPOINT [ "node", "server.js" ]
+ENTRYPOINT ["npm", "start"]

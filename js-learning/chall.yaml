@@ -2,8 +2,8 @@ name: JSLearning.com
 categories:
   - webex
 value: 50
-flag: 
-  file: ./flag.txt
+flag:
+  file: ./server/flag.txt
 description: |
   Hey, can you help me on this Javascript problem? Making strings is hard.
 hints:
@@ -16,5 +16,5 @@ deploy:
 authors:
   - Jacob Korn
 files:
-  - src: ./server.js
-visible: false
+  - src: ./server/server.js
+visible: true
