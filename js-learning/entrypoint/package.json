@@ -1,0 +1,11 @@
+{
+    "name": "js-learning-entrypoint",
+    "dependencies": {
+        "express": "^4.18.2",
+        "http-proxy": "^1.18.1"
+    },
+    "scripts": {
+        "start": "node server.js"
+    },
+    "type": "module"
+}
