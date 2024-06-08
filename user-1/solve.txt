@@ -52,6 +52,9 @@ response.
 So, we can assume that the server is hard-coded to check id=1, which
 gives sense given the challenge title, description, etc.
 
+(Another simple way to conclude this is by using a single ", which yields
+the error « unrecognized token: """" WHERE id=1" ».)
+
 We can use the FOREIGN KEY constraint to our advantage, given
 the ON UPDATE CASCADE keyword.
 
