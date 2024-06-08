@@ -43,7 +43,7 @@ for frid in range(n_frames):
     img.save(f"frames/frame{frid:03d}.png")
 
 os.system(
-    """ffmpeg -framerate 30 -pattern_type glob -i 'frames/*.png' \
-            -metadata encoding_tool="StaticMaker https://shorturl.at/AUKZm" \
-            -c:v libx264rgb -qp 12 out.mp4
+    """ffmpeg -framerate 30 -pattern_type glob -i 'frames/*.png' -c:v libx264rgb -qp 12\
+            -metadata:g encoding_tool="StaticMaker https://shorturl.at/AUKZm" \
+            out.mp4
     """)
