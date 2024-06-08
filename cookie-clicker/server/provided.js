@@ -40,9 +40,9 @@ io.on('connection', (socket) => {
     socket.on('click', (msg) => {
         let json = JSON.parse(msg)
 
-        if (sessions[id] > 1e7) {
+        if (sessions[id] > 1e20) {
             console.log("TEST")
-            io.emit('recievedScore', JSON.stringify({"value":"bcactf{Y0u_W3renT_Supp0sE_t0_WIN_123}"}));
+            io.emit('recievedScore', JSON.stringify({"value":"bcactf{flag}"}));
             return;
         }
 
@@ -56,7 +56,7 @@ io.on('connection', (socket) => {
         sessions[id] = newValue
         io.emit('recievedScore', JSON.stringify({"value":newValue}));
 
-        if (json.power > 100) {
+        if (json.power > 10) {
             io.emit('error', JSON.stringify({"value":oldValue}));
         }
 

@@ -4,13 +4,14 @@ categories:
 value: 100
 flag: bcactf{Y0u_W3renT_Supp0sE_t0_WIN_123}
 description: |-
-  You need to get 1e10 cookies, hope you have fun clicking!
+  You need to get 1e20 cookies, hope you have fun clicking!
 authors:
   - Jack
 visible: true
 hints: []
 files:
-  - src: ./provided.js
+  - src: ./server/provided.js
+    dest: app.js
 deploy:
   web:
     build: .
