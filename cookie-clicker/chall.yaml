@@ -7,7 +7,7 @@ description: |-
   You need to get 1e20 cookies, hope you have fun clicking!
 authors:
   - Jack
-visible: true
+visible: false
 hints: []
 files:
   - src: ./server/provided.js
