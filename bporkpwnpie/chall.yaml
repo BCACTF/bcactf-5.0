@@ -16,6 +16,7 @@ deploy:
     build: .
     expose: 9999/tcp
 files:
+  - src: Dockerfile
   - src: /home/ctf/chall
     dest: chall
     container: nc
