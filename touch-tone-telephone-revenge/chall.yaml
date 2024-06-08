@@ -5,12 +5,12 @@ categories:
 value: 200
 flag:
   file: ./flag.txt
-description: |-
+description: |
   Well let's quickly patch out an unintended solvepath to the original
   challenge...
   
   There, now go use your programming skills.
-
+  
   Even more of a headphone warning with this one, sorry.
 hints: []
 files:
@@ -22,4 +22,4 @@ deploy:
     build: .
 authors:
   - Skyler Calaman
-visible: false
+visible: true
