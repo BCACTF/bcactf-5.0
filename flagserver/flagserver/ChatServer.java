@@ -6,6 +6,7 @@ import java.io.ObjectOutputStream;
 import java.net.Inet4Address;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketTimeoutException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -24,10 +25,11 @@ public class ChatServer {
             System.out.println("Chat Server started.");
             System.out.println("Local IP: " + Inet4Address.getLocalHost().getHostAddress());
             System.out.println("Local Port: " + serverSocket.getLocalPort());
-
+            Socket socket = null;
             while (true) {
                 try {
-                    Socket socket = serverSocket.accept();
+                    socket = serverSocket.accept();
+                    socket.setSoTimeout(3000);
                     System.out.printf("Connected to %s:%d on local port %d\n", socket.getInetAddress(),
                             socket.getPort(), socket.getLocalPort());
 
@@ -43,13 +45,13 @@ public class ChatServer {
 
                     // handle client business in another thread
                     pool.execute(new ChatServerSocketListener(client, clientList));
-                } 
-                
-                // prevent exceptions from causing server from exiting.
-                catch (IOException ex) {
+                } catch (Exception ex) {
+                    try {
+                        socket.close();
+                    } finally {
+                    }
                     System.out.println(ex.getMessage());
                 }
-
             }
         }
     }
