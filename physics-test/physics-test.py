@@ -30,7 +30,7 @@ while True:
         y = randint(0, 100)
         expected = eval(q[1], {'__builtins__': None, 'ord': ord, 'len': len}, {'x': x, 'y': y, 'flag': flag}) 
         res = eval(answer, {'__builtins__': None, 'ord': ord, 'len': len}, {'x': x, 'y': y, 'flag': flag})
-        if expected != res:
+        if abs(expected - res) > 0.1:
             print(f"TEST FAILED!")
             break
         if _ == 9:
