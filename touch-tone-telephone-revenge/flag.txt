@@ -1,1 +1,1 @@
-bcactf{dtmf-netlify-app-bad--internet-bad--im-quitting-ctf-123a456b789c-0-d}
+bcactf{dtmf_netlify_app_bad__internet_bad__im_quitting_ctf__123A_456B_789C_S0HD}
