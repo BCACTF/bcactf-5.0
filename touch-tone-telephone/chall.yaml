@@ -27,6 +27,7 @@ hints:
   - DTMF is a really cool technology
   - There also used to be A, B, C, and D menu selection keys
   - How many keys are there in total? Is it a computer science-y number?
+  - For key to number, Start at top left, reading order. (Sorry, 0 is not 0, my bad)
 files:
   - src: /gen/output.wav
     dest: beep_boop.wav
