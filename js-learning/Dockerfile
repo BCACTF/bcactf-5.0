@@ -1,10 +1,14 @@
 FROM node:20.14
 
+RUN useradd -m ctf -d /app && chown -R ctf:ctf /app
+
+USER ctf
+
 WORKDIR /app
 
 COPY . .
 
-RUN npm ci 
+RUN npm ci && chmod 550 /app
 
 RUN adduser ctf
 
