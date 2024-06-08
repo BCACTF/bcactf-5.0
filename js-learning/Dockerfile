@@ -10,10 +10,6 @@ COPY . .
 
 RUN npm ci && chmod 550 /app
 
-RUN adduser ctf
-
-USER ctf
-
 EXPOSE 3000
 
 ENTRYPOINT [ "node", "server.js" ]
