@@ -8,7 +8,7 @@ description: |
   
   We also don't know what underscores are add them yourself.
   
-  put ONLY the final decrypted cipher in bcactf{}, no intermediate steps
+  put **ONLY** the final decrypted cipher in bcactf{}, no intermediate steps
   
   key - vinegar
   
@@ -16,7 +16,7 @@ description: |
   
   cipher 1 - seooizmt
   
-  cipher 2 - bdoloeinbdjmmyg
+  cipher 2 - bdoloeinbdjmmyg <- THIS ONE
 hints: []
 authors:
 - Sylvia Lee
