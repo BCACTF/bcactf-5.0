@@ -7,8 +7,10 @@ fin = open("input.txt", "r")
 fout = open("fast.out", "w")
 # Read the input
 (n, k) = [int(x) for x in fin.readline().split(" ")]
+arr = [int(x) for x in fin.readline().split(" ")]
+assert len(arr) == k
 
-sum = sum([int(x) for x in fin.readline().split(" ")])
+sum = sum(arr)
 
 start = sum + n - k + 1
 out = 0
