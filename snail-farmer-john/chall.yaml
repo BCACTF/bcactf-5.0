@@ -4,7 +4,10 @@ categories:
 value: 125
 flag:
   file: fast.out
-description: Farmer John has moved on from cows to snails.
+description: |
+  Farmer John has moved on from cows to snails.
+  
+  Please ignore any potential integer overflow.
 hints:
   - As you can imagine, Farmer John's code is quite slow, but there's a much faster way.
   - Where does the slowness come from? Can you find a way to eliminate it with math?
