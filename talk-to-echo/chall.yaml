@@ -4,8 +4,7 @@ categories:
 value: 175
 flag:
   file: ./flag.txt
-description: |-
-  Echo is lonely and would like to talk
+description: Echo is lonely and would like to talk
 hints: []
 files:
   - src: ./echo.py
@@ -15,4 +14,4 @@ deploy:
     expose: 3000/tcp
 authors:
   - Marvin
-visible: false
+visible: true
