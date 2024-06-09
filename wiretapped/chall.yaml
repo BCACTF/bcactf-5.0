@@ -13,4 +13,4 @@ files:
   - src: ./wiretapped.wav
 authors:
   - Marvin
-visible: true
+visible: false
