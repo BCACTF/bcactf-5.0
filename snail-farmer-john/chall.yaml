@@ -11,13 +11,7 @@ hints:
   - Where does the slowness come from? Can you find a way to eliminate it with math?
 files:
   - src: ./input.txt
-  - src: /chall
-    dest: snail-farmer-john
-    container: static
   - src: ./slow.cpp
-deploy:
-  static:
-    build: .
 authors:
   - Marvin
 visible: false
