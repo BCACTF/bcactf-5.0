@@ -1,7 +1,7 @@
 name: Snail Farmer John
 categories:
   - rev
-value: 150
+value: 125
 flag:
   file: fast.out
 description: |-
