@@ -1,0 +1,24 @@
+name: Juggler 1
+categories:
+  - binex
+value: 50
+flag:
+  file: ./flag.txt
+description: |-
+  My friend here has got some issues...
+  Mainly, he can't stop juggling.
+
+  P.S Dockerfile is provided but not necessary for Juggler
+hints:
+  - He told me he was only good at juggling small words
+files:
+  - src: /home/ctf/chall
+    dest: chall
+    container: nc
+authors:
+  - Marvin
+  - awt
+deploy:
+  nc:
+    build: .
+    expose: 9999/tcp
