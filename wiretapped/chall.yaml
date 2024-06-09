@@ -3,7 +3,7 @@ categories:
   - foren
 value: 100
 flag: bcactf{listening_in_a28270fb0dbfd}
-description: |-
+description: |
   I've been listening to this cable between two computers,
   but I feel like it's in the wrong format.
 hints:
@@ -13,4 +13,4 @@ files:
   - src: ./wiretapped.wav
 authors:
   - Marvin
-visible: false
+visible: true
