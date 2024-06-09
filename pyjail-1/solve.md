@@ -9,3 +9,5 @@ To get around this, we can raise an error with a custom error message.
 ```py
 raise OSError(locals()[chr(102)+chr(108)+chr(97)+chr(103)])
 ```
+
+Note: There is an unintended solution to both original JailBreak challenges, which is by abusing Python normalization and submitting a payload such as `𝘱𝘳𝘪𝘯𝘵(𝘧𝘭𝘢𝘨)`. Other unintended solutions to JailBreak 1 involve `help()`.
