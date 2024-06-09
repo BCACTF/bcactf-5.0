@@ -5,3 +5,5 @@ Unlike the first JailBreak, this time the security measures banned numbers. Howe
 ```
 locals()[chr(((bool("a")+bool("a")+bool("a")+bool("a")+bool("a"))*(bool("a")+bool("a")))**(bool("a")+bool("a"))+bool("a")+bool("a"))+chr(((bool("a")+bool("a")+bool("a")+bool("a")+bool("a"))*(bool("a")+bool("a")))**(bool("a")+bool("a"))+(bool("a")+bool("a")+bool("a")+bool("a"))*(bool("a")+bool("a")))+chr(((bool("a")+bool("a")+bool("a")+bool("a")+bool("a"))*(bool("a")+bool("a")))**(bool("a")+bool("a"))-bool("a")-bool("a")-bool("a"))+chr(((bool("a")+bool("a")+bool("a")+bool("a")+bool("a"))*(bool("a")+bool("a")))**(bool("a")+bool("a"))+bool("a")+bool("a")+bool("a"))]
 ```
+
+Note: There is an unintended solution to both original JailBreak challenges, which is by abusing Python normalization and submitting a payload such as `𝘱𝘳𝘪𝘯𝘵(𝘧𝘭𝘢𝘨)`.
