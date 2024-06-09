@@ -8,7 +8,6 @@ const port = 3000;
 const socketIo = require('socket.io');
 const io = socketIo(http);
 
-const { v4 } = require('uuid');
 
 let sessions = {}
 let errors = {}
@@ -20,9 +19,8 @@ app.get('/', (req, res) => {
 })
 
 io.on('connection', (socket) => {
-    let id = v4();
-    sessions[id] = 0
-    errors[id] = 0
+    sessions[socket.id] = 0
+    errors[socket.id] = 0
 
     socket.on('disconnect', () => {
         console.log('user disconnected');
@@ -33,34 +31,33 @@ io.on('connection', (socket) => {
     });
 
     socket.on('receivedError', (msg) => {
-        sessions[id] = errors[id]
-        socket.emit('recievedScore', JSON.stringify({"value":sessions[id]}));
+        sessions[socket.id] = errors[socket.id]
+        socket.emit('recievedScore', JSON.stringify({"value":sessions[socket.id]}));
     });
 
     socket.on('click', (msg) => {
         let json = JSON.parse(msg)
 
-        if (sessions[id] > 1e20) {
-            console.log("TEST")
-            socket.emit('recievedScore', JSON.stringify({"value":"flag"}));
+        if (sessions[socket.id] > 1e20) {
+            socket.emit('recievedScore', JSON.stringify({"value":"FLAG"}));
             return;
         }
 
-        if (json.value != sessions[id]) {
+        if (json.value != sessions[socket.id]) {
             socket.emit("error", "previous value does not match")
         }
 
-        let oldValue = sessions[id]
+        let oldValue = sessions[socket.id]
         let newValue = Math.floor(Math.random() * json.power) + 1 + oldValue
 
-        sessions[id] = newValue
+        sessions[socket.id] = newValue
         socket.emit('recievedScore', JSON.stringify({"value":newValue}));
 
         if (json.power > 10) {
             socket.emit('error', JSON.stringify({"value":oldValue}));
         }
 
-        errors[id] = oldValue;
+        errors[socket.id] = oldValue;
     });
 });
 
