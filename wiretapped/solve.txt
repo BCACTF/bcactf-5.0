@@ -3,6 +3,7 @@ The .wav file actually contains a pcapng packet trace
 finding some HTTP requests stuff as well as:
 "Dumpcap (Wireshark) 4.2.2 (Git v4.2.2 packaged as 4.2.2-1)"
 near the start. Interestingly enough, binwalk doesn't detect it.)
+We can retrieve the pcapng by simply deleting the wav header.
 
 This suggests that we should extract the pcapng file and open it
 in Wireshark. We see a TCP conversation between 10.0.2.15 and
