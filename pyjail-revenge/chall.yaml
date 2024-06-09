@@ -4,7 +4,7 @@ categories:
 value: 125
 flag:
   file: flag.txt
-description: |-
+description: |
   Some of y'all cheesed the previous two jailbreaks,
   so it looks like they've put even more band-aids on
   the system...
@@ -14,7 +14,7 @@ files:
   - src: ./main.py
 authors:
   - Jack Crowley
-visible: false
+visible: true
 deploy:
   nc:
     build: .
