@@ -1,7 +1,7 @@
 name: sheep
 categories:
   - foren
-value: 75
+value: 125
 flag: bcactf{SHaPE_f1lEd_b54a11ac9c87c8}
 description: |-
   baa
