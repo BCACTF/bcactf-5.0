@@ -1,0 +1,57 @@
+The .wav file actually contains a pcapng packet trace
+(you can find this by e.g. running "strings" on the file,
+finding some HTTP requests stuff as well as:
+"Dumpcap (Wireshark) 4.2.2 (Git v4.2.2 packaged as 4.2.2-1)"
+near the start. Interestingly enough, binwalk doesn't detect it.)
+We can retrieve the pcapng by simply deleting the wav header.
+
+This suggests that we should extract the pcapng file and open it
+in Wireshark. We see a TCP conversation between 10.0.2.15 and
+192.168.1.178. You can right click any of the TCP packets and
+select "Follow > TCP Stream" to see the conversation at once.
+
+It reads:
+
+    hello there host computer 
+    hello there vm
+    do you know what the flag is
+    yeah i think it starts with bcactf{
+    ok and the rest of it?
+    uhh... listening_ ... i forgot the rest but i have it in an image somewhere, i'll send it to you
+    you still there?? it's been a long time
+    yeah i'm sorry i'm literally just making the flag on the fly
+    port 5500
+    ok lemme check it out
+    thanks i think i got it hopefully
+
+The first part of the flag is bcactf{listening_. The rest is
+supposedly in an image, hosted at port 5500.
+
+Let's find that image. One nice way is to filter by the port,
+so that we only see what we need, by typing "tcp.port == 5500"
+into the "Apply a display filter..." field at the top of the screen.
+
+We see a few HTTP requests:
+
+0000   52 54 00 12 35 02 08 00 27 1e 36 4a 08 00 45 00   RT..5...'.6J..E.
+0010   00 79 f2 a5 40 00 40 06 79 70 0a 00 02 0f c0 a8   .y..@.@.yp......
+0020   01 b2 90 82 15 7c 9a 44 5c 3d 03 1f ce 02 50 18   .....|.D\=....P.
+0030   7d 78 ce d4 00 00 47 45 54 20 2f 20 48 54 54 50   }x....GET / HTTP
+0040   2f 31 2e 31 0d 0a 48 6f 73 74 3a 20 31 39 32 2e   /1.1..Host: 192.
+0050   31 36 38 2e 31 2e 31 37 38 3a 35 35 30 30 0d 0a   168.1.178:5500..
+0060   55 73 65 72 2d 41 67 65 6e 74 3a 20 63 75 72 6c   User-Agent: curl
+0070   2f 38 2e 35 2e 30 0d 0a 41 63 63 65 70 74 3a 20   /8.5.0..Accept: 
+0080   2a 2f 2a 0d 0a 0d 0a                              */*....
+
+The response is a HTML file with <img src="rest_of_flag.jpg" alt="1">.
+
+The next request (tcp stream 3) looks like it prematurely reset, so
+it likely will not work. 
+
+The response to the next request seems to actually contain the image.
+However, the image is large, so it is split into several packets.
+One way (which is probably not optimal) that I found to extract the
+image is to once again follow the TCP stream. Using "Show Data As Raw",
+you can copy the entire response as hexadecimal. Then, we can extract
+the image on https://cyberchef.org/ using "From Hex" and "Extract Files".
+You can then see the extracted JPEG file, showing "in_a28270fb0dbfd}".
