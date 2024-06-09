@@ -6,7 +6,7 @@ flag: bcactf{H0w_Did_Y0u_Cl1ck_S0_M4ny_T1mes_123}
 description: "You need to get 1e20 cookies, hope you have fun clicking!"
 authors:
   - Jack
-visible: false
+visible: true
 hints: []
 files:
   - src: ./server/provided.js
