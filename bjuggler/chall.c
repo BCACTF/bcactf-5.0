@@ -48,7 +48,7 @@ int main() {
         printf("Give me something for my left hand (not too heavy though please, I injured it)\n(or QUIT to quit):\n> ");
         fgets(left_hand, sizeof(left_hand), stdin);
 
-        if (strncmp(left_hand, "QUIT", 4) == 0 || strncmp(left_hand, "quit", 4)) {
+        if (strncmp(left_hand, "QUIT", 4) == 0 || strncmp(left_hand, "quit", 4) == 0) {
             puts("Goodbye!");
             return 0;
         }
