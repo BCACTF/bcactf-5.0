@@ -1,0 +1,18 @@
+name: Cookie Clicker
+categories:
+  - webex
+value: 100
+flag: bcactf{Y0u_W3renT_Supp0sE_t0_WIN_123}
+description: |-
+  You need to get 1e20 cookies, hope you have fun clicking!
+authors:
+  - Jack
+visible: false
+hints: []
+files:
+  - src: ./server/provided.js
+    dest: app.js
+deploy:
+  web:
+    build: .
+    expose: 3000/tcp
