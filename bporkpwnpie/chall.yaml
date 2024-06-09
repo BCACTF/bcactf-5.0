@@ -20,6 +20,3 @@ files:
   - src: /home/ctf/chall
     dest: chall
     container: nc
-  - src: /lib/x86_64-linux-gnu/libc-2.31.so
-    dest: libc.so.6
-    container: nc

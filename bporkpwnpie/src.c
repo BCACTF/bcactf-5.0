@@ -9,6 +9,7 @@
 #define ART_HEIGHT 0x10
 
 static uint8_t raw_art_canvas[ART_HEIGHT * ART_WIDTH];
+static char* pwd_env;
 static uint8_t* art_canvas = raw_art_canvas;
 
 void print_canvas() {
@@ -40,7 +41,7 @@ int main() {
     setbuf(stdout, NULL);
     setbuf(stdin, NULL);
     setbuf(stderr, NULL);
-
+    pwd_env = getenv("PWD");
     memset(raw_art_canvas, ' ', sizeof(raw_art_canvas));
 
     printf("Welcome to the ASCII Art Canvas!\n");
