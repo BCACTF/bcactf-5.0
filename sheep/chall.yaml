@@ -8,7 +8,7 @@ description: |-
 hints:
   - Figure out what type of file it is and see if there are tools you can use or modify.
 files:
-  - src: ./sheep
+  - src: ./sheep.shp
 authors:
   - Marvin
 visible: false
