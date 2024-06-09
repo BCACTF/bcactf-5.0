@@ -7,7 +7,7 @@ We can retrieve the pcapng by simply deleting the wav header.
 
 This suggests that we should extract the pcapng file and open it
 in Wireshark. We see a TCP conversation between 10.0.2.15 and
-192.168.178. You can right click any of the TCP packets and
+192.168.1.178. You can right click any of the TCP packets and
 select "Follow > TCP Stream" to see the conversation at once.
 
 It reads:
