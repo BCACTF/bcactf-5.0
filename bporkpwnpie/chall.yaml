@@ -1,11 +1,13 @@
-name: Goodbye, Porkpwnpie Hat
+name: "Goodbye, Porkpwnpie Hat"
 categories:
   - binex
 value: 150
 flag:
   file: ./flag.txt
-description: |-
+description: |
   My friends graphic design tool, has some issues... can you help me get shell?
+  
+  (Admin is away, attempt at your own risk)
 hints:
   - So you get all the PIE you want, can you get shell?
 authors:
