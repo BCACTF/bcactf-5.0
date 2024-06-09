@@ -27,17 +27,37 @@ void load_flag(char* flag, size_t size) {
     fgets(flag, size, fp);
 }
 
+void strcpy_unsafe(char* dest, char* src, uint32_t max) {
+    uint32_t i = 0;
+    while (*src) {
+        *dest = *src;
+        dest++;
+        src++;
+        i++;
+    }
+    if (i >= max) return;
+    *dest = '\0';
+}
+
 int main() {
     setbuf(stdout, NULL);
     setbuf(stderr, NULL);
     setbuf(stdin, NULL);
 
-    char flag[40];
-    uint32_t turn_count = 5;
-    char air[12];
-    char left_hand[8];
+    static char flag_cache[80];
+    load_flag(flag_cache, 4800);
+
+    // Enforces stack struct
+struct {
     char right_hand[24];
-    load_flag(flag, 40);
+    uint64_t _spacer[16];
+    char left_hand[12];
+    uint64_t _spacer2[16];
+    char air[12];
+    char flag[80];
+    uint32_t turn_count;
+} scope;
+    scope.turn_count = 5;
 
     printf("P.S the juggler animation is kind of tilted so you might need to look at it sideways.\n\n");
     sleep(1);
@@ -46,46 +66,48 @@ int main() {
         puts("Please help me, I am the juggler, but I can't stop juggling.");
         sleep(1);
         printf("Give me something for my left hand (not too heavy though please, I injured it)\n(or QUIT to quit):\n> ");
-        fgets(left_hand, sizeof(left_hand), stdin);
+        fgets(scope.left_hand, sizeof(scope.left_hand), stdin);
 
-        if (strncmp(left_hand, "QUIT", 4) == 0 || strncmp(left_hand, "quit", 4) == 0) {
+        if (strncmp(scope.left_hand, "QUIT", 4) == 0 || strncmp(scope.left_hand, "quit", 4) == 0) {
             puts("Goodbye!");
             return 0;
         }
         
         printf("Give me something for my right hand:\n> ");
-        fgets(right_hand, sizeof(right_hand), stdin);
-        strcpy(air, "");
+        fgets(scope.right_hand, sizeof(scope.right_hand), stdin);
+        strcpy(scope.air, "");
 
-        if (left_hand[strlen(left_hand) - 1] == '\n') {
-            left_hand[strlen(left_hand) - 1] = '\0';
+        if (scope.left_hand[strlen(scope.left_hand) - 1] == '\n') {
+            scope.left_hand[strlen(scope.left_hand) - 1] = '\0';
         }
 
-        if (right_hand[strlen(right_hand) - 1] == '\n') {
-            right_hand[strlen(right_hand) - 1] = '\0';
+        if (scope.right_hand[strlen(scope.right_hand) - 1] == '\n') {
+            scope.right_hand[strlen(scope.right_hand) - 1] = '\0';
         }
 
         printf("Watch this!");
 
-        for (int i = 0, turns = turn_count; i < turns; i++) {
+        for (int i = 0, turns = scope.turn_count; i < turns; i++) {
             printf("-----------------------------------------=--||\n");
-            printf("%24s 3----\\     __\n", right_hand);
-            printf("%23s      O-|---<__\n", air);
-            printf("%24s 3----/       \n", left_hand);
+            printf("%24s 3----\\     __\n", scope.right_hand);
+            printf("%23s      O-|---<__\n", scope.air);
+            printf("%24s 3----/       \n", scope.left_hand);
 
             if (i % 3 == 0) {
-                strcpy(air, left_hand);
-                strcpy(left_hand, right_hand);
-                strcpy(right_hand, "");
+                strcpy_unsafe(scope.air, scope.left_hand, sizeof(scope.air));
+                strcpy_unsafe(scope.left_hand, scope.right_hand, sizeof(scope.left_hand));
+                strcpy_unsafe(scope.right_hand, "", sizeof(scope.right_hand));
             } else if (i % 3 == 1) {
-                strcpy(right_hand, air);
-                strcpy(air, left_hand);
-                strcpy(left_hand, "");
+                strcpy_unsafe(scope.right_hand, scope.air, sizeof(scope.right_hand));
+                strcpy_unsafe(scope.air, scope.left_hand, sizeof(scope.air));
+                strcpy_unsafe(scope.left_hand, "", sizeof(scope.left_hand));
             } else if (i % 3 == 2) {
-                strcpy(left_hand, right_hand);
-                strcpy(right_hand, air);
-                strcpy(air, "");
+                strcpy_unsafe(scope.left_hand, scope.right_hand, sizeof(scope.left_hand));
+                strcpy_unsafe(scope.right_hand, scope.air, sizeof(scope.right_hand));
+                strcpy_unsafe(scope.air, "", sizeof(scope.air));
             }
+
+            strcpy(scope.flag, flag_cache);
 
             sleepms(800);
         }

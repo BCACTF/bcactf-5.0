@@ -1,7 +1,7 @@
 name: Juggler 1
 categories:
   - binex
-value: 100
+value: 50
 flag:
   file: ./flag.txt
 description: |-
@@ -9,16 +9,15 @@ description: |-
   Mainly, he can't stop juggling.
 
   P.S Dockerfile is provided but not necessary for Juggler
-hints: []
+hints:
+  - He told me he was only good at juggling small words
 files:
   - src: /home/ctf/chall
     dest: chall
     container: nc
-  - src: Dockerfile
 authors:
   - Marvin
   - awt
-visible: false
 deploy:
   nc:
     build: .
