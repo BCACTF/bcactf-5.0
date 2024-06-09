@@ -45,5 +45,5 @@ for frid in range(n_frames):
 os.system(
     """ffmpeg -framerate 30 -pattern_type glob -i 'frames/*.png' -c:v libx264rgb -qp 12\
             -metadata:g encoding_tool="StaticMaker https://shorturl.at/AUKZm" \
-            out.mp4
+            static.mp4
     """)

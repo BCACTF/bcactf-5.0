@@ -10,8 +10,7 @@ description: |-
 hints:
   - Start off by looking for metadata.
 files:
-  - src: ./out.mp4
-    dest: static.mp4
+  - src: ./static.mp4
 authors:
   - Marvin
 visible: false
