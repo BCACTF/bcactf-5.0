@@ -29,12 +29,12 @@ io.on('connection', (socket) => {
     });
 
     socket.on('chat message', (msg) => {
-        io.emit('chat message', msg);
+        socket.emit('chat message', msg);
     });
 
     socket.on('receivedError', (msg) => {
         sessions[id] = errors[id]
-        io.emit('recievedScore', JSON.stringify({"value":sessions[id]}));
+        socket.emit('recievedScore', JSON.stringify({"value":sessions[id]}));
     });
 
     socket.on('click', (msg) => {
@@ -42,22 +42,22 @@ io.on('connection', (socket) => {
 
         if (sessions[id] > 1e20) {
             console.log("TEST")
-            io.emit('recievedScore', JSON.stringify({"value":"bcactf{flag}"}));
+            socket.emit('recievedScore', JSON.stringify({"value":"flag"}));
             return;
         }
 
         if (json.value != sessions[id]) {
-            io.emit("error", "previous value does not match")
+            socket.emit("error", "previous value does not match")
         }
 
         let oldValue = sessions[id]
         let newValue = Math.floor(Math.random() * json.power) + 1 + oldValue
 
         sessions[id] = newValue
-        io.emit('recievedScore', JSON.stringify({"value":newValue}));
+        socket.emit('recievedScore', JSON.stringify({"value":newValue}));
 
         if (json.power > 10) {
-            io.emit('error', JSON.stringify({"value":oldValue}));
+            socket.emit('error', JSON.stringify({"value":oldValue}));
         }
 
         errors[id] = oldValue;
