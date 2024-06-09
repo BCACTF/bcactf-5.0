@@ -13,8 +13,7 @@ deploy:
   web:
     build: .
     expose: 3000/tcp
-hints:
-  - Flag is in localStorage.flag
+hints: []
 authors:
   - Thomas
 visible: true
