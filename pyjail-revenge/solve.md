@@ -1,4 +1,8 @@
-# JailBreak 2
+# JailBreak - (Revenge)
+
+This challenge is essentially the same as JailBreak 2, except that characters
+with larger unicode code points are also banned, preventing the italics cheese
+(see the bottom of [solvepath for pyjail 2](../pyjail-2/solve.md))
 
 Unlike the first JailBreak, this time the security measures banned numbers. However, this does not factor into the fact the both `True` and `False` are counted as 1 and 0 respectedly. Using the `bool` function, which when presented with a not empty argument evaluates to true, we can then do math to get the the needed ascii values, counting `all(())` as 1.
 
