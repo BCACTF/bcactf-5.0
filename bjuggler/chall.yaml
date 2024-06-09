@@ -4,10 +4,10 @@ categories:
 value: 50
 flag:
   file: ./flag.txt
-description: |-
+description: |
   My friend here has got some issues...
   Mainly, he can't stop juggling.
-
+  
   P.S Dockerfile is provided but not necessary for Juggler
 hints:
   - He told me he was only good at juggling small words
@@ -23,4 +23,4 @@ deploy:
   nc:
     build: .
     expose: 9999/tcp
-visible: false
+visible: true
