@@ -1,0 +1,16 @@
+name: Static
+categories:
+  - foren
+value: 150
+flag: bcactf{imag3_PROc3sSINg_yaY_2ea104d700c1a8}
+description: |-
+  Here's a copy of a mysterious video we found when
+  infiltrating a submarine. It seems rather random,
+  though.
+hints:
+  - Start off by looking for metadata.
+files:
+  - src: ./static.mp4
+authors:
+  - Marvin
+visible: false
