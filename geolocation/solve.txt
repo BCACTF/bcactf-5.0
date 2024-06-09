@@ -1,7 +1,7 @@
 Suggested solutions:
 1. Identify the extremely wide highway (Ontario Highway 401).
 For example, searching for "18-lane highway" or even just
-"wide highway near airport" can lead you towards the correct
+"wide highway near airport" yield results mentioning the
 location. The building is the Mississauga Harley-Davidson,
 which has what3words ///beeline.tape.couch.
 
