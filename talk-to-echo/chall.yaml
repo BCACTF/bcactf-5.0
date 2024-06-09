@@ -1,0 +1,18 @@
+name: Talk to Echo
+categories:
+  - crypto
+value: 175
+flag:
+  file: ./flag.txt
+description: |-
+  Echo is lonely and would like to talk
+hints: []
+files:
+  - src: ./echo.py
+deploy:
+  nc:
+    build: .
+    expose: 3000/tcp
+authors:
+  - Marvin
+visible: false
