@@ -11,4 +11,4 @@ files:
   - src: ./sheep
 authors:
   - Marvin
-visible: true
+visible: false
