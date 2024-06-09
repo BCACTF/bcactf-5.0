@@ -14,10 +14,10 @@ files:
   - src: /chall
     dest: snail-farmer-john
     container: static
+  - src: ./slow.cpp
 deploy:
   static:
     build: .
 authors:
   - Marvin
 visible: false
-# TODO: verify deployment
