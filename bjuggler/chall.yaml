@@ -15,6 +15,7 @@ files:
   - src: /home/ctf/chall
     dest: chall
     container: nc
+  - src: Dockerfile
 authors:
   - Marvin
   - awt
@@ -22,3 +23,4 @@ deploy:
   nc:
     build: .
     expose: 9999/tcp
+visible: false
