@@ -61,8 +61,8 @@ K = GF(n)
 a = K(0xFFFFFFFF00000001000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFC)
 
 
-# Use remote() on the real challenge
-p = process(["python", "echo.py"])
+# change ports for the real challenge
+p = remote("localhost", 3000)
 
 # Get the (R, cipher.encrypt(pad([flag], 16))) for later
 flag_msg = eval(p.recvline_contains(b"mumble")[10:-25])
@@ -101,7 +101,7 @@ while prod(moduli) < goal:
     # Find a low-order point on a curve that with the same a coeff
     # as the curve used by the server.
     # Any random curve likely has some low-order points
-    b = randint(1, n - 1)
+    b = randint(1, 10000000) # seems to go faster if b is small
     print("\033[31;1mTrying curve with b =", b, "\033[0m")
     print(
         "-- Still need a factor of 2 ^\033[34;1m",
@@ -166,7 +166,7 @@ while prod(moduli) < goal:
 end = time.time()
 print("Done!")
 print(f"Took {end - start} seconds")
-# personal best: 120 seconds
+# personal best: 107 seconds
 # can tweak timeout and prime factor cutoff to optimize ig
 
 # use CRT to find priv^2
