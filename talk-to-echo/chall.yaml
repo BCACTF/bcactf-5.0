@@ -15,4 +15,4 @@ deploy:
     expose: 3000/tcp
 authors:
   - Marvin
-visible: true
+visible: false
