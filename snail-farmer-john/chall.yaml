@@ -19,5 +19,5 @@ deploy:
     build: .
 authors:
   - Marvin
-visible: true
+visible: false
 # TODO: verify deployment
