@@ -9,9 +9,7 @@ description: |-
   Mainly, he can't stop juggling.
 
   P.S Dockerfile is provided but not necessary for Juggler
-hints:
-  - Have you tried turning it off and on again?
-  - Have you tried forcing an unexpected reboot?
+hints: []
 files:
   - src: /home/ctf/chall
     dest: chall
