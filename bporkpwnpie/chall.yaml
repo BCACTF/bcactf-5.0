@@ -12,7 +12,7 @@ hints:
   - So you get all the PIE you want, can you get shell?
 authors:
   - awt
-visible: true
+visible: false
 deploy:
   nc:
     build: .
