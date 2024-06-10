@@ -1,0 +1,20 @@
+name: Juggler 2
+categories:
+  - binex
+value: 150
+flag: bcactf{UHM_YOU_Sh0ULdN'T_Be_hEre_951cd948f02f3}
+description: |
+  Remember my old friend the juggler? Well apparently
+  he's got another flag somewhere on his `system`
+  
+  Use the same port as *Juggler 1*. Also here, take this Dockerfile
+  
+  **(Admin is away and challenge may be unsolvable, attempt at your own risk)**
+hints:
+  - If only we could get some more turns
+files:
+  - src: Dockerfile
+authors:
+  - Marvin
+  - awt
+visible: true

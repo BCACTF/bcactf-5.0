@@ -10,5 +10,9 @@ RUN wget -O ynetd.c \
 COPY ./flag.txt .
 
 COPY ./pycalculator.py .
+
+RUN adduser ctf
+USER ctf
+
 EXPOSE 3000
 ENTRYPOINT ["./ynetd", "-p", "3000", "python3 ./pycalculator.py 2>&1"]

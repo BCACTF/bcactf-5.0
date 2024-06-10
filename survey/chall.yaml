@@ -1,0 +1,18 @@
+name: Survey
+categories:
+  - misc
+value: 25
+flag: bcactf{THankS_fOr_Pl4YiNG_08aa139604c6d}
+description: |
+  We'd love your feedback on our CTF! In exchange for 25 points, please
+  let us know how we did and what we can improve on. We hope to see you next year!
+  
+  **Please note** that this challenge will **NOT** impact time-based tiebreakers and that **NO** first-blood messages will be sent.
+  
+  Please take your time filling this out and be honest, as we really appreciate your feedback.
+  
+  [https://forms.gle/tTxsmMyLKDdkQz2y5](https://forms.gle/tTxsmMyLKDdkQz2y5)
+hints: []
+authors:
+  - CTF Club
+visible: true
